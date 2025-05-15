@@ -37,70 +37,11 @@ Summary:
 ┌──(kali㉿kali)-[~]
 └─$ sudo systemctl status nginx
 
-○ nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: di>
-     Active: inactive (dead)
-       Docs: man:nginx(8)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ○ nginx.service - A high performance web server and a reverse proxy server
      Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
      Active: inactive (dead)
        Docs: man:nginx(8)
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
 
                                                                                                              
 ┌──(kali㉿kali)-[~]
@@ -174,13 +115,6 @@ Synchronizing state of apache2.service with SysV service script with /usr/lib/sy
 Executing: /usr/lib/systemd/systemd-sysv-install disable apache2
 Removed '/etc/systemd/system/multi-user.target.wants/apache2.service'.
                                                                                                              
-┌──(kali㉿kali)-[~]
-└─$ sudo systemctl start nginx
-
-                                                                                                             
-┌──(kali㉿kali)-[~]
-└─$ sudo systemctl start nginx
-
 ┌──(kali㉿kali)-[~]
 └─$ sudo systemctl start nginx
 
@@ -263,23 +197,8 @@ May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web 
 ~
 ~
 ~
-~
-~
-~
-~
 
-                                                                                                             
 
-                                                                                                             
-┌──(kali㉿kali)-[~]
-└─$                      
-sudo ufw status
-sudo: ufw: command not found
-                                                                                                             
-┌──(kali㉿kali)-[~]
-└─$ sudo ufw status
-
-sudo: ufw: command not found
                                                                                                              
 ┌──(kali㉿kali)-[~]
 └─$ sudo nginx -t       
@@ -436,3 +355,215 @@ zsh: event not found: </h1>
                                                                                                              
 ┌──(kali㉿kali)-[~]
 └─$ sudo systemctl reload nginx
+┌──(kali㉿kali)-[~]
+└─$ echo "<h1>Hello from NGINX!</h1>" | sudo tee /var/www/html/index.html
+
+zsh: event not found: </h1>
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl reload nginx
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo '<h1>Hello from NGINX!</h1>' | sudo tee /var/www/html/index.html
+
+<h1>Hello from NGINX!</h1>
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl reload nginx                                          
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd /ect/nginx        
+cd: no such file or directory: /ect/nginx
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd /ect/nginx
+cd: no such file or directory: /ect/nginx
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd usr/local/ect/nginx
+cd: no such file or directory: usr/local/ect/nginx
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls                          
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd user               
+cd: no such file or directory: user
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ nginx ls                     
+nginx: invalid option: "ls"
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ nginx % ls
+nginx: invalid option: "%"
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls -la /var/www/html
+
+total 20
+drwxr-xr-x 3 root     root     4096 Feb 14 08:26 .
+drwxr-xr-x 3 root     root     4096 Aug 18  2024 ..
+drwxr-xr-x 5 www-data www-data 4096 Feb 14 08:44 bookshop
+-rw-r--r-- 1 root     root       27 May 15 03:05 index.html
+-rw-r--r-- 1 root     root      615 Aug 18  2024 index.nginx-debian.html
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls -l /etc/nginx
+
+total 68
+drwxr-xr-x 2 root root 4096 May  5  2024 conf.d
+-rw-r--r-- 1 root root 1125 May  5  2024 fastcgi.conf
+-rw-r--r-- 1 root root 1055 May  5  2024 fastcgi_params
+-rw-r--r-- 1 root root 2837 May  5  2024 koi-utf
+-rw-r--r-- 1 root root 2223 May  5  2024 koi-win
+-rw-r--r-- 1 root root 5527 May  5  2024 mime.types
+drwxr-xr-x 2 root root 4096 May  5  2024 modules-available
+drwxr-xr-x 2 root root 4096 May  5  2024 modules-enabled
+-rw-r--r-- 1 root root 1472 May  5  2024 nginx.conf
+-rw-r--r-- 1 root root  180 May  5  2024 proxy_params
+-rw-r--r-- 1 root root  636 May  5  2024 scgi_params
+drwxr-xr-x 2 root root 4096 Aug 18  2024 sites-available
+drwxr-xr-x 2 root root 4096 Aug 18  2024 sites-enabled
+drwxr-xr-x 2 root root 4096 Aug 18  2024 snippets
+-rw-r--r-- 1 root root  664 May  5  2024 uwsgi_params
+-rw-r--r-- 1 root root 3071 May  5  2024 win-utf
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ code.    
+Command 'code.' not found, did you mean:
+  command 'code' from deb code-oss
+Try: sudo apt install <deb name>
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo mkdir -p /var/www/mysite
+[sudo] password for kali: 
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd /var/www/mysite
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ echo "<h1>Home Page</h1>" | sudo tee index.html
+echo "<h1>About Us</h1>" | sudo tee about.html
+echo "<h1>Our Services</h1>" | sudo tee services.html
+<h1>Home Page</h1>
+<h1>About Us</h1>
+<h1>Our Services</h1>
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite
+                                                                                                             
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ curl http://localhost
+
+<h1>Hello from NGINX!</h1>
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo ln -s /etc/nginx/sites-available/mysite /etc/nginx/sites-enabled/
+
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite                           
+
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nginx -t                              
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ 
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ ..cd
+..cd: command not found
+                                                                                                             
+
+                                                                                                             
+                                                                                                             
+┌──(kali㉿kali)-[/]
+└─$ sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[/]
+└─$ cd /var/www/mysitecd /var/www/mysitecd /var/www/mysite c  
+                                                                                                             
+┌──(kali㉿kali)-[/]
+└─$ cd /var/www/mysite
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite
+
+[sudo] password for kali: 
+Sorry, try again.
+[sudo] password for kali: 
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ 
+┌──(kali㉿kali)-[/]
+└─$ cd /var/www/mysitecd /var/www/mysitecd /var/www/mysite c  
+                                                                                                             
+┌──(kali㉿kali)-[/]
+└─$ cd /var/www/mysite
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite
+
+[sudo] password for kali: 
+Sorry, try again.
+[sudo] password for kali: 
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+                                                                                                         
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite
+
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo ln -sf /etc/nginx/sites-available/mysite /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo nano /etc/nginx/sites-available/mysite                            
+
+                                                                                                             
+┌──(kali㉿kali)-[/var/www/mysite]
+└─$ sudo ln -sf /etc/nginx/sites-available/mysite /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
