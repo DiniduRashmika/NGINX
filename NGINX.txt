@@ -1,0 +1,438 @@
+(kali㉿kali)-[~]
+└─$ ^[[200~sudo apt update
+zsh: bad pattern: ^[[200~sudo
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt upgrade -y
+[sudo] password for kali: 
+Sorry, try again.
+[sudo] password for kali: 
+Summary:                        
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt update
+sudo apt upgrade -y
+
+Ign:1 http://http.kali.org/kali kali-rolling InRelease
+Ign:1 http://http.kali.org/kali kali-rolling InRelease
+Ign:1 http://http.kali.org/kali kali-rolling InRelease
+Err:1 http://http.kali.org/kali kali-rolling InRelease
+  Temporary failure resolving 'http.kali.org'
+All packages are up to date.    
+Warning: Failed to fetch http://http.kali.org/kali/dists/kali-rolling/InRelease  Temporary failure resolving 'http.kali.org'
+Warning: Some index files failed to download. They have been ignored, or old ones used instead.
+Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non-free' to 'non-free-firmware'
+Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
+Summary:                        
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install nginx -y                                                            
+nginx is already the newest version (1.26.0-1).
+nginx set to manually installed.
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status nginx
+
+○ nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: di>
+     Active: inactive (dead)
+       Docs: man:nginx(8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+○ nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: inactive (dead)
+       Docs: man:nginx(8)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl start nginx  
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl start nginx
+
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo journalctl -xeu nginx
+
+May 15 01:36:29 kali nginx[11634]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+May 15 01:36:30 kali nginx[11634]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 15 01:36:30 kali nginx[11634]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+May 15 01:36:30 kali nginx[11634]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 15 01:36:30 kali nginx[11634]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+May 15 01:36:31 kali nginx[11634]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 15 01:36:31 kali nginx[11634]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+May 15 01:36:31 kali nginx[11634]: nginx: [emerg] still could not bind()
+May 15 01:36:31 kali systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 1.
+May 15 01:36:31 kali systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 15 01:36:31 kali systemd[1]: Failed to start nginx.service - A high performance web server and a reverse>
+░░ Subject: A start job for unit nginx.service has failed
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit nginx.service has finished with a failure.
+░░ 
+░░ The job identifier is 2139 and the job result is failed.
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i :80
+
+COMMAND PID     USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+apache2 756     root    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+apache2 779 www-data    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+apache2 780 www-data    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+apache2 781 www-data    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+apache2 782 www-data    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+apache2 783 www-data    4u  IPv6   6407      0t0  TCP *:http (LISTEN)
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl stop apache2
+sudo systemctl disable apache2
+
+Synchronizing state of apache2.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable apache2
+Removed '/etc/systemd/system/multi-user.target.wants/apache2.service'.
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl start nginx
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl start nginx
+
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl start nginx
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status nginx
+
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-15 01:56:40 EDT; 1min 33s ago
+ Invocation: d4e3cc5491ff4d7985b264d378f57d13
+       Docs: man:nginx(8)
+    Process: 21843 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=>
+    Process: 21849 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 21854 (nginx)
+      Tasks: 3 (limit: 2269)
+     Memory: 2.5M (peak: 2.7M)
+        CPU: 47ms
+     CGroup: /system.slice/nginx.service
+             ├─21854 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─21855 "nginx: worker process"
+             └─21856 "nginx: worker process"
+
+May 15 01:56:40 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ curl http://localhost
+
+
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status nginx
+
+[sudo] password for kali: 
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-15 01:56:40 EDT; 17min ago
+ Invocation: d4e3cc5491ff4d7985b264d378f57d13
+       Docs: man:nginx(8)
+    Process: 21843 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=>
+    Process: 21849 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 21854 (nginx)
+      Tasks: 3 (limit: 2269)
+     Memory: 2.5M (peak: 3M)
+        CPU: 49ms
+     CGroup: /system.slice/nginx.service
+             ├─21854 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─21855 "nginx: worker process"
+             └─21856 "nginx: worker process"
+
+May 15 01:56:40 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+...skipping...
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-15 01:56:40 EDT; 17min ago
+ Invocation: d4e3cc5491ff4d7985b264d378f57d13
+       Docs: man:nginx(8)
+    Process: 21843 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=>
+    Process: 21849 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 21854 (nginx)
+      Tasks: 3 (limit: 2269)
+     Memory: 2.5M (peak: 3M)
+        CPU: 49ms
+     CGroup: /system.slice/nginx.service
+             ├─21854 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─21855 "nginx: worker process"
+             └─21856 "nginx: worker process"
+
+May 15 01:56:40 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+                                                                                                             
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$                      
+sudo ufw status
+sudo: ufw: command not found
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo ufw status
+
+sudo: ufw: command not found
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nginx -t       
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo journalctl -xeu nginx 
+
+May 15 01:36:31 kali systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 15 01:36:31 kali systemd[1]: Failed to start nginx.service - A high performance web server and a reverse>
+░░ Subject: A start job for unit nginx.service has failed
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit nginx.service has finished with a failure.
+░░ 
+░░ The job identifier is 2139 and the job result is failed.
+May 15 01:56:40 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit nginx.service has begun execution.
+░░ 
+░░ The job identifier is 3026.
+May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+░░ Subject: A start job for unit nginx.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit nginx.service has finished successfully.
+░░ 
+░░ The job identifier is 3026.
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl stop apache2
+sudo systemctl disable apache2
+sudo systemctl start nginx
+[sudo] password for kali: 
+Synchronizing state of apache2.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable apache2
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status nginx
+
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-15 01:56:40 EDT; 52min ago
+ Invocation: d4e3cc5491ff4d7985b264d378f57d13
+       Docs: man:nginx(8)
+   Main PID: 21854 (nginx)
+      Tasks: 3 (limit: 2269)
+     Memory: 2.5M (peak: 3M)
+        CPU: 50ms
+     CGroup: /system.slice/nginx.service
+             ├─21854 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─21855 "nginx: worker process"
+             └─21856 "nginx: worker process"
+
+May 15 01:56:40 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+May 15 01:56:40 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ip a     
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:ad:25:87 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.101/24 brd 192.168.56.255 scope global dynamic noprefixroute eth0
+       valid_lft 368sec preferred_lft 368sec
+    inet6 fe80::9c55:6e69:eff8:4bb4/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl stop apache2
+sudo systemctl disable apache2
+Synchronizing state of apache2.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable apache2
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status apache2
+○ apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled; preset: disabled)
+     Active: inactive (dead)
+       Docs: https://httpd.apache.org/docs/2.4/
+
+May 15 01:06:33 kali systemd[1]: Starting apache2.service - The Apache HTTP Server...
+May 15 01:06:34 kali apachectl[698]: AH00558: apache2: Could not reliably determine the server's fully quali>
+May 15 01:06:34 kali systemd[1]: Started apache2.service - The Apache HTTP Server.
+May 15 01:51:14 kali systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+May 15 01:51:14 kali apachectl[18962]: AH00558: apache2: Could not reliably determine the server's fully qua>
+May 15 01:51:14 kali systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+May 15 01:56:06 kali systemd[1]: Stopping apache2.service - The Apache HTTP Server...
+May 15 01:56:06 kali apachectl[21358]: AH00558: apache2: Could not reliably determine the server's fully qua>
+May 15 01:56:06 kali systemd[1]: apache2.service: Deactivated successfully.
+May 15 01:56:06 kali systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl restart nginx
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl status nginx  
+
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-15 02:59:04 EDT; 8s ago
+ Invocation: fcba9baf10e64908bfe7919209758fdb
+       Docs: man:nginx(8)
+    Process: 53224 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=>
+    Process: 53227 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 53228 (nginx)
+      Tasks: 3 (limit: 2269)
+     Memory: 2.7M (peak: 2.8M)
+        CPU: 55ms
+     CGroup: /system.slice/nginx.service
+             ├─53228 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─53229 "nginx: worker process"
+             └─53230 "nginx: worker process"
+
+May 15 02:59:04 kali systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy >
+May 15 02:59:04 kali systemd[1]: Started nginx.service - A high performance web server and a reverse proxy s>
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo "<h1>Hello from NGINX!</h1>" | sudo tee /var/www/html/index.html
+
+zsh: event not found: </h1>
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl reload nginx
+
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo '<h1>Hello from NGINX!</h1>' | sudo tee /var/www/html/index.html
+
+<h1>Hello from NGINX!</h1>
+                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo systemctl reload nginx
