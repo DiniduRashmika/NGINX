@@ -1,0 +1,293 @@
+┌──(kali㉿kali)-[~]
+└─$ mkdir -p logs
+nano logs/spring.log
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ tail logs/spring.log
+
+2025-05-16 16:18:18 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 16:19:13 INFO  [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Started NSBPayApplication in 4.382 seconds
+2025-05-16 16:19:26 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:42 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=5559 due to Insufficient balance
+2025-05-16 16:20:26 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Started NSBPayApplication in 2.052 seconds
+2025-05-16 16:21:06 WARN  [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 16:22:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:22:29 INFO  [main] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 4.181 seconds
+2025-05-16 16:22:39 WARN  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 16:23:24 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 2.191 seconds
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ tail -f logs/spring.log
+
+2025-05-16 16:18:18 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 16:19:13 INFO  [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Started NSBPayApplication in 4.382 seconds
+2025-05-16 16:19:26 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:42 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=5559 due to Insufficient balance
+2025-05-16 16:20:26 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Started NSBPayApplication in 2.052 seconds
+2025-05-16 16:21:06 WARN  [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 16:22:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:22:29 INFO  [main] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 4.181 seconds
+2025-05-16 16:22:39 WARN  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 16:23:24 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 2.191 seconds
+^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ tail -n 10 logs/spring.log
+
+2025-05-16 16:18:18 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 16:19:13 INFO  [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Started NSBPayApplication in 4.382 seconds
+2025-05-16 16:19:26 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:42 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=5559 due to Insufficient balance
+2025-05-16 16:20:26 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Started NSBPayApplication in 2.052 seconds
+2025-05-16 16:21:06 WARN  [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 16:22:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:22:29 INFO  [main] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 4.181 seconds
+2025-05-16 16:22:39 WARN  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 16:23:24 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 2.191 seconds
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep ERROR logs/spring.log
+
+2025-05-16 14:01:03 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Payment failed for userId=5572 due to Insufficient balance
+2025-05-16 14:01:15 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Payment failed for userId=7860 due to Insufficient balance
+2025-05-16 14:03:22 ERROR [http-nio-8080-exec-5] c.n.nsbpay.security.JwtFilter : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:06:32 ERROR [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:06:40 ERROR [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:12:00 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:13:10 ERROR [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:14:20 ERROR [http-nio-8080-exec-5] c.n.nsbpay.security.JwtFilter : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:17:15 ERROR [http-nio-8080-exec-4] c.n.nsbpay.security.JwtFilter : Payment failed for userId=5477 due to Insufficient balance
+2025-05-16 14:17:44 ERROR [http-nio-8080-exec-4] c.n.nsbpay.service.PaymentService : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:20:05 ERROR [http-nio-8080-exec-4] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:20:53 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:22:34 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:24:15 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:28:00 ERROR [main] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:29:04 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:30:46 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:31:41 ERROR [http-nio-8080-exec-2] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:33:09 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:36:36 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=2651 due to Insufficient balance
+2025-05-16 14:39:57 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=7639 due to Insufficient balance
+2025-05-16 14:41:11 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Payment failed for userId=7184 due to Insufficient balance
+2025-05-16 14:41:36 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:44:08 ERROR [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:45:36 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:46:43 ERROR [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:46:48 ERROR [main] o.h.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:47:34 ERROR [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=9038 due to Insufficient balance
+2025-05-16 14:51:00 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:52:43 ERROR [http-nio-8080-exec-4] c.n.nsbpay.security.JwtFilter : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:53:41 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:57:12 ERROR [main] c.n.nsbpay.security.JwtFilter : Payment failed for userId=9551 due to Insufficient balance
+2025-05-16 14:57:24 ERROR [main] c.n.nsbpay.controller.PaymentController : Payment failed for userId=6237 due to Insufficient balance
+2025-05-16 14:58:53 ERROR [main] o.h.engine.jdbc.spi.SqlExceptionHelper : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:59:52 ERROR [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper : Payment failed for userId=7239 due to Insufficient balance
+2025-05-16 15:00:50 ERROR [http-nio-8080-exec-2] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:02:56 ERROR [main] c.n.nsbpay.NSBPayApplication : Payment failed for userId=7226 due to Insufficient balance
+2025-05-16 15:03:38 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:05:19 ERROR [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:06:39 ERROR [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:07:24 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:09:41 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:13:15 ERROR [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:15:31 ERROR [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:15:49 ERROR [main] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:16:31 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:17:04 ERROR [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:17:13 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:17:48 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:18:36 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:22:34 ERROR [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:24:28 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:25:20 ERROR [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:27:08 ERROR [http-nio-8080-exec-5] c.n.nsbpay.security.JwtFilter : Payment failed for userId=1157 due to Insufficient balance
+2025-05-16 15:29:56 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Payment failed for userId=3509 due to Insufficient balance
+2025-05-16 15:32:06 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Payment failed for userId=5575 due to Insufficient balance
+2025-05-16 15:32:47 ERROR [main] c.n.nsbpay.NSBPayApplication : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:34:16 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Payment failed for userId=3917 due to Insufficient balance
+2025-05-16 15:35:13 ERROR [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:38:51 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Payment failed for userId=5174 due to Insufficient balance
+2025-05-16 15:46:11 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:48:40 ERROR [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:49:56 ERROR [main] o.h.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:50:27 ERROR [http-nio-8080-exec-4] c.n.nsbpay.security.JwtFilter : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:50:52 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:52:48 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=9447 due to Insufficient balance
+2025-05-16 15:56:17 ERROR [http-nio-8080-exec-4] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:58:49 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Payment failed for userId=7078 due to Insufficient balance
+2025-05-16 16:00:22 ERROR [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:00:43 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 16:01:28 ERROR [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:06:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:07:28 ERROR [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:08:45 ERROR [main] o.h.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 1045, SQLState: 28000
+2025-05-16 16:09:27 ERROR [main] c.n.nsbpay.service.PaymentService : Payment failed for userId=9343 due to Insufficient balance
+2025-05-16 16:10:00 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=4000 due to Insufficient balance
+2025-05-16 16:17:47 ERROR [http-nio-8080-exec-4] c.n.nsbpay.security.JwtFilter : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:26 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:42 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=5559 due to Insufficient balance
+2025-05-16 16:22:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -i "payment" logs/spring.log
+
+2025-05-16 14:00:29 INFO  [http-nio-8080-exec-2] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=7738
+2025-05-16 14:01:03 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Payment failed for userId=5572 due to Insufficient balance
+2025-05-16 14:01:15 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Payment failed for userId=7860 due to Insufficient balance
+2025-05-16 14:02:14 INFO  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 2.531 seconds
+2025-05-16 14:02:56 WARN  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 14:03:57 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Tomcat started on port(s): 8080
+2025-05-16 14:09:16 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=3679
+2025-05-16 14:10:07 INFO  [main] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 4.525 seconds
+2025-05-16 14:10:52 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=7125
+2025-05-16 14:12:00 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:14:06 WARN  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Unusual login attempt for userId=3234
+2025-05-16 14:14:28 INFO  [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper : Payment processed successfully for userId=6317
+2025-05-16 14:15:01 WARN  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 14:15:58 WARN  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 14:16:22 INFO  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:17:15 ERROR [http-nio-8080-exec-4] c.n.nsbpay.security.JwtFilter : Payment failed for userId=5477 due to Insufficient balance
+2025-05-16 14:17:44 ERROR [http-nio-8080-exec-4] c.n.nsbpay.service.PaymentService : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:19:14 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:20:32 INFO  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:20:53 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:22:34 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 14:23:25 INFO  [main] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 3.638 seconds
+2025-05-16 14:24:02 INFO  [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Payment processed successfully for userId=1722
+2025-05-16 14:24:15 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:24:56 WARN  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Deprecated API used in transaction module
+2025-05-16 14:27:08 WARN  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 14:29:29 INFO  [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=6246
+2025-05-16 14:31:29 WARN  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Deprecated API used in transaction module
+2025-05-16 14:33:09 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:33:30 INFO  [http-nio-8080-exec-4] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=3380
+2025-05-16 14:33:39 INFO  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:35:10 INFO  [main] c.n.nsbpay.service.PaymentService : Payment processed successfully for userId=3724
+2025-05-16 14:35:52 WARN  [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 14:36:36 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=2651 due to Insufficient balance
+2025-05-16 14:39:57 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=7639 due to Insufficient balance
+2025-05-16 14:41:11 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Payment failed for userId=7184 due to Insufficient balance
+2025-05-16 14:42:23 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 4.875 seconds
+2025-05-16 14:44:54 INFO  [http-nio-8080-exec-5] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=7500
+2025-05-16 14:45:36 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:46:04 INFO  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:47:09 INFO  [http-nio-8080-exec-4] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 5.855 seconds
+2025-05-16 14:47:34 ERROR [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=9038 due to Insufficient balance
+2025-05-16 14:48:32 INFO  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment processed successfully for userId=7138
+2025-05-16 14:49:30 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 4.248 seconds
+2025-05-16 14:51:00 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:51:58 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 14:53:41 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 14:54:01 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Unusual login attempt for userId=2789
+2025-05-16 14:54:42 INFO  [http-nio-8080-exec-5] c.n.nsbpay.security.JwtFilter : Payment processed successfully for userId=5807
+2025-05-16 14:57:12 ERROR [main] c.n.nsbpay.security.JwtFilter : Payment failed for userId=9551 due to Insufficient balance
+2025-05-16 14:57:24 ERROR [main] c.n.nsbpay.controller.PaymentController : Payment failed for userId=6237 due to Insufficient balance
+2025-05-16 14:57:53 WARN  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Unusual login attempt for userId=4434
+2025-05-16 14:59:52 ERROR [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper : Payment failed for userId=7239 due to Insufficient balance
+2025-05-16 15:01:40 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 5.826 seconds
+2025-05-16 15:02:56 ERROR [main] c.n.nsbpay.NSBPayApplication : Payment failed for userId=7226 due to Insufficient balance
+2025-05-16 15:03:38 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:04:32 INFO  [http-nio-8080-exec-3] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=4707
+2025-05-16 15:09:41 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:10:45 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 15:14:00 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 3.077 seconds
+2025-05-16 15:14:17 WARN  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Unusual login attempt for userId=2021
+2025-05-16 15:15:15 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Payment processed successfully for userId=3056
+2025-05-16 15:15:49 ERROR [main] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:17:43 WARN  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 15:17:48 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : SQL Error: 1045, SQLState: 28000
+2025-05-16 15:18:36 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:19:23 WARN  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Unusual login attempt for userId=4497
+2025-05-16 15:22:46 WARN  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 15:23:44 INFO  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Tomcat started on port(s): 8080
+2025-05-16 15:24:28 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:26:31 INFO  [main] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 3.488 seconds
+2025-05-16 15:27:08 ERROR [http-nio-8080-exec-5] c.n.nsbpay.security.JwtFilter : Payment failed for userId=1157 due to Insufficient balance
+2025-05-16 15:28:01 INFO  [http-nio-8080-exec-5] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=6078
+2025-05-16 15:28:25 WARN  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Deprecated API used in transaction module
+2025-05-16 15:29:04 INFO  [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=6852
+2025-05-16 15:29:56 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Payment failed for userId=3509 due to Insufficient balance
+2025-05-16 15:30:08 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 4.005 seconds
+2025-05-16 15:31:08 INFO  [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=3683
+2025-05-16 15:31:39 INFO  [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 15:32:06 ERROR [http-nio-8080-exec-3] c.n.nsbpay.security.JwtFilter : Payment failed for userId=5575 due to Insufficient balance
+2025-05-16 15:32:27 WARN  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 15:33:45 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Unusual login attempt for userId=9944
+2025-05-16 15:34:16 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Payment failed for userId=3917 due to Insufficient balance
+2025-05-16 15:35:57 INFO  [main] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=4665
+2025-05-16 15:38:11 WARN  [main] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 15:38:51 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Payment failed for userId=5174 due to Insufficient balance
+2025-05-16 15:42:56 INFO  [main] c.n.nsbpay.service.PaymentService : Tomcat started on port(s): 8080
+2025-05-16 15:43:33 WARN  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Deprecated API used in transaction module
+2025-05-16 15:43:38 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Tomcat started on port(s): 8080
+2025-05-16 15:44:38 INFO  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Started NSBPayApplication in 4.935 seconds
+2025-05-16 15:45:14 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 15:46:11 ERROR [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:47:08 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Unusual login attempt for userId=3058
+2025-05-16 15:48:23 INFO  [main] c.n.nsbpay.service.PaymentService : Payment processed successfully for userId=6539
+2025-05-16 15:50:52 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 15:52:48 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=9447 due to Insufficient balance
+2025-05-16 15:53:48 INFO  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 5.132 seconds
+2025-05-16 15:54:09 WARN  [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 15:54:45 INFO  [http-nio-8080-exec-2] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=8741
+2025-05-16 15:57:30 INFO  [http-nio-8080-exec-4] c.n.nsbpay.service.PaymentService : Payment processed successfully for userId=1806
+2025-05-16 15:58:22 INFO  [http-nio-8080-exec-3] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=3007
+2025-05-16 15:58:49 ERROR [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Payment failed for userId=7078 due to Insufficient balance
+2025-05-16 16:00:43 ERROR [http-nio-8080-exec-2] c.n.nsbpay.controller.PaymentController : SQL Error: 1045, SQLState: 28000
+2025-05-16 16:03:58 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=3845
+2025-05-16 16:05:06 INFO  [main] c.n.nsbpay.NSBPayApplication : Payment processed successfully for userId=7585
+2025-05-16 16:06:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:09:27 ERROR [main] c.n.nsbpay.service.PaymentService : Payment failed for userId=9343 due to Insufficient balance
+2025-05-16 16:10:00 ERROR [main] o.s.b.w.e.tomcat.TomcatWebServer : Payment failed for userId=4000 due to Insufficient balance
+2025-05-16 16:11:24 WARN  [http-nio-8080-exec-5] c.n.nsbpay.controller.PaymentController : Unusual login attempt for userId=7806
+2025-05-16 16:13:35 INFO  [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Tomcat started on port(s): 8080
+2025-05-16 16:14:18 INFO  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Tomcat started on port(s): 8080
+2025-05-16 16:14:51 INFO  [http-nio-8080-exec-4] o.s.b.w.e.tomcat.TomcatWebServer : Payment processed successfully for userId=6222
+2025-05-16 16:18:18 WARN  [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Expired JWT token detected
+2025-05-16 16:19:26 ERROR [http-nio-8080-exec-2] c.n.nsbpay.service.PaymentService : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:19:42 ERROR [http-nio-8080-exec-5] c.n.nsbpay.service.PaymentService : Payment failed for userId=5559 due to Insufficient balance
+2025-05-16 16:21:06 WARN  [http-nio-8080-exec-4] c.n.nsbpay.controller.PaymentController : Expired JWT token detected
+2025-05-16 16:22:01 ERROR [http-nio-8080-exec-3] c.n.nsbpay.controller.PaymentController : Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-16 16:22:29 INFO  [main] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 4.181 seconds
+2025-05-16 16:22:39 WARN  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Deprecated API used in transaction module
+2025-05-16 16:23:24 INFO  [http-nio-8080-exec-3] c.n.nsbpay.service.PaymentService : Started NSBPayApplication in 2.191 seconds
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ls -l           
+total 40
+drwxr-xr-x 2 kali kali 4096 Feb 14 08:32 Desktop
+drwxr-xr-x 3 kali kali 4096 May 16 03:23 Documents
+drwxr-xr-x 3 kali kali 4096 May 16 01:20 Downloads
+drwxrwxr-x 2 kali kali 4096 May 16 08:27 logs
+drwxrwxr-x 5 kali kali 4096 May 16 00:45 maven-mvnd-1.0.2-linux-amd64
+drwxr-xr-x 2 kali kali 4096 Nov 28 08:01 Music
+drwxr-xr-x 2 kali kali 4096 Nov 28 08:01 Pictures
+drwxr-xr-x 2 kali kali 4096 Nov 28 08:01 Public
+drwxr-xr-x 2 kali kali 4096 Nov 28 08:01 Templates
+drwxr-xr-x 2 kali kali 4096 Nov 28 08:01 Videos
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd /logs          
+cd: no such file or directory: /logs
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd logs 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/logs]
+└─$ ls   
+spring.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/logs]
+└─$ cd spring.log
+cd: not a directory: spring.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/logs]
+└─$ ls -ltr
+total 32
+-rw-rw-r-- 1 kali kali 31146 May 16 08:27 spring.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/logs]
+└─$ ls     
+spring.log
