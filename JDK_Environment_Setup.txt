@@ -369,3 +369,195 @@ Plugin [id: 'org.springframework.boot', version: '3.4.5'] was not found in any o
 
 BUILD FAILED in 22s
 
+
+┌──(kali㉿kali)-[~]
+└─$ curl -s "https://get.sdkman.io" | bash
+
+
+                                -+syyyyyyys:
+                            `/yho:`       -yd.
+                         `/yh/`             +m.
+                       .oho.                 hy                          .`
+                     .sh/`                   :N`                `-/o`  `+dyyo:.
+                   .yh:`                     `M-          `-/osysoym  :hs` `-+sys:      hhyssssssssy+
+                 .sh:`                       `N:          ms/-``  yy.yh-      -hy.    `.N-````````+N.
+               `od/`                         `N-       -/oM-      ddd+`     `sd:     hNNm        -N:
+              :do`                           .M.       dMMM-     `ms.      /d+`     `NMMs       `do
+            .yy-                             :N`    ```mMMM.      -      -hy.       /MMM:       yh
+          `+d+`           `:/oo/`       `-/osyh/ossssssdNMM`           .sh:         yMMN`      /m.
+         -dh-           :ymNMMMMy  `-/shmNm-`:N/-.``   `.sN            /N-         `NMMy      .m/
+       `oNs`          -hysosmMMMMydmNmds+-.:ohm           :             sd`        :MMM/      yy
+      .hN+           /d:    -MMMmhs/-.`   .MMMh   .ss+-                 `yy`       sMMN`     :N.
+     :mN/           `N/     `o/-`         :MMMo   +MMMN-         .`      `ds       mMMh      do
+    /NN/            `N+....--:/+oooosooo+:sMMM:   hMMMM:        `my       .m+     -MMM+     :N.
+   /NMo              -+ooooo+/:-....`...:+hNMN.  `NMMMd`        .MM/       -m:    oMMN.     hs
+  -NMd`                                    :mm   -MMMm- .s/     -MMm.       /m-   mMMd     -N.
+ `mMM/                                      .-   /MMh. -dMo     -MMMy        od. .MMMs..---yh
+ +MMM.                                           sNo`.sNMM+     :MMMM/        sh`+MMMNmNm+++-
+ mMMM-                                           /--ohmMMM+     :MMMMm.       `hyymmmdddo
+ MMMMh.                  ````                  `-+yy/`yMMM/     :MMMMMy       -sm:.``..-:-.`
+ dMMMMmo-.``````..-:/osyhddddho.           `+shdh+.   hMMM:     :MmMMMM/   ./yy/` `:sys+/+sh/
+ .dMMMMMMmdddddmmNMMMNNNNNMMMMMs           sNdo-      dMMM-  `-/yd/MMMMm-:sy+.   :hs-      /N`
+  `/ymNNNNNNNmmdys+/::----/dMMm:          +m-         mMMM+ohmo/.` sMMMMdo-    .om:       `sh
+     `.-----+/.`       `.-+hh/`         `od.          NMMNmds/     `mmy:`     +mMy      `:yy.
+           /moyso+//+ossso:.           .yy`          `dy+:`         ..       :MMMN+---/oys:
+         /+m:  `.-:::-`               /d+                                    +MMMMMMMNh:`
+        +MN/                        -yh.                                     `+hddhy+.
+       /MM+                       .sh:
+      :NMo                      -sh/
+     -NMs                    `/yy:
+    .NMy                  `:sh+.
+   `mMm`               ./yds-
+  `dMMMmyo:-.````.-:oymNy:`
+  +NMMMMMMMMMMMMMMMMms:`
+    -+shmNMMMNmdy+:`
+
+
+                                                                 Now attempting installation...
+
+
+Looking for a previous installation of SDKMAN...
+Looking for unzip...
+Looking for zip...
+Looking for tar...
+Looking for curl...
+Looking for sed...
+Installing SDKMAN scripts...
+Create distribution directories...
+Getting available candidates...
+Prime platform file...
+Prime the config file...
+Installing script cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Installing script cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Set version to 5.19.0 ...
+Set native version to 0.7.4 ...
+Attempt update of interactive bash profile on regular UNIX...
+Added sdkman init snippet to /home/kali/.bashrc
+Attempt update of zsh profile...
+Updated existing /home/kali/.zshrc
+
+
+
+All done!
+
+
+You are subscribed to the STABLE channel.
+
+Please open a new terminal, or run the following in the existing one:
+
+    source "/home/kali/.sdkman/bin/sdkman-init.sh"
+
+Then issue the following command:
+
+    sdk help
+
+Enjoy!!!
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sdk install gradle
+
+
+Downloading: gradle 8.14
+
+In progress...
+
+############################################################################################################################################################### 100.0%############################################################################################################################################################### 100.0%
+
+Installing: gradle 8.14
+Done installing!
+
+
+Setting gradle 8.14 as default.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ gradle -v
+
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+
+------------------------------------------------------------
+Gradle 8.14
+------------------------------------------------------------
+
+Build time:    2025-04-25 09:29:08 UTC
+Revision:      34c560e3be961658a6fbcd7170ec2443a228b109
+
+Kotlin:        2.0.21
+Groovy:        3.0.24
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  21.0.7 (Oracle Corporation 21.0.7+8-LTS-245)
+Daemon JVM:    /usr/lib/jvm/jdk-21.0.7-oracle-x64 (no JDK specified, using current Java home)
+OS:            Linux 6.8.11-amd64 amd64
+
+
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ./gradlew build
+
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+
+Downloading https://services.gradle.org/distributions/gradle-8.13-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.13!
+
+Here are the highlights of this release:
+ - Daemon JVM auto-provisioning
+ - Enhancements for Scala plugin and JUnit testing
+ - Improvements for build authors and plugin developers
+
+For more details see https://docs.gradle.org/8.13/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :test
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+BUILD SUCCESSFUL in 4m 33s
+7 actionable tasks: 7 executed
+<-------------> 0% WAITING
+> IDLE
+> IDLE
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ java -jar build/libs/*.jar
+
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-16T03:32:23.556-04:00  INFO 20390 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 20390 (/home/kali/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar started by kali in /home/kali/Documents/demo_linux)
+2025-05-16T03:32:23.570-04:00  INFO 20390 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-16T03:32:27.583-04:00  INFO 20390 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-16T03:32:27.647-04:00  INFO 20390 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-16T03:32:27.648-04:00  INFO 20390 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-16T03:32:27.760-04:00  INFO 20390 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-16T03:32:27.763-04:00  INFO 20390 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3876 ms
+2025-05-16T03:32:30.219-04:00  INFO 20390 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-16T03:32:30.274-04:00  INFO 20390 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 8.573 seconds (process running for 10.444)
+
