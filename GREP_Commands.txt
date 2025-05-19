@@ -1,0 +1,283 @@
+──(kali㉿kali)-[~]
+└─$ mkdir -p ~/log-practice
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd ~/log-practice 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ touch access.log
+touch api.log
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ for i in {1..50}; do
+  echo "$(date '+%Y-%m-%d %H:%M:%S') ACCESS - Client $(($i % 3 + 1)) hit /home" >> access.log
+  sleep 0.5
+done    
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ for i in {1..50}; do
+  echo "$(date '+%Y-%m-%d %H:%M:%S') API - Received GET /api/data/$i -> 200 OK" >> api.log
+  sleep 0.5   
+done       
+
+
+┌──(kali㉿kali)-[~/log-practice]
+└─$ tail -f access.log api.log
+==> access.log <==
+2025-05-19 01:16:28 ACCESS - Client 3 hit /home
+2025-05-19 01:16:29 ACCESS - Client 1 hit /home
+2025-05-19 01:16:29 ACCESS - Client 2 hit /home
+2025-05-19 01:16:30 ACCESS - Client 3 hit /home
+2025-05-19 01:16:31 ACCESS - Client 1 hit /home
+2025-05-19 01:16:31 ACCESS - Client 2 hit /home
+2025-05-19 01:16:32 ACCESS - Client 3 hit /home
+2025-05-19 01:16:32 ACCESS - Client 1 hit /home
+2025-05-19 01:16:33 ACCESS - Client 2 hit /home
+2025-05-19 01:16:33 ACCESS - Client 3 hit /home
+
+==> api.log <==
+2025-05-19 01:17:50 API - Received GET /api/data/41 -> 200 OK
+2025-05-19 01:17:51 API - Received GET /api/data/42 -> 200 OK
+2025-05-19 01:17:51 API - Received GET /api/data/43 -> 200 OK
+2025-05-19 01:17:52 API - Received GET /api/data/44 -> 200 OK
+2025-05-19 01:17:52 API - Received GET /api/data/45 -> 200 OK
+2025-05-19 01:17:53 API - Received GET /api/data/46 -> 200 OK
+2025-05-19 01:17:53 API - Received GET /api/data/47 -> 200 OK
+2025-05-19 01:17:54 API - Received GET /api/data/48 -> 200 OK
+2025-05-19 01:17:54 API - Received GET /api/data/49 -> 200 OK
+2025-05-19 01:17:55 API - Received GET /api/data/50 -> 200 OK
+^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ tail -f access.log api.log | awk '{print strftime("[%H:%M:%S]"), $0}'
+
+[01:31:21] ==> access.log <==
+[01:31:21] 2025-05-19 01:16:28 ACCESS - Client 3 hit /home
+[01:31:21] 2025-05-19 01:16:29 ACCESS - Client 1 hit /home
+[01:31:21] 2025-05-19 01:16:29 ACCESS - Client 2 hit /home
+[01:31:21] 2025-05-19 01:16:30 ACCESS - Client 3 hit /home
+[01:31:21] 2025-05-19 01:16:31 ACCESS - Client 1 hit /home
+[01:31:21] 2025-05-19 01:16:31 ACCESS - Client 2 hit /home
+[01:31:21] 2025-05-19 01:16:32 ACCESS - Client 3 hit /home
+[01:31:21] 2025-05-19 01:16:32 ACCESS - Client 1 hit /home
+[01:31:21] 2025-05-19 01:16:33 ACCESS - Client 2 hit /home
+[01:31:21] 2025-05-19 01:16:33 ACCESS - Client 3 hit /home
+[01:31:21] 
+[01:31:21] ==> api.log <==
+[01:31:21] 2025-05-19 01:17:50 API - Received GET /api/data/41 -> 200 OK
+[01:31:21] 2025-05-19 01:17:51 API - Received GET /api/data/42 -> 200 OK
+[01:31:21] 2025-05-19 01:17:51 API - Received GET /api/data/43 -> 200 OK
+[01:31:21] 2025-05-19 01:17:52 API - Received GET /api/data/44 -> 200 OK
+[01:31:21] 2025-05-19 01:17:52 API - Received GET /api/data/45 -> 200 OK
+[01:31:21] 2025-05-19 01:17:53 API - Received GET /api/data/46 -> 200 OK
+[01:31:21] 2025-05-19 01:17:53 API - Received GET /api/data/47 -> 200 OK
+[01:31:21] 2025-05-19 01:17:54 API - Received GET /api/data/48 -> 200 OK
+[01:31:21] 2025-05-19 01:17:54 API - Received GET /api/data/49 -> 200 OK
+[01:31:21] 2025-05-19 01:17:55 API - Received GET /api/data/50 -> 200 OK
+^C
+
+
+──(kali㉿kali)-[~/log-practice]
+└─$ sudo apt update
+sudo apt install multitail -y
+
+Get:1 http://mirror.freedif.org/kali kali-rolling InRelease [41.5 kB]
+Err:1 http://mirror.freedif.org/kali kali-rolling InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED65462EC8D5E4C5
+Warning: GPG error: http://mirror.freedif.org/kali kali-rolling InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED65462EC8D5E4C5
+Error: The repository 'http://http.kali.org/kali kali-rolling InRelease' is not signed.
+Notice: Updating from such a repository can't be done securely, and is therefore disabled by default.
+Notice: See apt-secure(8) manpage for repository creation and user configuration details.
+Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non-free' to 'non-free-firmware'
+Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
+Error: Unable to locate package multitail
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+
+[sudo] password for kali: 
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.4YRTNFBhNa/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+gpg: key ED65462EC8D5E4C5: public key "Kali Linux Archive Automatic Signing Key (2025) <devel@kali.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+
+
+┌──(kali㉿kali)-[~/log-practice]
+└─$ pwd            
+/home/kali/log-practice
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ ll              
+total 8
+-rw-rw-r-- 1 kali kali 2400 May 19 01:16 access.log
+-rw-rw-r-- 1 kali kali 3091 May 19 01:17 api.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ cat access.log  
+2025-05-19 01:16:08 ACCESS - Client 2 hit /home
+2025-05-19 01:16:08 ACCESS - Client 3 hit /home
+2025-05-19 01:16:09 ACCESS - Client 1 hit /home
+2025-05-19 01:16:09 ACCESS - Client 2 hit /home
+2025-05-19 01:16:10 ACCESS - Client 3 hit /home
+2025-05-19 01:16:10 ACCESS - Client 1 hit /home
+2025-05-19 01:16:11 ACCESS - Client 2 hit /home
+2025-05-19 01:16:11 ACCESS - Client 3 hit /home
+2025-05-19 01:16:12 ACCESS - Client 1 hit /home
+2025-05-19 01:16:12 ACCESS - Client 2 hit /home
+2025-05-19 01:16:13 ACCESS - Client 3 hit /home
+2025-05-19 01:16:13 ACCESS - Client 1 hit /home
+2025-05-19 01:16:14 ACCESS - Client 2 hit /home
+2025-05-19 01:16:14 ACCESS - Client 3 hit /home
+2025-05-19 01:16:15 ACCESS - Client 1 hit /home
+2025-05-19 01:16:15 ACCESS - Client 2 hit /home
+2025-05-19 01:16:16 ACCESS - Client 3 hit /home
+2025-05-19 01:16:16 ACCESS - Client 1 hit /home
+2025-05-19 01:16:17 ACCESS - Client 2 hit /home
+2025-05-19 01:16:18 ACCESS - Client 3 hit /home
+2025-05-19 01:16:18 ACCESS - Client 1 hit /home
+2025-05-19 01:16:19 ACCESS - Client 2 hit /home
+2025-05-19 01:16:19 ACCESS - Client 3 hit /home
+2025-05-19 01:16:20 ACCESS - Client 1 hit /home
+2025-05-19 01:16:20 ACCESS - Client 2 hit /home
+2025-05-19 01:16:21 ACCESS - Client 3 hit /home
+2025-05-19 01:16:21 ACCESS - Client 1 hit /home
+2025-05-19 01:16:22 ACCESS - Client 2 hit /home
+2025-05-19 01:16:22 ACCESS - Client 3 hit /home
+2025-05-19 01:16:23 ACCESS - Client 1 hit /home
+2025-05-19 01:16:23 ACCESS - Client 2 hit /home
+2025-05-19 01:16:24 ACCESS - Client 3 hit /home
+2025-05-19 01:16:24 ACCESS - Client 1 hit /home
+2025-05-19 01:16:25 ACCESS - Client 2 hit /home
+2025-05-19 01:16:25 ACCESS - Client 3 hit /home
+2025-05-19 01:16:26 ACCESS - Client 1 hit /home
+2025-05-19 01:16:26 ACCESS - Client 2 hit /home
+2025-05-19 01:16:27 ACCESS - Client 3 hit /home
+2025-05-19 01:16:27 ACCESS - Client 1 hit /home
+2025-05-19 01:16:28 ACCESS - Client 2 hit /home
+2025-05-19 01:16:28 ACCESS - Client 3 hit /home
+2025-05-19 01:16:29 ACCESS - Client 1 hit /home
+2025-05-19 01:16:29 ACCESS - Client 2 hit /home
+2025-05-19 01:16:30 ACCESS - Client 3 hit /home
+2025-05-19 01:16:31 ACCESS - Client 1 hit /home
+2025-05-19 01:16:31 ACCESS - Client 2 hit /home
+2025-05-19 01:16:32 ACCESS - Client 3 hit /home
+2025-05-19 01:16:32 ACCESS - Client 1 hit /home
+2025-05-19 01:16:33 ACCESS - Client 2 hit /home
+2025-05-19 01:16:33 ACCESS - Client 3 hit /home
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ vim access.log 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ cat access.log
+2025-05-19 01:16:08 ACCESS - Client 2 hit /home
+2025-05-19 01:16:08 ACCESS - Client 3 hit /home
+2025-05-19 01:16:09 ACCESS - Client 1 hit /home
+2025-05-19 01:16:09 ACCESS - Client 2 hit /home
+2025-05-19 01:16:10 ACCESS - Client 3 hit /home
+2025-05-19 01:16:10 ACCESS - Client 1 hit /home
+2025-05-19 01:16:11 ACCESS - Client 2 hit /home
+2025-05-19 01:16:11 ACCESS - Client 3 hit /home
+2025-05-19 01:16:12 ACCESS - Client 1 hit /home
+2025-05-19 01:16:12 ACCESS - Client 2 hit /home
+2025-05-19 01:16:13 ACCESS - Client 3 hit /home
+2025-05-19 01:16:13 ACCESS - Client 1 hit /home
+2025-05-19 01:16:14 ACCESS - Client 2 hit /home
+2025-05-19 01:16:14 ACCESS - Client 3 hit /home
+2025-05-19 01:16:15 ACCESS - Client 1 hit /home
+2025-05-19 01:16:15 ACCESS - Client 2 hit /home
+2025-05-19 01:16:16 ACCESS - Client 3 hit /home
+2025-05-19 01:16:16 ACCESS - Client 1 hit /home
+2025-05-19 01:16:17 ACCESS - Client 2 hit /home
+2025-05-19 01:16:18 ACCESS - Client 3 hit /home
+2025-05-19 01:16:18 ACCESS - Client 1 hit /home
+2025-05-19 01:16:19 ACCESS - Client 2 hit /home
+2025-05-19 01:16:19 ACCESS - Client 3 hit /home
+2025-05-19 01:16:20 ACCESS - Client 1 hit /home
+2025-05-19 01:16:20 ACCESS - Client 2 hit /home
+2025-05-19 01:16:21 ACCESS - Client 3 hit /home
+2025-05-19 01:16:21 ACCESS - Client 1 hit /home
+2025-05-19 01:16:22 ACCESS - Client 2 hit /home
+2025-05-19 01:16:22 ACCESS - Client 3 hit /home
+2025-05-19 01:16:23 ACCESS - Client 1 hit /home
+2025-05-19 01:16:23 ACCESS - Client 2 hit /home
+2025-05-19 01:16:24 ACCESS - Client 3 hit /home
+2025-05-19 01:16:24 ACCESS - Client 1 hit /home
+2025-05-19 01:16:25 ACCESS - Client 2 hit /home
+2025-05-19 01:16:25 ACCESS - Client 3 hit /home
+2025-05-19 01:16:26 ACCESS - Client 1 hit /home
+2025-05-19 01:16:26 ACCESS - Client 2 hit /home
+2025-05-19 01:16:27 ACCESS - Client 3 hit /home
+2025-05-19 01:16:27 ACCESS - Client 1 hit /home
+2025-05-19 01:16:28 ACCESS - Client 2 hit /home
+2025-05-19 01:16:28 ACCESS - Client 3 hit /home
+2025-05-19 01:16:29 ACCESS - Client 1 hit /home
+2025-05-19 01:16:29 ACCESS - Client 2 hit /home
+2025-05-19 01:16:30 ACCESS - Client 3 hit /home
+2025-05-19 01:16:31 ACCESS - Client 1 hit /home
+2025-05-19 01:16:31 ACCESS - Client 2 hit /home
+2025-05-19 01:16:32 ACCESS - Client 3 hit /home
+2025-05-19 01:16:32 ACCESS - Client 1 hit /home
+2025-05-19 01:16:33 ACCESS - Client 2 hit /home
+xxxcxzz2025-05-19 01:16:33 ACCESS - Client 3 hit /home
+
+┌──(kali㉿kali)-[~/log-practice]
+└─$ cat access.log | grep 01:16:20
+2025-05-19 01:16:20 ACCESS - Client 1 hit /home
+2025-05-19 01:16:20 ACCESS - Client 2 hit /home
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ sudo gpg --no-default-keyring --keyring /etc/apt/trusted.gpg.d/kali.gpg --keyserver keyserver.ubuntu.com --recv-keys ED65462EC8D5E4C5
+
+[sudo] password for kali: 
+gpg: keybox '/etc/apt/trusted.gpg.d/kali.gpg' created
+gpg: failed to create temporary file '/root/.gnupg/.#lk0x000056239c1fe060.kali.35627': No such file or directory
+gpg: connecting dirmngr at '/root/.gnupg/S.dirmngr' failed: No such file or directory
+gpg: keyserver receive failed: No dirmngr
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ sudo apt update
+
+Get:1 http://mirror.sg.gs/kali kali-rolling InRelease [41.5 kB]
+Get:2 http://mirror.sg.gs/kali kali-rolling/main amd64 Packages [21.0 MB]
+Get:3 http://mirror.sg.gs/kali kali-rolling/main amd64 Contents (deb) [52.0 MB]                                                                                      
+Get:4 http://mirror.sg.gs/kali kali-rolling/contrib amd64 Packages [121 kB]                                                                                          
+Get:5 http://mirror.sg.gs/kali kali-rolling/contrib amd64 Contents (deb) [327 kB]                                                                                    
+Get:6 http://mirror.sg.gs/kali kali-rolling/non-free amd64 Packages [204 kB]                                                                                         
+Get:7 http://mirror.sg.gs/kali kali-rolling/non-free amd64 Contents (deb) [915 kB]                                                                                   
+Get:8 http://mirror.sg.gs/kali kali-rolling/non-free-firmware amd64 Packages [10.6 kB]                                                                               
+Get:9 http://mirror.sg.gs/kali kali-rolling/non-free-firmware amd64 Contents (deb) [24.3 kB]                                                                         
+Fetched 74.5 MB in 1min 50s (680 kB/s)                                                                                                                               
+2162 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Warning: http://http.kali.org/kali/dists/kali-rolling/InRelease: The key(s) in the keyring /etc/apt/trusted.gpg.d/kali.gpg are ignored as the file is not readable by user '_apt' executing apt-key.
+Warning: http://http.kali.org/kali/dists/kali-rolling/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ sudo apt install multitail -y
+
+Installing:                     
+  multitail
+                                                                                                                                                                      
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 2162
+  Download size: 137 kB
+  Space needed: 387 kB / 55.3 GB available
+
+Get:1 http://mirror.kku.ac.th/kali kali-rolling/main amd64 multitail amd64 7.1.5-2 [137 kB]
+Fetched 137 kB in 2s (57.6 kB/s)   
+Selecting previously unselected package multitail.
+(Reading database ... 396286 files and directories currently installed.)
+Preparing to unpack .../multitail_7.1.5-2_amd64.deb ...
+Unpacking multitail (7.1.5-2) ...
+Setting up multitail (7.1.5-2) ...
+Processing triggers for man-db (2.12.1-2) ...
+Processing triggers for kali-menu (2024.3.1) ...
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/log-practice]
+└─$ multitail access.log api.log 
