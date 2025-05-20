@@ -1,0 +1,139 @@
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd Documents/demo_linux/src/main/java                  
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/demo_linux/src/main/java]
+└─$ ll              
+total 4
+drwxrwxr-x 3 kali kali 4096 May 16 03:23 com
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/demo_linux/src/main/java]
+└─$ cd com/example/demo                  
+cd: no such file or directory: com/example/demo
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/demo_linux/src/main/java]
+└─$ ll
+total 4
+drwxrwxr-x 3 kali kali 4096 May 16 03:23 com
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/demo_linux/src/main/java]
+└─$ cd com             
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/src/main/java/com]
+└─$ ll
+total 4
+drwxrwxr-x 3 kali kali 4096 May 16 03:23 example
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/src/main/java/com]
+└─$ cd example
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/main/java/com/example]
+└─$ ll
+total 4
+drwxrwxr-x 3 kali kali 4096 May 20 05:35 demo_linux
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/main/java/com/example]
+└─$ cd demo_linux
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/java/com/example/demo_linux]
+└─$ ll
+total 8
+drwxrwxr-x 2 kali kali 4096 May 20 05:37 controllers
+-rwxrwx--- 1 kali kali  321 May 16 01:42 DemoLinuxApplication.java
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/java/com/example/demo_linux]
+└─$ cd controllers
+
+┌──(kali㉿kali)-[~/…/com/example/demo_linux/controllers]
+└─$ ll            
+total 4
+-rw-rw-r-- 1 kali kali 418 May 20 05:37 HelloController.java
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/com/example/demo_linux/controllers]
+└─$ nano HelloController 
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/…/com/example/demo_linux/controllers]
+└─$ cd               
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd Documents                         
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents]
+└─$ cd demo_linux
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ll                          
+total 40
+drwxrwxr-x 9 kali kali 4096 May 16 03:29 build
+-rwxrwx--- 1 kali kali  886 May 16 01:42 build.gradle
+drwxrwxr-x 3 kali kali 4096 May 16 03:23 gradle
+-rwxrwx--- 1 kali kali 8752 May 16 01:42 gradlew
+-rwxrwx--- 1 kali kali 2966 May 16 01:42 gradlew.bat
+-rwxrwx--- 1 kali kali 1555 May 16 01:42 HELP.md
+-rwxrwx--- 1 kali kali   32 May 16 01:42 settings.gradle
+drwxrwxr-x 4 kali kali 4096 May 16 03:23 src
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ./gradlew bootRun
+
+Starting a Gradle Daemon, 1 busy Daemon could not be reused, use --status for details
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-20T06:54:21.748-04:00  INFO 33584 --- [demo_linux] [  restartedMain] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication using Java 21.0.7 with PID 33584 (/home/kali/Documents/demo_linux/build/classes/java/main started by kali in /home/kali/Documents/demo_linux)
+2025-05-20T06:54:21.762-04:00  INFO 33584 --- [demo_linux] [  restartedMain] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-20T06:54:21.940-04:00  INFO 33584 --- [demo_linux] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-20T06:54:21.942-04:00  INFO 33584 --- [demo_linux] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-20T06:54:24.777-04:00  INFO 33584 --- [demo_linux] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-20T06:54:24.822-04:00  INFO 33584 --- [demo_linux] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-20T06:54:24.822-04:00  INFO 33584 --- [demo_linux] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-20T06:54:24.910-04:00  INFO 33584 --- [demo_linux] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-20T06:54:24.915-04:00  INFO 33584 --- [demo_linux] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2967 ms
+2025-05-20T06:54:26.720-04:00  WARN 33584 --- [demo_linux] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-05-20T06:54:26.791-04:00  WARN 33584 --- [demo_linux] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-05-20T06:54:26.852-04:00  INFO 33584 --- [demo_linux] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-20T06:54:26.897-04:00 ERROR 33584 --- [demo_linux] [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+
+BUILD SUCCESSFUL in 40s
+4 actionable tasks: 1 executed, 3 up-to-date
+
+
+zsh: corrupt history file /home/kali/.zsh_history
+┌──(kali㉿kali)-[~]
+└─$ sudo nano /etc/nginx/sites-available/springboot
+
+[sudo] password for kali: 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo ln -s /etc/nginx/sites-available/springboot /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+
+ln: failed to create symbolic link '/etc/nginx/sites-enabled/springboot': File exists
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
