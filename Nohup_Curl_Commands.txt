@@ -1,0 +1,505 @@
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ lsltr           
+Command 'lsltr' not found, did you mean:
+  command 'lsbtr' from deb btrbk
+Try: sudo apt install <deb name>
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ls ltr          
+ls: cannot access 'ltr': No such file or directory
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ll    
+total 8
+-rw-rw-r-- 1 kali kali 2562 May 20 07:21 demo_linux-0.0.1-SNAPSHOT-plain.jar
+-rw-rw-r-- 1 kali kali   89 May 21 06:49 output.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$                         
+nohup java -jar demo_linux-0.0.1-SNAPSHOT-plain.jar > &                
+
+zsh: parse error near `&'
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$           
+nohup java -jar demo_linux-0.0.1-SNAPSHOT-plain.jar &  
+
+[1] 12775
+                                                                                                                                                                      
+nohup: ignoring input and appending output to 'nohup.out'
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+[1]  + exit 1     nohup java -jar demo_linux-0.0.1-SNAPSHOT-plain.jar
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ll
+total 12
+-rw-rw-r-- 1 kali kali 2562 May 20 07:21 demo_linux-0.0.1-SNAPSHOT-plain.jar
+-rw------- 1 kali kali   67 May 21 06:53 nohup.out
+-rw-rw-r-- 1 kali kali   89 May 21 06:49 output.log
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ tail -1000 nohup.out 
+no main manifest attribute, in demo_linux-0.0.1-SNAPSHOT-plain.jar
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ cd ..                   
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build]
+└─$ cd ..
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ./gradlew build         
+
+BUILD SUCCESSFUL in 12s
+7 actionable tasks: 1 executed, 6 up-to-date
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ./gradlew bootrun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-21T07:07:13.867-04:00  INFO 19627 --- [demo_linux] [  restartedMain] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication using Java 21.0.7 with PID 19627 (/home/kali/Documents/demo_linux/build/classes/java/main started by kali in /home/kali/Documents/demo_linux)
+2025-05-21T07:07:13.887-04:00  INFO 19627 --- [demo_linux] [  restartedMain] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T07:07:14.011-04:00  INFO 19627 --- [demo_linux] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-21T07:07:14.013-04:00  INFO 19627 --- [demo_linux] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-21T07:07:16.646-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T07:07:16.692-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T07:07:16.692-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-21T07:07:16.773-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-21T07:07:16.776-04:00  INFO 19627 --- [demo_linux] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2760 ms
+2025-05-21T07:07:18.392-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-21T07:07:18.468-04:00  INFO 19627 --- [demo_linux] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-21T07:07:18.508-04:00  INFO 19627 --- [demo_linux] [  restartedMain] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 5.67 seconds (process running for 6.874)
+<==========---> 80% EXECUTING [5m 59s]
+> :bootRun
+^C                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ll
+total 52
+drwxrwxr-x 9 kali kali 4096 May 16 03:29 build
+-rwxrwx--- 1 kali kali  886 May 16 01:42 build.gradle
+drwxrwxr-x 3 kali kali 4096 May 16 03:23 gradle
+-rwxrwx--- 1 kali kali 8752 May 16 01:42 gradlew
+-rwxrwx--- 1 kali kali 2966 May 16 01:42 gradlew.bat
+-rw-rw-r-- 1 kali kali  266 May 20 06:58 HelloController
+-rwxrwx--- 1 kali kali 1555 May 16 01:42 HELP.md
+-rw------- 1 kali kali  528 May 21 06:10 nohup.out
+-rw-rw-r-- 1 kali kali   96 May 21 06:44 output.log
+-rwxrwx--- 1 kali kali   32 May 16 01:42 settings.gradle
+drwxrwxr-x 4 kali kali 4096 May 16 03:23 src
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ cd build
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build]
+└─$ cd libs 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$                     
+nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar &      
+
+[1] 23063
+nohup:                                                                                                                                                                
+ignoring input and appending output to 'nohup.out'
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ll
+total 26260
+-rw-rw-r-- 1 kali kali 26876088 May 21 07:05 demo_linux-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 kali kali     2562 May 20 07:21 demo_linux-0.0.1-SNAPSHOT-plain.jar
+-rw------- 1 kali kali     1717 May 21 07:14 nohup.out
+-rw-rw-r-- 1 kali kali       89 May 21 06:49 output.log
+                                                                                                                                                                       
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ tail -1000 nohup.out
+no main manifest attribute, in demo_linux-0.0.1-SNAPSHOT-plain.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-21T07:14:08.330-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 23063 (/home/kali/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar started by kali in /home/kali/Documents/demo_linux/build/libs)
+2025-05-21T07:14:08.340-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T07:14:12.663-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T07:14:12.716-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T07:14:12.719-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-21T07:14:12.837-04:00  INFO 23063 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-21T07:14:12.840-04:00  INFO 23063 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4245 ms
+2025-05-21T07:14:15.591-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-21T07:14:15.640-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 8.88 seconds (process running for 10.561)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar  > output.log 2>&1 &
+
+[2] 40407
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ 
+[2]  + exit 1     nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar > output.log 2>&1
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ps aux | grep demo      
+kali        1412  0.0  0.3 308516  6488 ?        Sl   06:32   0:00 /usr/libexec/geoclue-2.0/demos/agent
+kali       23063  1.3  8.6 3115512 173908 pts/0  SNl  07:14   0:28 java -jar demo_linux-0.0.1-SNAPSHOT.jar
+kali       40668  0.0  0.1   6528  2112 pts/0    S+   07:49   0:00 grep --color=auto demo
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ tail -f output.log
+
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+^[[B^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ps aux | grep java
+kali        6797  2.2 21.4 2452332 433740 ?      Ssl  06:42   1:35 /usr/lib/jvm/jdk-21.0.7-oracle-x64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/gradle-daemon-main-8.13.jar -javaagent:/home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/agents/gradle-instrumentation-agent-8.13.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.13
+kali       23063  1.2  8.6 3115512 173908 pts/0  SNl  07:14   0:28 java -jar demo_linux-0.0.1-SNAPSHOT.jar
+kali       42014  0.0  0.1   6528  2284 pts/0    S+   07:52   0:00 grep --color=auto java
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ fg
+[1]  + running    nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar
+^C                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ bg
+bg: no current job
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar  > output.log 2>&1 &
+
+[1] 42822
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ sudo lsof -i -Pn                                                       
+[sudo] password for kali: 
+COMMAND     PID  USER  FD   TYPE DEVICE SIZE/OFF NODE NAME
+NetworkMa   563  root  26u  IPv4   6788      0t0  UDP 10.0.2.15:68->10.0.2.2:67 
+sshd        668  root   7u  IPv4   5974      0t0  TCP *:22 (LISTEN)
+sshd        668  root   8u  IPv6   5976      0t0  TCP *:22 (LISTEN)
+mariadbd    736 mysql  27u  IPv4   7658      0t0  TCP 127.0.0.1:3306 (LISTEN)
+java       6797  kali 308u  IPv6  21878      0t0  UDP *:44039 
+java       6797  kali 311u  IPv6  21879      0t0  TCP 127.0.0.1:39503 (LISTEN)
+java      42822  kali   9u  IPv6  94746      0t0  TCP *:8080 (LISTEN)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ sudo netstat -tulsp       
+IcmpMsg:
+    InType11: 1
+Tcp:
+    10 active connection openings
+    6 passive connection openings
+    4 failed connection attempts
+    5 connection resets received
+    0 connections established
+    1792 segments received
+    1792 segments sent out
+    0 segments retransmitted
+    0 bad segments received
+    7 resets sent
+Udp:
+    1 packets received
+    0 packets to unknown port received
+    0 packet receive errors
+    1 packets sent
+    0 receive buffer errors
+    0 send buffer errors
+UdpLite:
+TcpExt:
+    3 TCP sockets finished time wait in fast timer
+    87 packet headers predicted
+    31 acknowledgments not containing data payload received
+    854 predicted acknowledgments
+    3 connections reset due to unexpected data
+    IPReversePathFilter: 1
+    TCPRcvCoalesce: 87
+    TCPOrigDataSent: 884
+    TCPDelivered: 889
+IpExt:
+    InMcastPkts: 1
+    OutMcastPkts: 4
+    InOctets: 185084
+    OutOctets: 184052
+    InMcastOctets: 635
+    OutMcastOctets: 755
+    InNoECTPkts: 1783
+MPTcpExt:
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ sudo netstat -tulnp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      668/sshd: /usr/sbin 
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      736/mariadbd        
+tcp6       0      0 :::22                   :::*                    LISTEN      668/sshd: /usr/sbin 
+tcp6       0      0 :::8080                 :::*                    LISTEN      42822/java          
+tcp6       0      0 127.0.0.1:39503         :::*                    LISTEN      6797/java           
+udp6       0      0 :::44039                :::*                                6797/java           
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ tail -f output.log                                                
+
+
+2025-05-21T07:54:18.968-04:00  INFO 42822 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 42822 (/home/kali/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar started by kali in /home/kali/Documents/demo_linux/build/libs)
+2025-05-21T07:54:18.989-04:00  INFO 42822 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T07:54:23.574-04:00  INFO 42822 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T07:54:23.618-04:00  INFO 42822 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T07:54:23.619-04:00  INFO 42822 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-21T07:54:23.731-04:00  INFO 42822 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-21T07:54:23.735-04:00  INFO 42822 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4379 ms
+2025-05-21T07:54:26.127-04:00  INFO 42822 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-21T07:54:26.195-04:00  INFO 42822 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 8.879 seconds (process running for 10.547)
+^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup --version                                                   
+nohup (GNU coreutils) 9.7
+Packaged by Debian (9.7-2)
+Copyright (C) 2025 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jim Meyering.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup bash  demo_linux-0.0.1-SNAPSHOT.jar  > output.txt  
+
+nohup: ignoring input and redirecting stderr to stdout
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ cat output.txt
+demo_linux-0.0.1-SNAPSHOT.jar: demo_linux-0.0.1-SNAPSHOT.jar: cannot execute binary file
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ cat nohup.out 
+no main manifest attribute, in demo_linux-0.0.1-SNAPSHOT-plain.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-21T07:14:08.330-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 23063 (/home/kali/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar started by kali in /home/kali/Documents/demo_linux/build/libs)
+2025-05-21T07:14:08.340-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T07:14:12.663-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T07:14:12.716-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T07:14:12.719-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-21T07:14:12.837-04:00  INFO 23063 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-21T07:14:12.840-04:00  INFO 23063 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4245 ms
+2025-05-21T07:14:15.591-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-21T07:14:15.640-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 8.88 seconds (process running for 10.561)
+2025-05-21T07:53:56.371-04:00  INFO 23063 --- [demo_linux] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-21T07:53:56.402-04:00  INFO 23063 --- [demo_linux] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup bash  demo_linux-0.0.1-SNAPSHOT.jar &            
+
+[2] 46303
+                                                                                                                                                                      
+nohup: ignoring input and appending output to 'nohup.out'
+[2]  + exit 126   nohup bash demo_linux-0.0.1-SNAPSHOT.jar
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ fg
+[1]  - running    nohup java -jar demo_linux-0.0.1-SNAPSHOT.jar > output.log 2>&1
+^C                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ nohup bash -c 'cal && ls'
+nohup: ignoring input and appending output to 'nohup.out'
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ cat nohup.out
+no main manifest attribute, in demo_linux-0.0.1-SNAPSHOT-plain.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-05-21T07:14:08.330-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 23063 (/home/kali/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar started by kali in /home/kali/Documents/demo_linux/build/libs)
+2025-05-21T07:14:08.340-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T07:14:12.663-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T07:14:12.716-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T07:14:12.719-04:00  INFO 23063 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-21T07:14:12.837-04:00  INFO 23063 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-21T07:14:12.840-04:00  INFO 23063 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4245 ms
+2025-05-21T07:14:15.591-04:00  INFO 23063 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-21T07:14:15.640-04:00  INFO 23063 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 8.88 seconds (process running for 10.561)
+2025-05-21T07:53:56.371-04:00  INFO 23063 --- [demo_linux] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-21T07:53:56.402-04:00  INFO 23063 --- [demo_linux] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+demo_linux-0.0.1-SNAPSHOT.jar: demo_linux-0.0.1-SNAPSHOT.jar: cannot execute binary file
+bash: line 1: cal: command not found
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ pgrep -p bash     
+pgrep: invalid option -- 'p'
+
+Usage:
+ pgrep [options] <pattern>
+
+Options:
+ -d, --delimiter <string>  specify output delimiter
+ -l, --list-name           list PID and process name
+ -a, --list-full           list PID and full command line
+ -v, --inverse             negates the matching
+ -w, --lightweight         list all TID
+ -c, --count               count of matching processes
+ -f, --full                use full process name to match
+ -g, --pgroup <PGID,...>   match listed process group IDs
+ -G, --group <GID,...>     match real group IDs
+ -i, --ignore-case         match case insensitively
+ -n, --newest              select most recently started
+ -o, --oldest              select least recently started
+ -O, --older <seconds>     select where older than seconds
+ -P, --parent <PPID,...>   match only child processes of the given parent
+ -s, --session <SID,...>   match session IDs
+     --signal <sig>        signal to send (either number or name)
+ -t, --terminal <tty,...>  match by controlling terminal
+ -u, --euid <ID,...>       match by effective IDs
+ -U, --uid <ID,...>        match by real IDs
+ -x, --exact               match exactly with the command name
+ -F, --pidfile <file>      read PIDs from file
+ -L, --logpidfile          fail if PID file is not locked
+ -r, --runstates <state>   match runstates [D,S,Z,...]
+ -A, --ignore-ancestors    exclude our ancestors from results
+ --cgroup <grp,...>        match by cgroup v2 names
+ --ns <PID>                match the processes that belong to the same
+                           namespace as <pid>
+ --nslist <ns,...>         list which namespaces will be considered for
+                           the --ns option.
+                           Available namespaces: ipc, mnt, net, pid, user, uts
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see pgrep(1).
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ pgrep -a bash
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ps aux | grep demo_linux-0.0.1-SNAPSHOT.jar
+kali       48444  0.0  0.1   6680  2220 pts/0    S+   08:05   0:00 grep --color=auto demo_linux-0.0.1-SNAPSHOT.jar
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ kill 48444
+kill: kill 48444 failed: no such process
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ kill 6680 
+kill: kill 6680 failed: no such process
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ ps aux | grep demo_linux-0.0.1-SNAPSHOT.jar
+kali       48798  0.0  0.1   6680  2320 pts/0    S+   08:06   0:00 grep --color=auto demo_linux-0.0.1-SNAPSHOT.jar
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ kill 48798
+kill: kill 48798 failed: no such process
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ pkill demo_linux-0.0.1-SNAPSHOT.jar        
+pkill: pattern that searches for process name longer than 15 characters will result in zero matches
+Try `pkill -f' option to match against the complete command line.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build/libs]
+└─$ cd ..                              
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux/build]
+└─$ cd ..
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ps aux | grep demo_linux-0.0.1-SNAPSHOT.jar
+kali       49505  0.0  0.1   6680  2260 pts/0    S+   08:07   0:00 grep --color=auto demo_linux-0.0.1-SNAPSHOT.jar
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ kill 49505
+kill: kill 49505 failed: no such process
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ tail -1000 nohup.out                                              
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :help
+
+Welcome to Gradle 8.13.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see more detail about a task, run gradlew help --task <task>
+
+To see a list of command-line options, run gradlew --help
+
+For more detail on using Gradle, see https://docs.gradle.org/8.13/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 25s
+1 actionable task: 1 executed
+                                                                                                                                                                      
+                                                                                                                                                                   
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ps aux | grep "java"                       
+kali        6797  1.9 21.4 2452332 433740 ?      Ssl  06:42   1:41 /usr/lib/jvm/jdk-21.0.7-oracle-x64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/gradle-daemon-main-8.13.jar -javaagent:/home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/agents/gradle-instrumentation-agent-8.13.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.13
+kali       50664  0.0  0.1   6528  2176 pts/0    S+   08:09   0:00 grep --color=auto java
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ kill -9 2452332
+kill: kill 2452332 failed: no such process
+                                                                                                                                                                      
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ps aux | grep "jar" 
+kali        6797  1.9 21.4 2452332 433740 ?      Ssl  06:42   1:41 /usr/lib/jvm/jdk-21.0.7-oracle-x64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/gradle-daemon-main-8.13.jar -javaagent:/home/kali/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13/lib/agents/gradle-instrumentation-agent-8.13.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.13
+kali       51040  0.0  0.1   6528  2284 pts/0    S+   08:10   0:00 grep --color=auto jar
+                                                                                                                                                                      
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ ps aux | grep "jar"
+kali       51231  0.0  0.1   6528  2296 pts/0    S+   08:10   0:00 grep --color=auto jar
+                                                                                                                                                                      
+
