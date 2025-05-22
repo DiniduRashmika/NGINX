@@ -1,0 +1,119 @@
+zsh: corrupt history file /home/kali/.zsh_history
+┌──(kali㉿kali)-[~]
+└─$ ps aux |grep "jar"                                                     
+kali        2780  0.0  0.1   6528  2252 pts/0    S+   00:37   0:00 grep --color=auto jar
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd ~/Documents/demo_linux
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo mkdir -p /opt/myapp
+sudo cp ~/Documents/demo_linux/build/libs/demo_linux-0.0.1-SNAPSHOT.jar /opt/myapp/app.jar
+
+[sudo] password for kali: 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo nano /etc/systemd/system/myapp.service
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo systemctl daemon-reload
+sudo systemctl enable myapp.service
+
+Created symlink '/etc/systemd/system/multi-user.target.wants/myapp.service' → '/etc/systemd/system/myapp.service'.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo systemctl start myapp.service
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ tail -f /opt/myapp/app.log
+
+
+2025-05-22T00:42:20.868-04:00  INFO 5214 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 5214 (/opt/myapp/app.jar started by kali in /)
+2025-05-22T00:42:20.885-04:00  INFO 5214 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-22T00:42:25.635-04:00  INFO 5214 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-22T00:42:25.682-04:00  INFO 5214 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-22T00:42:25.683-04:00  INFO 5214 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-22T00:42:25.810-04:00  INFO 5214 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-22T00:42:25.813-04:00  INFO 5214 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4626 ms
+2025-05-22T00:42:28.376-04:00  INFO 5214 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-22T00:42:28.514-04:00  INFO 5214 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 9.326 seconds (process running for 11.334)
+^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo systemctl status  myapp.service
+
+● myapp.service - My Spring Boot App
+     Loaded: loaded (/etc/systemd/system/myapp.service; enabled; preset: disabled)
+     Active: active (running) since Thu 2025-05-22 00:42:17 EDT; 1min 47s ago
+ Invocation: acebc7fcad734cc7bebff37c21eab088
+   Main PID: 5214 (java)
+      Tasks: 35 (limit: 2214)
+     Memory: 192.1M (peak: 194.1M)
+        CPU: 22.157s
+     CGroup: /system.slice/myapp.service
+             └─5214 /usr/bin/java -jar /opt/myapp/app.jar
+
+May 22 00:42:17 kali systemd[1]: Started myapp.service - My Spring Boot App.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ tail -1000 nohup.out                
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :help
+
+Welcome to Gradle 8.13.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see more detail about a task, run gradlew help --task <task>
+
+To see a list of command-line options, run gradlew --help
+
+For more detail on using Gradle, see https://docs.gradle.org/8.13/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 25s
+1 actionable task: 1 executed
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo lsof -i :80                                                       
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo lsof -i :8080
+COMMAND  PID USER FD   TYPE DEVICE SIZE/OFF NODE NAME
+java    5214 kali 9u  IPv6  21603      0t0  TCP *:http-alt (LISTEN)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo systemctl stop  myapp.service
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo systemctl status  myapp.service
+
+○ myapp.service - My Spring Boot App
+     Loaded: loaded (/etc/systemd/system/myapp.service; enabled; preset: disabled)
+     Active: inactive (dead) since Thu 2025-05-22 00:48:17 EDT; 7s ago
+   Duration: 5min 59.898s
+ Invocation: acebc7fcad734cc7bebff37c21eab088
+    Process: 5214 ExecStart=/usr/bin/java -jar /opt/myapp/app.jar (code=exited, status=143)
+   Main PID: 5214 (code=exited, status=143)
+   Mem peak: 194.4M
+        CPU: 23.727s
+
+May 22 00:42:17 kali systemd[1]: Started myapp.service - My Spring Boot App.
+May 22 00:48:16 kali systemd[1]: Stopping myapp.service - My Spring Boot App...
+May 22 00:48:17 kali systemd[1]: myapp.service: Deactivated successfully.
+May 22 00:48:17 kali systemd[1]: Stopped myapp.service - My Spring Boot App.
+May 22 00:48:17 kali systemd[1]: myapp.service: Consumed 23.727s CPU time, 194.4M memory peak.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ sudo lsof -i :8080                  
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/Documents/demo_linux]
+└─$ 
