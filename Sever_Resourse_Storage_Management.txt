@@ -1,0 +1,769 @@
+zsh: corrupt history file /home/kali/.zsh_history
+┌──(kali㉿kali)-[~]
+└─$ uptime
+ 01:44:17 up  2:33,  1 user,  load average: 0.29, 0.26, 0.26
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+top - 01:49:24 up  2:38,  1 user,  load average: 0.13, 0.25, 0.26
+Tasks: 169 total,   1 running, 168 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.7 us,  3.8 sy,  0.0 ni, 91.0 id,  0.0 wa,  0.0 hi,  0.5 si,  0.0 st 
+MiB Mem :   1973.7 total,    141.8 free,   1375.5 used,    640.0 buff/cache     
+MiB Swap:   1024.0 total,   1023.7 free,      0.3 used.    598.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                        
+    736 root      20   0  383180 129648  60352 S   3.6   6.4   3:38.03 Xorg                                                                                           
+   1358 kali      20   0  297172  51272  23328 S   2.3   2.5   2:44.00 wrapper-2.0                                                                                    
+  71576 kali      20   0   10444   5620   3572 R   1.3   0.3   0:01.70 top                                                                                            
+   1291 kali      20   0  894132 132120  83600 S   1.0   6.5   0:53.37 xfwm4                                                                                          
+  58538 kali      20   0  619344 108536  88196 S   1.0   5.4   0:03.87 qterminal                                                                                      
+   1211 kali      20   0  215416   3208   2824 S   0.7   0.2   0:15.14 VBoxClient                                                                                     
+   1363 kali      20   0  274020  28900  21748 S   0.7   1.4   0:52.50 wrapper-2.0                                                                                    
+  35511 kali      20   0 3115512 178080  23972 S   0.7   8.8   0:40.65 java                                                                                           
+    628 root      20   0  291696   3456   3068 S   0.3   0.2   0:03.73 VBoxService                                                                                    
+   1118 kali      20   0  347964  35052  18068 S   0.3   1.7   0:03.91 xfce4-session                                                                                  
+   1521 kali      20   0  209464  36332  20132 S   0.3   1.8   0:03.80 xfce4-screensav                                                                                
+  61676 root      20   0       0      0      0 I   0.3   0.0   0:01.06 kworker/0:3-ata_sff                                                                            
+      1 root      20   0   24212  15312  10640 S   0.0   0.8   0:08.50 systemd                                                                                        
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd                                                                                       
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                                         
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                                   
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                               
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                              
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                         
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                                
+     12 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/u8:0-ipv6_addrconf                                                                     
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                         
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthread                                                                              
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread                                                                         
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread                                                                        
+     17 root      20   0       0      0      0 S   0.0   0.0   0:02.35 ksoftirqd/0                                                                                    
+     18 root      20   0       0      0      0 I   0.0   0.0   0:04.57 rcu_preempt                                                                                    
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ install htop              
+install: missing destination file operand after 'htop'
+Try 'install --help' for more information.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install htop      
+[sudo] password for kali: 
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common        libconfig++9v5           libgles-dev                  libiniparser1      libtag1v5                    python3-pluggy
+  firebird3.0-common-doc    libconfig9               libgles1                     libjim0.82t64      libtag1v5-vanilla            python3-poetry-dynamic-versioning
+  fonts-liberation2         libdirectfb-1.7-7t64     libglusterfs0                libjsoncpp25       libtagc0                     python3-setproctitle
+  freerdp2-x11              libegl-dev               libglvnd-core-dev            liblbfgsb0         libwebrtc-audio-processing1  python3-setuptools-scm
+  hydra-gtk                 libflac12t64             libglvnd-dev                 libmbedcrypto7t64  libwinpr2-2t64               python3-tomlkit
+  ibverbs-providers         libfmt9                  libgspell-1-2                libmfx1            libzip4t64                   python3-trove-classifiers
+  icu-devtools              libfreerdp-client2-2t64  libgtk2.0-0t64               libnetcdf19t64     openjdk-17-jre               python3.11
+  libabsl20230802           libfreerdp2-2t64         libgtk2.0-bin                libopenh264-7      openjdk-17-jre-headless      python3.11-dev
+  libarmadillo12            libgail-common           libgtk2.0-common             libpaper1          openjdk-23-jre               python3.11-minimal
+  libassuan0                libgail18t64             libgtksourceview-3.0-1       libperl5.38t64     openjdk-23-jre-headless      ruby-zeitwerk
+  libavfilter9              libgdal34t64             libgtksourceview-3.0-common  libplacebo338      perl-modules-5.38            ruby3.1
+  libbfio1                  libgeos3.12.2            libgtksourceviewmm-3.0-0v5   libpoppler134      python3-appdirs              ruby3.1-dev
+  libblosc2-3               libgfapi0                libgumbo2                    libpostproc57      python3-dunamai              ruby3.1-doc
+  libboost-iostreams1.83.0  libgfrpc0                libhdf5-103-1t64             libpython3.11-dev  python3-hatch-vcs            rwho
+  libboost-thread1.83.0     libgfxdr0                libhdf5-hl-100t64            librados2          python3-hatchling            rwhod
+  libcapstone4              libgl1-mesa-dev          libibverbs1                  librdmacm1t64      python3-lib2to3              samba-vfs-modules
+  libcephfs2                libglapi-mesa            libicu-dev                   libsuperlu6        python3-pathspec             strongswan
+Use 'sudo apt autoremove' to remove them.
+
+Installing:
+  htop
+                                                                                                                                                                      
+Suggested packages:
+  strace
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 84
+  Download size: 172 kB
+  Space needed: 434 kB / 48.9 GB available
+
+Get:1 http://kali.download/kali kali-rolling/main amd64 htop amd64 3.4.1-4 [172 kB]
+Fetched 172 kB in 1s (212 kB/s)
+Selecting previously unselected package htop.
+(Reading database ... 449255 files and directories currently installed.)
+Preparing to unpack .../htop_3.4.1-4_amd64.deb ...
+Unpacking htop (3.4.1-4) ...
+Setting up htop (3.4.1-4) ...
+Processing triggers for mailcap (3.74) ...
+Processing triggers for kali-menu (2025.2.3) ...
+Processing triggers for desktop-file-utils (0.28-1) ...
+Processing triggers for hicolor-icon-theme (0.18-2) ...
+Processing triggers for man-db (2.13.1-1) ...
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ htop                      
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       1.4Gi       151Mi        13Mi       592Mi       553Mi
+Swap:          1.0Gi       4.5Mi       1.0Gi
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cat /proc/meminfo
+
+MemTotal:        2021056 kB
+MemFree:          179484 kB
+MemAvailable:     588040 kB
+Buffers:           38872 kB
+Cached:           464176 kB
+SwapCached:         2564 kB
+Active:           633352 kB
+Inactive:         962764 kB
+Active(anon):     467248 kB
+Inactive(anon):   639116 kB
+Active(file):     166104 kB
+Inactive(file):   323648 kB
+Unevictable:         112 kB
+Mlocked:             112 kB
+SwapTotal:       1048572 kB
+SwapFree:        1043928 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       1090428 kB
+Mapped:           217068 kB
+Shmem:             13472 kB
+KReclaimable:     100272 kB
+Slab:             144096 kB
+SReclaimable:     100272 kB
+SUnreclaim:        43824 kB
+KernelStack:        6760 kB
+PageTables:        13368 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2059100 kB
+Committed_AS:    3729240 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       26164 kB
+VmallocChunk:          0 kB
+Percpu:             1152 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    688128 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+Unaccepted:            0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      147392 kB
+DirectMap2M:     1949696 kB
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ps aux | less
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$  
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ps aux --sort=-%mem | head -n 10
+
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+mysql        791  0.0 15.9 1376484 322996 ?      Ssl  May22   0:07 /usr/sbin/mariadbd
+kali       35511  0.7  8.1 3115512 164432 ?      Ssl  00:33   0:49 /usr/bin/java -Dserver.port=9090 -jar /opt/myapp/app.jar
+kali        1196  0.0  7.3 350488 147660 ?       Sl   May22   0:01 /usr/bin/VBoxClient --clipboard
+root         736  2.3  6.6 389900 135388 tty7    Ssl+ May22   4:25 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+kali        1291  0.6  6.0 894132 123032 ?       Sl   May22   1:05 xfwm4 --display :0.0 --sm-client-id 2d43c5199-740b-4546-8a51-e7f5e8c97ff0
+kali       58538  0.3  5.3 619340 108564 ?       Sl   01:20   0:12 /usr/bin/qterminal
+kali        7847  0.6  5.0 612780 103004 ?       Sl   May22   0:59 /usr/bin/qterminal
+kali        1326  0.0  2.8 522676 56768 ?        Sl   May22   0:06 xfce4-panel --display :0.0 --sm-client-id 2342a4afe-55b4-407a-95ca-f89e53d87e23
+kali        1337  0.0  2.7 476560 56052 ?        Sl   May22   0:05 xfdesktop --display :0.0 --sm-client-id 28be9eb8e-e8a6-4f94-bfb4-4d97908f3216
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ps aux --sort=-%cpu | head -n 20
+
+
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kali       89341  200  0.2   9532  4240 pts/1    R+   02:23   0:00 ps aux --sort=-%cpu
+root         736  2.3  6.6 389900 135388 tty7    Ssl+ May22   4:28 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+kali        1358  1.9  2.4 297172 50504 ?        Sl   May22   3:25 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 27262988 cpugraph CPU Graph Graphical representation of the CPU load
+kali       35511  0.7  8.1 3115512 164752 ?      Ssl  00:33   0:49 /usr/bin/java -Dserver.port=9090 -jar /opt/myapp/app.jar
+kali        1291  0.6  6.0 894132 123032 ?       Sl   May22   1:05 xfwm4 --display :0.0 --sm-client-id 2d43c5199-740b-4546-8a51-e7f5e8c97ff0
+kali        1363  0.6  1.3 274020 27748 ?        Sl   May22   1:05 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libgenmon.so 15 27262990 genmon Generic Monitor Show output of a command.
+kali        7847  0.5  5.0 612780 103004 ?       Sl   May22   0:59 /usr/bin/qterminal
+kali        1216  0.3  0.1 215932  3324 ?        Sl   May22   0:39 /usr/bin/VBoxClient --draganddrop
+kali       58538  0.3  5.3 619340 108564 ?       Rl   01:20   0:12 /usr/bin/qterminal
+kali        7850  0.2  0.3  11128  7300 pts/0    Ss+  May22   0:29 /usr/bin/zsh
+kali        1211  0.1  0.1 215416  3208 ?        Sl   May22   0:19 /usr/bin/VBoxClient --seamless
+message+     503  0.1  0.3  10392  6608 ?        Ss   May22   0:11 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       78161  0.1  0.0      0     0 ?        I    02:00   0:01 [kworker/0:2-ata_sff]
+root       88289  0.0  0.0      0     0 ?        I    02:21   0:00 [kworker/0:0-events]
+kali       58541  0.0  0.3  10748  6936 pts/1    Ss   01:20   0:03 /usr/bin/zsh
+root           1  0.0  0.7  24212 15312 ?        Ss   May22   0:08 /sbin/init splash
+mysql        791  0.0 15.9 1376484 322996 ?      Ssl  May22   0:07 /usr/sbin/mariadbd
+kali        1326  0.0  2.8 522676 56768 ?        Sl   May22   0:06 xfce4-panel --display :0.0 --sm-client-id 2342a4afe-55b4-407a-95ca-f89e53d87e23
+root       83285  0.0  0.0      0     0 ?        I    02:10   0:00 [kworker/0:1-ata_sff]
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            923M     0  923M   0% /dev
+tmpfs           198M  960K  197M   1% /run
+/dev/sda1        79G   29G   46G  39% /
+tmpfs           987M  4.0K  987M   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           987M  1.2M  986M   1% /tmp
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           198M  128K  198M   1% /run/user/1000
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ df   
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev              944972        0    944972   0% /dev
+tmpfs             202108      960    201148   1% /run
+/dev/sda1       82083148 30128556  47739044  39% /
+tmpfs            1010528        4   1010524   1% /dev/shm
+tmpfs               5120        0      5120   0% /run/lock
+tmpfs               1024        0      1024   0% /run/credentials/systemd-journald.service
+tmpfs            1010528     1192   1009336   1% /tmp
+tmpfs               1024        0      1024   0% /run/credentials/getty@tty1.service
+tmpfs             202104      128    201976   1% /run/user/1000
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ du
+4       ./Videos
+31532   ./Downloads/maven-mvnd-1.0.2-linux-amd64/bin
+36      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/bin
+12      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/conf/logging
+32      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/conf
+72      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/boot
+88      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/jansi-native/Windows/arm64
+132     ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/jansi-native/Windows/x86_64
+120     ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/jansi-native/Windows/x86
+344     ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/jansi-native/Windows
+352     ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/jansi-native
+8       ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/ext/redisson
+8       ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/ext/hazelcast
+24      ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/ext
+1880    ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib/mvnd
+12348   ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn/lib
+12524   ./Downloads/maven-mvnd-1.0.2-linux-amd64/mvn
+12      ./Downloads/maven-mvnd-1.0.2-linux-amd64/conf
+44100   ./Downloads/maven-mvnd-1.0.2-linux-amd64
+4       ./Downloads/__MACOSX/temp01.txt
+296     ./Downloads/__MACOSX/temp01
+4996    ./Downloads/__MACOSX
+20      ./Downloads/gzfiles
+188     ./Downloads/samplelogs/gzfiles
+192     ./Downloads/samplelogs
+355400  ./Downloads
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+──(kali㉿kali)-[~]
+└─$ du -sh /home/* 
+1.7G    /home/kali
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ du -sh /home/kali/*
+8.0K    /home/kali/01.txt
+4.0K    /home/kali/Desktop
+32M     /home/kali/Documents
+348M    /home/kali/Downloads
+12K     /home/kali/log-practice
+36K     /home/kali/logs
+44M     /home/kali/maven-mvnd-1.0.2-linux-amd64
+4.0K    /home/kali/Music
+4.0K    /home/kali/nohup.out
+4.0K    /home/kali/nohup.txt
+4.0K    /home/kali/Pictures
+4.0K    /home/kali/Public
+4.0K    /home/kali/Templates
+4.0K    /home/kali/Videos
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ du -ah ~ | sort -rh | head -n 10
+1.7G    /home/kali
+561M    /home/kali/.BurpSuite
+529M    /home/kali/.BurpSuite/burpbrowser/126.0.6478.126
+529M    /home/kali/.BurpSuite/burpbrowser
+395M    /home/kali/.BurpSuite/burpbrowser/126.0.6478.126/chrome
+348M    /home/kali/Downloads
+283M    /home/kali/.sdkman
+254M    /home/kali/.gradle
+161M    /home/kali/Downloads/jdk-21_linux-x64_bin.deb
+146M    /home/kali/.sdkman/candidates/gradle/8.14/lib
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ du -ah / | sort -rh | head -n 20
+
+du: cannot read directory '/tmp/tomcat.8080.10003738587292468378': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-colord.service-Lvwqah': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-upower.service-luhkJ8': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-ModemManager.service-JK4HUZ': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-systemd-logind.service-VGi7MO': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-polkit.service-99Febb': Permission denied
+du: cannot read directory '/tmp/systemd-private-862720b303c7456fa88c1a4e1cd72d3c-haveged.service-x7545b': Permission denied
+du: cannot read directory '/sys/kernel/tracing/instances': Permission denied
+du: cannot read directory '/sys/kernel/tracing/per_cpu': Permission denied
+du: cannot read directory '/sys/kernel/tracing/options': Permission denied
+du: cannot read directory '/sys/kernel/debug': Permission denied
+du: cannot read directory '/sys/fs/pstore': Permission denied
+du: cannot read directory '/sys/fs/bpf': Permission denied
+du: cannot read directory '/root': Permission denied
+du: cannot read directory '/lost+found': Permission denied
+du: cannot read directory '/run/udisks2': Permission denied
+du: cannot read directory '/run/lightdm': Permission denied
+du: cannot read directory '/run/user/1000/systemd/inaccessible/dir': Permission denied
+du: cannot read directory '/run/sudo': Permission denied
+du: cannot read directory '/run/openvpn-server': Permission denied
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+..
+.
+.
+.
+..
+.
+
+
+──(kali㉿kali)-[~]
+└─$ find / -type f -size +100M 2>/dev/null
+
+/sys/devices/pci0000:00/0000:00:02.0/resource1
+/sys/devices/pci0000:00/0000:00:02.0/resource1_wc
+/swapfile
+/boot/initrd.img-6.8.11-amd64
+/boot/initrd.img-6.12.25-amd64
+/proc/kcore
+/usr/share/burpsuite/burpsuite.jar
+/usr/lib/jvm/jdk-21.0.7-oracle-x64/lib/modules
+/usr/lib/jvm/java-17-openjdk-amd64/lib/modules
+/usr/lib/jvm/java-23-openjdk-amd64/lib/modules
+/usr/lib/jvm/java-21-openjdk-amd64/lib/modules
+/usr/lib/oracle/19.6/client64/lib/libociei.so
+/usr/lib/firefox-esr/libxul.so
+/usr/lib/chromium/chromium
+/usr/lib/x86_64-linux-gnu/libLLVM-18.so.1
+/usr/lib/x86_64-linux-gnu/libLLVM-17.so.1
+/usr/lib/x86_64-linux-gnu/libLLVM-16.so.1
+/usr/lib/x86_64-linux-gnu/libwireshark.so.17.0.5
+/usr/lib/x86_64-linux-gnu/libLLVM.so.19.1
+/opt/nessus/var/nessus/plugins-code.db.1734070957924672335
+/opt/nessus/var/nessus/plugins-desc.db.17340709691896707210
+/opt/nessus/var/nessus/plugins-attributes.db
+/opt/nessus/var/nessus/plugins-code.db
+/opt/nessus/var/nessus/plugins-desc.db
+/home/kali/Downloads/jdk-21_linux-x64_bin.deb
+/home/kali/.sdkman/tmp/gradle-8.14.zip
+/home/kali/.BurpSuite/burpbrowser/126.0.6478.126/chrome
+/var/cache/apt/archives/linux-image-6.12.25-amd64_6.12.25-1kali1_amd64.deb
+/var/cache/apt/archives/burpsuite_2025.3.4-0kali1_amd64.deb
+/var/cache/apt/archives/metasploit-framework_6.4.56-0kali1_amd64.deb
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install ncdu    
+[sudo] password for kali: 
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common        libconfig++9v5           libgles-dev                  libiniparser1      libtag1v5                    python3-pluggy
+  firebird3.0-common-doc    libconfig9               libgles1                     libjim0.82t64      libtag1v5-vanilla            python3-poetry-dynamic-versioning
+  fonts-liberation2         libdirectfb-1.7-7t64     libglusterfs0                libjsoncpp25       libtagc0                     python3-setproctitle
+  freerdp2-x11              libegl-dev               libglvnd-core-dev            liblbfgsb0         libwebrtc-audio-processing1  python3-setuptools-scm
+  hydra-gtk                 libflac12t64             libglvnd-dev                 libmbedcrypto7t64  libwinpr2-2t64               python3-tomlkit
+  ibverbs-providers         libfmt9                  libgspell-1-2                libmfx1            libzip4t64                   python3-trove-classifiers
+  icu-devtools              libfreerdp-client2-2t64  libgtk2.0-0t64               libnetcdf19t64     openjdk-17-jre               python3.11
+  libabsl20230802           libfreerdp2-2t64         libgtk2.0-bin                libopenh264-7      openjdk-17-jre-headless      python3.11-dev
+  libarmadillo12            libgail-common           libgtk2.0-common             libpaper1          openjdk-23-jre               python3.11-minimal
+  libassuan0                libgail18t64             libgtksourceview-3.0-1       libperl5.38t64     openjdk-23-jre-headless      ruby-zeitwerk
+  libavfilter9              libgdal34t64             libgtksourceview-3.0-common  libplacebo338      perl-modules-5.38            ruby3.1
+  libbfio1                  libgeos3.12.2            libgtksourceviewmm-3.0-0v5   libpoppler134      python3-appdirs              ruby3.1-dev
+  libblosc2-3               libgfapi0                libgumbo2                    libpostproc57      python3-dunamai              ruby3.1-doc
+  libboost-iostreams1.83.0  libgfrpc0                libhdf5-103-1t64             libpython3.11-dev  python3-hatch-vcs            rwho
+  libboost-thread1.83.0     libgfxdr0                libhdf5-hl-100t64            librados2          python3-hatchling            rwhod
+  libcapstone4              libgl1-mesa-dev          libibverbs1                  librdmacm1t64      python3-lib2to3              samba-vfs-modules
+  libcephfs2                libglapi-mesa            libicu-dev                   libsuperlu6        python3-pathspec             strongswan
+Use 'sudo apt autoremove' to remove them.
+
+Installing:
+  ncdu
+                                                                                                                                                                      
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 84
+  Download size: 51.5 kB
+  Space needed: 122 kB / 48.9 GB available
+
+Get:1 http://kali.download/kali kali-rolling/main amd64 ncdu amd64 1.22-1 [51.5 kB]
+Fetched 51.5 kB in 1s (47.2 kB/s)
+Selecting previously unselected package ncdu.
+(Reading database ... 449266 files and directories currently installed.)
+Preparing to unpack .../archives/ncdu_1.22-1_amd64.deb ...
+Unpacking ncdu (1.22-1) ...
+Setting up ncdu (1.22-1) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for kali-menu (2025.2.3) ...
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ss -tulwn
+
+Netid             State               Recv-Q              Send-Q                           Local Address:Port                           Peer Address:Port             
+icmp6             UNCONN              0                   0                                            *:58                                        *:*                
+tcp               LISTEN              0                   80                                   127.0.0.1:3306                                0.0.0.0:*                
+tcp               LISTEN              0                   128                                    0.0.0.0:22                                  0.0.0.0:*                
+tcp               LISTEN              0                   100                                          *:9090                                      *:*                
+tcp               LISTEN              0                   128                                       [::]:22                                     [::]:*                
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install net-tools
+net-tools is already the newest version (2.10-1.1).
+net-tools set to manually installed.
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common        libconfig++9v5           libgles-dev                  libiniparser1      libtag1v5                    python3-pluggy
+  firebird3.0-common-doc    libconfig9               libgles1                     libjim0.82t64      libtag1v5-vanilla            python3-poetry-dynamic-versioning
+  fonts-liberation2         libdirectfb-1.7-7t64     libglusterfs0                libjsoncpp25       libtagc0                     python3-setproctitle
+  freerdp2-x11              libegl-dev               libglvnd-core-dev            liblbfgsb0         libwebrtc-audio-processing1  python3-setuptools-scm
+  hydra-gtk                 libflac12t64             libglvnd-dev                 libmbedcrypto7t64  libwinpr2-2t64               python3-tomlkit
+  ibverbs-providers         libfmt9                  libgspell-1-2                libmfx1            libzip4t64                   python3-trove-classifiers
+  icu-devtools              libfreerdp-client2-2t64  libgtk2.0-0t64               libnetcdf19t64     openjdk-17-jre               python3.11
+  libabsl20230802           libfreerdp2-2t64         libgtk2.0-bin                libopenh264-7      openjdk-17-jre-headless      python3.11-dev
+  libarmadillo12            libgail-common           libgtk2.0-common             libpaper1          openjdk-23-jre               python3.11-minimal
+  libassuan0                libgail18t64             libgtksourceview-3.0-1       libperl5.38t64     openjdk-23-jre-headless      ruby-zeitwerk
+  libavfilter9              libgdal34t64             libgtksourceview-3.0-common  libplacebo338      perl-modules-5.38            ruby3.1
+  libbfio1                  libgeos3.12.2            libgtksourceviewmm-3.0-0v5   libpoppler134      python3-appdirs              ruby3.1-dev
+  libblosc2-3               libgfapi0                libgumbo2                    libpostproc57      python3-dunamai              ruby3.1-doc
+  libboost-iostreams1.83.0  libgfrpc0                libhdf5-103-1t64             libpython3.11-dev  python3-hatch-vcs            rwho
+  libboost-thread1.83.0     libgfxdr0                libhdf5-hl-100t64            librados2          python3-hatchling            rwhod
+  libcapstone4              libgl1-mesa-dev          libibverbs1                  librdmacm1t64      python3-lib2to3              samba-vfs-modules
+  libcephfs2                libglapi-mesa            libicu-dev                   libsuperlu6        python3-pathspec             strongswan
+Use 'sudo apt autoremove' to remove them.
+
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 84
+                  
+
+
+┌──(kali㉿kali)-[~]
+└─$ netstat -tulnp 
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::9090                 :::*                    LISTEN      35511/java          
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i :8080
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i      
+COMMAND     PID  USER FD   TYPE DEVICE SIZE/OFF NODE NAME
+NetworkMa   570  root 26u  IPv4   7305      0t0  UDP 10.0.2.15:bootpc->10.0.2.2:bootps 
+sshd        710  root  7u  IPv4   5719      0t0  TCP *:ssh (LISTEN)
+sshd        710  root  8u  IPv6   5721      0t0  TCP *:ssh (LISTEN)
+mariadbd    791 mysql 27u  IPv4   8110      0t0  TCP localhost:mysql (LISTEN)
+java      35511  kali  9u  IPv6  79993      0t0  TCP *:9090 (LISTEN)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ip a
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:ad:25:87 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute eth0
+       valid_lft 72895sec preferred_lft 72895sec
+    inet6 fd00::46d9:804f:6d70:b305/64 scope global dynamic noprefixroute 
+       valid_lft 86360sec preferred_lft 14360sec
+    inet6 fe80::9c55:6e69:eff8:4bb4/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ip route
+default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15 metric 100 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ping google.com
+
+PING google.com (172.253.118.138) 56(84) bytes of data.
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=1 ttl=255 time=44.5 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=2 ttl=255 time=41.1 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=3 ttl=255 time=39.2 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=4 ttl=255 time=39.8 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=5 ttl=255 time=39.6 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=6 ttl=255 time=42.4 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=7 ttl=255 time=42.0 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=8 ttl=255 time=45.4 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=9 ttl=255 time=42.7 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=10 ttl=255 time=40.0 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=11 ttl=255 time=40.6 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=12 ttl=255 time=42.5 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=13 ttl=255 time=67.4 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=14 ttl=255 time=84.7 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=15 ttl=255 time=51.1 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=16 ttl=255 time=45.5 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=17 ttl=255 time=43.8 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=18 ttl=255 time=43.6 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=19 ttl=255 time=44.0 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=20 ttl=255 time=40.0 ms
+64 bytes from sl-in-f138.1e100.net (172.253.118.138): icmp_seq=21 ttl=255 time=55.3 ms
+^C
+--- google.com ping statistics ---
+21 packets transmitted, 21 received, 0% packet loss, time 20153ms
+rtt min/avg/max/mdev = 39.150/46.442/84.665/10.649 ms
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ping 127.0.0.1     
+PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.032 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.142 ms
+64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.067 ms
+64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.091 ms
+64 bytes from 127.0.0.1: icmp_seq=5 ttl=64 time=0.067 ms
+64 bytes from 127.0.0.1: icmp_seq=6 ttl=64 time=0.072 ms
+64 bytes from 127.0.0.1: icmp_seq=7 ttl=64 time=0.068 ms
+^C
+--- 127.0.0.1 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6269ms
+rtt min/avg/max/mdev = 0.032/0.077/0.142/0.031 ms
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install iftop
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common        libconfig++9v5           libgles-dev                  libiniparser1      libtag1v5                    python3-pluggy
+  firebird3.0-common-doc    libconfig9               libgles1                     libjim0.82t64      libtag1v5-vanilla            python3-poetry-dynamic-versioning
+  fonts-liberation2         libdirectfb-1.7-7t64     libglusterfs0                libjsoncpp25       libtagc0                     python3-setproctitle
+  freerdp2-x11              libegl-dev               libglvnd-core-dev            liblbfgsb0         libwebrtc-audio-processing1  python3-setuptools-scm
+  hydra-gtk                 libflac12t64             libglvnd-dev                 libmbedcrypto7t64  libwinpr2-2t64               python3-tomlkit
+  ibverbs-providers         libfmt9                  libgspell-1-2                libmfx1            libzip4t64                   python3-trove-classifiers
+  icu-devtools              libfreerdp-client2-2t64  libgtk2.0-0t64               libnetcdf19t64     openjdk-17-jre               python3.11
+  libabsl20230802           libfreerdp2-2t64         libgtk2.0-bin                libopenh264-7      openjdk-17-jre-headless      python3.11-dev
+  libarmadillo12            libgail-common           libgtk2.0-common             libpaper1          openjdk-23-jre               python3.11-minimal
+  libassuan0                libgail18t64             libgtksourceview-3.0-1       libperl5.38t64     openjdk-23-jre-headless      ruby-zeitwerk
+  libavfilter9              libgdal34t64             libgtksourceview-3.0-common  libplacebo338      perl-modules-5.38            ruby3.1
+  libbfio1                  libgeos3.12.2            libgtksourceviewmm-3.0-0v5   libpoppler134      python3-appdirs              ruby3.1-dev
+  libblosc2-3               libgfapi0                libgumbo2                    libpostproc57      python3-dunamai              ruby3.1-doc
+  libboost-iostreams1.83.0  libgfrpc0                libhdf5-103-1t64             libpython3.11-dev  python3-hatch-vcs            rwho
+  libboost-thread1.83.0     libgfxdr0                libhdf5-hl-100t64            librados2          python3-hatchling            rwhod
+  libcapstone4              libgl1-mesa-dev          libibverbs1                  librdmacm1t64      python3-lib2to3              samba-vfs-modules
+  libcephfs2                libglapi-mesa            libicu-dev                   libsuperlu6        python3-pathspec             strongswan
+Use 'sudo apt autoremove' to remove them.
+
+Installing:
+  iftop
+                                                                                                                                                                      
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 84
+  Download size: 38.9 kB
+  Space needed: 96.3 kB / 48.9 GB available
+
+Get:1 http://http.kali.org/kali kali-rolling/main amd64 iftop amd64 1.0~pre4-9+b1 [38.9 kB]
+Fetched 38.9 kB in 2s (24.7 kB/s)
+Selecting previously unselected package iftop.
+(Reading database ... 449272 files and directories currently installed.)
+Preparing to unpack .../iftop_1.0~pre4-9+b1_amd64.deb ...
+Unpacking iftop (1.0~pre4-9+b1) ...
+Setting up iftop (1.0~pre4-9+b1) ...
+Processing triggers for kali-menu (2025.2.3) ...
+Processing triggers for man-db (2.13.1-1) ...
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo iftop            
+interface: eth0
+IP address is: 10.0.2.15
+IPv6 address is: fd00::46d9:804f:6d70:b305
+MAC address is: 08:00:27:ad:25:87
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo iftop
+interface: eth0
+IP address is: 10.0.2.15
+IPv6 address is: fd00::46d9:804f:6d70:b305
+MAC address is: 08:00:27:ad:25:87
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i :    
+lsof: unacceptable port specification in: -i :
+lsof 4.99.4
+ latest revision: https://github.com/lsof-org/lsof
+ latest FAQ: https://github.com/lsof-org/lsof/blob/master/00FAQ
+ latest (non-formatted) man page: https://github.com/lsof-org/lsof/blob/master/Lsof.8
+ usage: [-?abhHKlnNoOPRtUvVX] [+|-c c] [+|-d s] [+D D] [+|-E] [+|-e s] [+|-f[gG]]
+ [-F [f]] [-g [s]] [-i [i]] [+|-L [l]] [+m [m]] [+|-M] [-o [o]] [-p s]
+ [+|-r [t]] [-s [p:s]] [-S [t]] [-T [t]] [-u s] [+|-w] [-x [fl]] [--] [names]
+Use the ``-h'' option to get more help information.
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i :8080
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo lsof -i :9090
+
+COMMAND   PID USER FD   TYPE DEVICE SIZE/OFF NODE NAME
+java    35511 kali 9u  IPv6  79993      0t0  TCP *:9090 (LISTEN)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ls -lh /var/log/
+
+total 2.1M
+-rw-r--r--  1 root              root             61K May 20 05:11 alternatives.log
+-rw-r--r--  1 root              root             12K May 15 23:44 alternatives.log.1
+-rw-r--r--  1 root              root            7.3K Aug 18  2024 alternatives.log.2.gz
+drwxr-x---  2 root              adm             4.0K May 16 00:43 apache2
+drwxr-xr-x  2 root              root            4.0K May 23 02:59 apt
+-rw-------  1 root              root               0 May 23 00:04 boot.log
+-rw-------  1 root              root             21K May 23 00:04 boot.log.1
+-rw-------  1 root              root             14K May 22 00:06 boot.log.2
+-rw-------  1 root              root             14K May 21 02:24 boot.log.3
+-rw-------  1 root              root            7.8K May 20 03:32 boot.log.4
+-rw-------  1 root              root             27K May 19 00:40 boot.log.5
+-rw-------  1 root              root             43K May 16 00:43 boot.log.6
+-rw-------  1 root              root             24K May 15 01:51 boot.log.7
+-rw-rw----  1 root              utmp            2.3K May 21 06:31 btmp
+-rw-rw----  1 root              utmp               0 Feb 14 07:57 btmp.1
+-rw-r--r--  1 root              root            1.4M May 23 02:59 dpkg.log
+-rw-r--r--  1 root              root             461 May 15 23:44 dpkg.log.1
+-rw-r--r--  1 root              root            140K Dec 12 10:54 dpkg.log.2.gz
+-rw-r--r--  1 root              root            7.0K May 20 05:04 fontconfig.log
+drwxr-xr-x  2 _gvm              _gvm            4.0K Jun 19  2024 gvm
+drwx------  3 inetsim           inetsim         4.0K Aug 18  2024 inetsim
+drwxr-sr-x+ 3 root              systemd-journal 4.0K Nov 28 08:01 journal
+-rw-rw-r--  1 root              utmp               0 Aug 18  2024 lastlog
+drwx--x--x  2 root              root            4.0K May 23 02:29 lightdm
+-rw-r--r--  1 root              root             324 May 22 23:11 macchanger.log
+-rw-r--r--  1 root              root              70 May 21 23:26 macchanger.log.1.gz
+-rw-r--r--  1 root              root              62 May 15 01:06 macchanger.log.2.gz
+-rw-r--r--  1 root              root              59 Feb 14 07:49 macchanger.log.3.gz
+-rw-r--r--  1 root              root              59 Jan 14 07:37 macchanger.log.4.gz
+drwxr-xr-x  2 mosquitto         root            4.0K Mar 11  2024 mosquitto
+drwxr-xr-x  2 root              adm             4.0K May 21 02:24 nginx
+drwxr-xr-x  2 _gvm              _gvm            4.0K Jun 21  2024 notus-scanner
+drwxr-xr-x  2 root              root            4.0K Jul 18  2024 openvpn
+drwxrwxr-t  2 root              postgres        4.0K May 21 02:24 postgresql
+drwx------  2 root              root            4.0K Aug 18  2024 private
+lrwxrwxrwx  1 root              root              39 Aug 18  2024 README -> ../../usr/share/doc/systemd/README.logs
+drwxr-s---  2 redis             adm             4.0K Aug 18  2024 redis
+drwxr-xr-x  4 root              root            4.0K May 20 04:04 runit
+drwxr-x---  2 root              adm             4.0K Jun 10  2024 samba
+drwx------  2 speech-dispatcher root            4.0K Mar 13  2024 speech-dispatcher
+drwxr-xr-x  2 stunnel4          stunnel4        4.0K Aug 18  2024 stunnel4
+drwxr-xr-x  2 root              root            4.0K Jan 15  2024 sysstat
+-rw-rw-r--  1 root              utmp             74K May 22 23:25 wtmp
+-rw-r--r--  1 root              root             47K May 23 02:31 Xorg.0.log
+-rw-r--r--  1 root              root             43K May 22 08:28 Xorg.0.log.old
+-rw-r--r--  1 root              root             26K May 23 02:31 Xorg.1.log
+-rw-r--r--  1 root              root             26K May 23 02:20 Xorg.1.log.old
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ less /var/log/syslog
+
+/var/log/syslog: No such file or directory
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ tail -f /opt/myapp/app.log
+
+
+2025-05-23T00:33:33.501-04:00  INFO 35511 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Starting DemoLinuxApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 35511 (/opt/myapp/app.jar started by kali in /opt/myapp)
+2025-05-23T00:33:33.525-04:00  INFO 35511 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-05-23T00:33:38.105-04:00  INFO 35511 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-05-23T00:33:38.178-04:00  INFO 35511 --- [demo_linux] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-23T00:33:38.179-04:00  INFO 35511 --- [demo_linux] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-23T00:33:38.267-04:00  INFO 35511 --- [demo_linux] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-23T00:33:38.270-04:00  INFO 35511 --- [demo_linux] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4426 ms
+2025-05-23T00:33:40.692-04:00  INFO 35511 --- [demo_linux] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-05-23T00:33:40.751-04:00  INFO 35511 --- [demo_linux] [           main] c.e.demo_linux.DemoLinuxApplication      : Started DemoLinuxApplication in 9.479 seconds (process running for 11.584)
+^C
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -i warning /var/log/syslog
+
+grep: /var/log/syslog: No such file or directory
+                                                                                                                                                                      
+
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -i warning /opt/myapp/app.log
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -i warning /var/log/sys      
+grep: /var/log/sys: No such file or directory
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -i warning /var/log    
+grep: /var/log: Is a directory
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ grep -c "ERROR" /opt/myapp/app.log
+
+0
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ awk '{print $1, $2, $3, $5}' app.log | head -n 10
