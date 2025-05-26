@@ -767,3 +767,796 @@ grep: /var/log: Is a directory
                                                                                                                                                                       
 ┌──(kali㉿kali)-[~]
 └─$ awk '{print $1, $2, $3, $5}' app.log | head -n 10
+.............................................................................
+.
+.
+.
+
+.
+.
+.
+.
+..
+.
+.
+story file /home/kali/.zsh_history
+┌──(kali㉿kali)-[~]
+└─$ ls /etc/logrotate.d
+alternatives  apt      btmp  gvmd        mariadb    nginx            postgresql-common  redis-server  speech-dispatcher  wtmp
+apache2       bootlog  dpkg  macchanger  mosquitto  openvas-scanner  ppp                sane-utils    stunnel4
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ll                 
+total 72
+-rw-rw-r-- 1 kali kali  7748 May 22 01:18 01.txt
+drwxr-xr-x 2 kali kali  4096 Feb 14 08:32 Desktop
+drwxr-xr-x 4 kali kali  4096 May 22 00:23 Documents
+drwxr-xr-x 6 kali kali 12288 May 19 05:22 Downloads
+drwxrwxr-x 2 kali kali  4096 May 19 01:59 log-practice
+drwxrwxr-x 2 kali kali  4096 May 16 08:27 logs
+drwxrwxr-x 5 kali kali  4096 May 16 00:45 maven-mvnd-1.0.2-linux-amd64
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Music
+-rw-rw-r-- 1 kali kali   649 May 23 03:22 myapp_today.log
+-rw------- 1 kali kali   108 May 21 05:14 nohup.out
+-rw-rw-r-- 1 kali kali    54 May 21 04:58 nohup.txt
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Pictures
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Public
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Templates
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Videos
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ll /etc/logrotate.d      
+total 76
+-rw-r--r-- 1 root root  120 Apr 25  2024 alternatives
+-rw-r--r-- 1 root root  397 Jul  7  2024 apache2
+-rw-r--r-- 1 root root  173 Jun 20  2024 apt
+-rw-r--r-- 1 root root   91 Jan  4  2024 bootlog
+-rw-r--r-- 1 root root  130 Jun 22  2020 btmp
+-rw-r--r-- 1 root root  112 Apr 25  2024 dpkg
+-rw-r--r-- 1 root root  368 Apr  8 11:00 gvmd
+-rw-r--r-- 1 root root   89 Jun 17  2018 macchanger
+-rw-r--r-- 1 root root 1859 Jul 12  2024 mariadb
+-rw-r--r-- 1 root root  252 Sep 25  2023 mosquitto
+-rw-r--r-- 1 root root  329 May  5  2024 nginx
+-rw-r--r-- 1 root root  291 Jun 19  2024 openvas-scanner
+-rw-r--r-- 1 root root  173 Jul 31  2023 postgresql-common
+-rw-r--r-- 1 root root   94 Apr 20  2024 ppp
+-rw-r--r-- 1 root root  146 Jan  9  2024 redis-server
+-rw-r--r-- 1 root root  132 Sep 10  2020 sane-utils
+-rw-r--r-- 1 root root  677 Oct  4  2023 speech-dispatcher
+-rw-r--r-- 1 root root  246 Apr 11  2024 stunnel4
+-rw-r--r-- 1 root root  145 Jul 26  2021 wtmp
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd /etc/logrotate.d 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ cd nginx           
+cd: not a directory: nginx
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ cat nginx
+/var/log/nginx/*.log {
+        daily
+        missingok
+        rotate 14
+        compress
+        delaycompress
+        notifempty
+        create 0640 www-data adm
+        sharedscripts
+        prerotate
+                if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
+                        run-parts /etc/logrotate.d/httpd-prerotate; \
+                fi \
+        endscript
+        postrotate
+                invoke-rc.d nginx rotate >/dev/null 2>&1
+        endscript
+}
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ crontab -l
+no crontab for kali
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ cd        
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ crontab -l
+no crontab for kali
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo nano /etc/logrotate/myapp
+[sudo] password for kali: 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ sudo nano /etc/logatate.d/myapp
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd /etc            
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc]
+└─$ ll                 
+total 1680
+-rw-r--r--  1 root     root       3981 Mar 28 09:21 adduser.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 alsa
+drwxr-xr-x  2 root     root      36864 May 20 05:08 alternatives
+drwxr-xr-x  8 root     root       4096 May 20 05:08 apache2
+drwxr-xr-x  3 root     root       4096 May 20 04:23 apparmor
+drwxr-xr-x  9 root     root       4096 May 20 05:10 apparmor.d
+drwxr-xr-x  8 root     root       4096 May 19 01:52 apt
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 arp-scan
+drwxr-xr-x  3 root     root       4096 May 20 05:07 avahi
+-rw-r--r--  1 root     root       1997 May  8 19:23 bash.bashrc
+-rw-r--r--  1 root     root         45 May  1  2024 bash_completion
+drwxr-xr-x  2 root     root       4096 May 20 05:07 bash_completion.d
+-rw-r--r--  1 root     root        367 Apr 10  2024 bindresvport.blacklist
+drwxr-xr-x  2 root     root       4096 Jul  5  2024 binfmt.d
+drwxr-xr-x  2 root     root       4096 May 20 05:05 bluetooth
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 ca-certificates
+-rw-r--r--  1 root     root       6636 May 20 05:02 ca-certificates.conf
+-rw-r--r--  1 root     root       6288 Aug 18  2024 ca-certificates.conf.dpkg-old
+drwxr-s---  2 root     dip        4096 May 20 05:03 chatscripts
+drwxr-xr-x  2 root     root       4096 May 20 05:10 chromium
+drwxr-xr-x  2 root     root       4096 May 20 05:10 chromium.d
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 cifs-utils
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 cloud
+drwxr-xr-x  2 colord   colord     4096 Nov 28 08:01 colord
+drwxr-xr-x  2 root     root       4096 May 20 05:08 console-setup
+drwxr-xr-x  2 root     root       4096 May 20 05:02 cracklib
+drwx------  2 root     root       4096 Jul  5  2024 credstore
+drwx------  2 root     root       4096 Jul  5  2024 credstore.encrypted
+drwxr-xr-x  2 root     root       4096 May 20 05:02 cron.d
+drwxr-xr-x  2 root     root       4096 May 20 05:08 cron.daily
+drwxr-xr-x  2 root     root       4096 May 20 05:01 cron.hourly
+drwxr-xr-x  2 root     root       4096 May 20 05:01 cron.monthly
+-rw-r--r--  1 root     root       1042 Mar 26  2024 crontab
+drwxr-xr-x  2 root     root       4096 May 20 05:05 cron.weekly
+drwxr-xr-x  2 root     root       4096 May 20 05:01 cron.yearly
+drwxr-xr-x  2 root     root       4096 May 20 05:11 cryptsetup-initramfs
+drwxr-xr-x  2 root     root       4096 Mar 10  2024 cryptsetup-nuke-password
+-rw-r--r--  1 root     root         54 Aug 18  2024 crypttab
+drwxr-xr-x  2 root     root       4096 May 20 04:23 cupshelpers
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 dbus-1
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 dconf
+-rw-r--r--  1 root     root       2967 Jul  8  2024 debconf.conf
+-rw-r--r--  1 root     root         13 Aug 12  2024 debian_version
+drwxr-xr-x  3 root     root       4096 May 20 05:22 default
+-rw-r--r--  1 root     root       1706 Jun 27  2023 deluser.conf
+drwxr-xr-x  2 root     root       4096 Apr 25 05:50 depmod.d
+drwxr-xr-x  4 root     root       4096 May 20 05:05 dhcp
+drwxr-xr-x  2 root     root       4096 May 20 05:11 dictionaries-common
+-rw-r--r--  1 root     root        214 Apr  4  2020 dns2tcpd.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 doc-base
+drwxr-xr-x  4 root     root       4096 May 20 05:05 dpkg
+-rw-r--r--  1 root     root        685 May 20  2024 e2scrub.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 eac
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 emacs
+-rw-r--r--  1 root     root        700 May 16 00:03 environment
+drwxr-xr-x  2 root     root       4096 May 20 05:10 environment.d
+-rw-r--r--  1 root     root       1936 Mar 15 19:20 ethertypes
+drwxr-xr-x  2 root     root       4096 May 20 05:05 ettercap
+drwxr-xr-x  4 root     root       4096 May 20 04:11 firebird
+drwxr-xr-x  4 root     root       4096 May 20 05:10 firefox-esr
+drwxr-xr-x  4 root     root       4096 May 20 04:21 fonts
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 freetds
+-rw-r--r--  1 root     root        113 Aug 18  2024 fstab
+-rw-r--r--  1 root     root        725 Apr 27 02:10 fuse.conf
+-rw-r--r--  1 root     root       2584 Jul 31  2023 gai.conf
+drwxr-xr-x  3 root     root       4096 May 20 05:10 geoclue
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 ghostscript
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 glvnd
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 gnome-system-tools
+drwxr-xr-x  2 root     root       4096 May 20 05:00 gophish
+-rw-r--r--  1 root     root       3986 Mar  3 16:01 gprofng.rc
+drwxr-xr-x  2 root     root       4096 May 20 05:03 groff
+-rw-r--r--  1 root     root       1333 May 20 05:22 group
+-rw-r--r--  1 root     root       1312 May 20 05:09 group-
+drwxr-xr-x  2 root     root       4096 May 20 05:11 grub.d
+-rw-r-----  1 root     shadow     1116 May 20 05:22 gshadow
+-rw-r-----  1 root     shadow     1098 May 20 05:09 gshadow-
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 gss
+drwxr-xr-x  2 root     root       4096 May 20 05:09 gtk-2.0
+drwxr-xr-x  2 root     root       4096 May 20 05:09 gtk-3.0
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 guymager
+drwxr-xr-x  2 root     root       4096 May 20 05:10 gvm
+-rw-r--r--  1 root     root       4448 Apr 16  2024 hdparm.conf
+-rw-r--r--  1 root     root          9 Aug 12  2024 host.conf
+-r--r--r--  1 root     root          5 Aug 18  2024 hostname
+-rw-r--r--  1 root     root        195 May 20 06:49 hosts
+-rw-r--r--  1 root     root        411 Aug 18  2024 hosts.allow
+-rw-r--r--  1 root     root        711 Aug 18  2024 hosts.deny
+-rw-r--r--  1 root     root        171 Jun 22  2024 idmapd.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 ifplugd
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 ImageMagick-6
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 inetsim
+drwxr-xr-x  2 root     root       4096 May 20 05:23 init.d
+drwxr-xr-x  5 root     root       4096 May 20 05:04 initramfs-tools
+-rw-r--r--  1 root     root       1875 Mar 23  2024 inputrc
+drwxr-xr-x  2 root     root       4096 May 20 05:05 insserv.conf.d
+drwxr-xr-x  2 root     root       4096 May 20 05:08 ipp-usb
+-rw-r--r--  1 root     root        610 Mar 14 13:55 ipsec.conf
+drwxr-xr-x 11 root     root       4096 Aug 18  2024 ipsec.d
+-rw-------  1 root     root        175 Mar 10  2024 ipsec.secrets
+-rw-r--r--  1 root     root         30 Aug 12  2024 issue
+-rw-r--r--  1 root     root         23 Aug 12  2024 issue.net
+drwxr-xr-x  5 root     root       4096 May 20 05:03 java-17-openjdk
+drwxr-xr-x  5 root     root       4096 May 20 05:04 java-21-openjdk
+drwxr-xr-x  5 root     root       4096 Aug 18  2024 java-23-openjdk
+drwxr-xr-x  2 root     root       4096 May 20 05:01 john
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 kali-menu
+drwxr-xr-x  6 root     root       4096 Aug 18  2024 kernel
+drwxr-xr-x  2 root     root       4096 Feb  6  2024 keyutils
+drwxr-xr-x  2 root     root       4096 May 20 05:01 kismet
+drwxr-xr-x  2 root     root       4096 May 20 04:23 ldap
+-rw-r--r--  1 root     root     105678 May 20 05:53 ld.so.cache
+-rw-r--r--  1 root     root         34 Apr 10  2024 ld.so.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:00 ld.so.conf.d
+-rw-r--r--  1 root     root      40645 Feb 25 22:29 legion.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 letsencrypt
+-rw-r--r--  1 root     root         26 Feb 21  2024 libao.conf
+-rw-r--r--  1 root     root        191 Jun 11  2024 libaudit.conf
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 libblockdev
+-rw-r--r--  1 root     root      62283 Mar 19 12:55 libccid_Info.plist
+drwxr-xr-x  2 root     root       4096 May 20 05:04 libibverbs.d
+drwxr-xr-x  2 root     root       4096 May 20 05:00 libnl-3
+drwxr-xr-x  2 root     root       4096 May 20 05:07 libpaper.d
+drwxr-xr-x  3 root     root       4096 May 20 05:04 lightdm
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 lighttpd
+-rw-r--r--  1 root     root       2996 Mar 14 18:56 locale.alias
+-rw-r--r--  1 root     root         52 Aug 18  2024 locale.conf
+-rw-r--r--  1 root     root       9580 May 20 04:22 locale.gen
+lrwxrwxrwx  1 root     root         36 Aug 18  2024 localtime -> /usr/share/zoneinfo/America/New_York
+drwxr-xr-x  6 root     root       4096 Aug 18  2024 logcheck
+-rw-r--r--  1 root     root       5939 Apr 19 06:20 login.defs
+-rw-r--r--  1 root     root        494 Jul 14  2024 logrotate.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:11 logrotate.d
+drwxr-xr-x  2 root     root       4096 May 20 05:00 macchanger
+-r--r--r--  1 root     root         33 Aug 18  2024 machine-id
+-rw-r--r--  1 root     root        111 Mar  1  2024 magic
+-rw-r--r--  1 root     root        111 Mar  1  2024 magic.mime
+-rw-r--r--  1 root     root      31559 May 23 01:50 mailcap
+-rw-r--r--  1 root     root        449 Jun  4  2024 mailcap.order
+-rw-r--r--  1 root     root       5230 Jun  5  2024 manpath.config
+-rw-r--r--  1 root     root      43413 Feb 27 13:50 matplotlibrc
+-rw-r--r--  1 root     root      78282 Mar  7 20:12 mime.types
+drwxr-xr-x  2 root     root       4096 May 20 05:00 minicom
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 miredo
+-rw-r--r--  1 root     root        264 Jul 26  2019 miredo.conf
+-rw-r--r--  1 root     root        813 May 20  2024 mke2fs.conf
+drwxr-xr-x  5 root     root       4096 May 20 04:16 ModemManager
+drwxr-xr-x  2 root     root       4096 May 20 04:23 modprobe.d
+-rw-r--r--  1 root     root        212 Aug 18  2024 modules
+drwxr-xr-x  2 root     root       4096 May 20 03:59 modules-load.d
+drwxr-xr-x  5 root     root       4096 May 20 05:03 mosquitto
+-rw-r--r--  1 root     root        282 Aug 12  2024 motd
+lrwxrwxrwx  1 root     root         19 Aug 18  2024 mtab -> ../proc/self/mounts
+-rw-r--r--  1 root     root      54621 Feb 17 16:37 multitail.conf
+drwxr-xr-x  4 root     root       4096 May 20 05:09 mysql
+-rw-r--r--  1 root     root      11763 Apr  6 10:11 nanorc
+-rw-r--r--  1 root     root        767 Apr 24  2024 netconfig
+drwxr-xr-x  2 root     root       4096 May 20 05:05 netsniff-ng
+drwxr-xr-x  7 root     root       4096 Aug 18  2024 network
+drwxr-xr-x  8 root     root       4096 May 20 05:05 NetworkManager
+-rw-r--r--  1 root     root         60 Aug 18  2024 networks
+-rw-r--r--  1 root     root       1543 May 20 05:11 nfs.conf
+drwxr-xr-x  2 root     root       4096 Jun 22  2024 nfs.conf.d
+-rwxr-xr-x  1 root     root        243 Jul 24  2024 nftables.conf
+drwxr-xr-x  8 root     root       4096 May 20 04:21 nginx
+-rw-r--r--  1 root     root       3563 Feb 23  2023 nikto.conf
+-rw-r--r--  1 root     root       1726 Apr  6  2024 nsisconf.nsh
+-rw-r--r--  1 root     root        574 May 20 05:22 nsswitch.conf
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 ntpsec
+drwxr-xr-x  2 root     root       4096 Aug  9  2023 ODBCDataSources
+-rw-r--r--  1 root     root          0 Aug  9  2023 odbc.ini
+-rw-r--r--  1 root     root          0 Aug 18  2024 odbcinst.ini
+drwxr-xr-x  2 root     root       4096 May 20 05:00 openal
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 OpenCL
+drwxr-xr-x  2 root     root       4096 May 20 05:01 openni2
+drwxr-xr-x  2 root     root       4096 May 20 05:08 opensc
+drwxr-xr-x  3 root     root       4096 May 20 05:09 openvas
+drwxr-xr-x  4 root     root       4096 May 20 05:04 openvpn
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 opt
+lrwxrwxrwx  1 root     root         21 May 15 21:57 os-release -> ../usr/lib/os-release
+-rw-r--r--  1 root     root        552 Apr  8  2024 pam.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:23 pam.d
+-rw-r--r--  1 root     root          3 Aug 18  2024 papersize
+-rw-r--r--  1 root     root       1309 Mar 28 16:29 paperspecs
+-rw-r--r--  1 root     root       3304 May 20 05:09 passwd
+-rw-r--r--  1 root     root       3270 May 20 05:09 passwd-
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 perl
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 php
+drwxr-xr-x  2 root     root       4096 May 20 05:04 plymouth
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 polkit-1
+drwxr-xr-x  4 postgres postgres   4096 May 20 05:09 postgresql
+drwxr-xr-x  3 root     root       4096 May 20 05:04 postgresql-common
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 powershell-empire
+drwxr-xr-x  8 root     dip        4096 May 20 05:03 ppp
+-rw-r--r--  1 root     root        828 Aug 12  2024 profile
+drwxr-xr-x  2 root     root       4096 May 20 05:09 profile.d
+-rw-r--r--  1 root     root       3144 Oct 17  2022 protocols
+-rw-r--r--  1 root     root       5847 Jan 26  2024 proxychains4.conf
+drwxr-xr-x  5 root     root       4096 May 20 05:09 pulse
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 python2.7
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 python3
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 python3.11
+drwxr-xr-x  2 root     root       4096 May 20 04:23 python3.13
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 radcli
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc0.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc1.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc2.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc3.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc4.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc5.d
+drwxr-xr-x  2 root     root       4096 May 20 05:23 rc6.d
+drwxr-xr-x  2 root     root       4096 May 20 05:02 rcS.d
+drwxr-xr-x  2 root     root       4096 May 20 05:01 reader.conf.d
+-rw-r--r--  1 root     root        373 Mar 12  2024 rearj.cfg
+drwxrws---  2 redis    redis      4096 May 20 05:09 redis
+-rw-r--r--  1 root     root       2431 Jan  2  2017 redsocks.conf
+-rw-r--r--  1 root     root       1787 Feb  6  2024 request-key.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:10 request-key.d
+-rw-r--r--  1 root     root         69 May 25 23:47 resolv.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:10 responder
+lrwxrwxrwx  1 root     root         13 Dec 18 09:37 rmt -> /usr/sbin/rmt
+-rw-r--r--  1 root     root        911 Oct 17  2022 rpc
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 runit
+drwxr-xr-x  2 root     root       4096 May 20 05:21 samba
+drwxr-xr-x  3 root     root      12288 May 20 05:11 sane.d
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 scalpel
+-rw-r--r--  1 root     root       3663 Jun 19  2016 screenrc
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 sddm.conf.d
+-rw-r--r--  1 root     root        694 Aug  7  2024 searchsploit_rc
+drwxr-xr-x  4 root     root       4096 May 20 05:09 security
+drwxr-xr-x  2 root     root       4096 May 20 04:00 selinux
+-rw-r--r--  1 root     root      10749 Apr 12 08:35 sensors3.conf
+drwxr-xr-x  2 root     root       4096 May 20 04:21 sensors.d
+-rw-r--r--  1 root     root      12990 Mar 15 18:55 services
+drwxr-xr-x  3 root     root       4096 May 20 05:00 sgml
+-rw-r-----  1 root     shadow     1457 May 20 05:09 shadow
+-rw-r-----  1 root     shadow     1428 Aug 18  2024 shadow-
+-rw-r--r--  1 root     root        217 May 20 05:11 shells
+drwxr-xr-x  5 root     root       4096 May 20 05:09 skel
+-rw-r--r--  1 root     root       6136 Nov 30  2023 smartd.conf
+drwxr-xr-x  4 root     root       4096 Aug 18  2024 smartmontools
+-rw-r--r--  1 root     root       1226 Mar 26  2024 smi.conf
+drwxr-xr-x  3 root     root       4096 May 20 05:05 snmp
+drwxr-xr-x  4 root     root       4096 May 20 05:09 speech-dispatcher
+drwxr-xr-x  2 root     root       4096 May 20 04:21 sqlmap
+drwxr-xr-x  4 root     root       4096 May 20 05:08 ssh
+drwxr-xr-x  4 root     root       4096 May 20 05:00 ssl
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 sslsplit
+-rw-r--r--  1 root     root        281 Mar 10  2024 strongswan.conf
+drwxr-xr-x  3 root     root       4096 May 20 05:07 strongswan.d
+drwxr-xr-x  2 root     root       4096 May 20 05:04 stunnel
+-rw-r--r--  1 root     root         18 Aug 18  2024 subgid
+-rw-r--r--  1 root     root          0 Aug 18  2024 subgid-
+-rw-r--r--  1 root     root         18 Aug 18  2024 subuid
+-rw-r--r--  1 root     root          0 Aug 18  2024 subuid-
+drwxr-xr-x  2 root     root       4096 May 20 05:08 subversion
+-rw-r--r--  1 root     root       4337 Feb  9 14:13 sudo.conf
+-r--r-----  1 root     root       1714 Jan 26  2024 sudoers
+drwxr-xr-x  2 root     root       4096 May 20 05:09 sudoers.d
+-rw-r--r--  1 root     root       9804 Mar 12  2024 sudo_logsrvd.conf
+drwxr-xr-x  2 root     root       4096 May 20 05:01 supercat
+drwxr-xr-x  4 root     root       4096 May 20 04:04 sv
+drwxr-xr-x  2 root     root       4096 May 20 04:02 sysctl.d
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 sysstat
+drwxr-xr-x  5 root     root       4096 May 20 04:00 systemd
+-rw-------  1 root     root         32 Dec 12 08:17 tenable_tag
+drwxr-xr-x  2 root     root       4096 May 20 04:01 terminfo
+drwxr-xr-x  8 root     root       4096 Aug 18  2024 texmf
+drwxr-xr-x  3 root     root       4096 May 20 05:09 theHarvester
+-rw-r--r--  1 root     root       1493 Jul  5  2024 tightvncserver.conf
+-rw-r--r--  1 root     root         17 May 20 04:23 timezone
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 timidity
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 tmpfiles.d
+-rw-r--r--  1 root     root        938 Sep  9  2019 ts.conf
+-rw-r--r--  1 root     root       1259 Mar 31 05:25 ucf.conf
+drwxr-xr-x  4 root     root       4096 May 20 05:03 udev
+drwxr-xr-x  2 root     root       4096 May 20 05:11 udisks2
+drwxr-xr-x  3 root     root       4096 Aug 18  2024 ufw
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 unicornscan
+-rw-r--r--  1 root     root        583 Nov 21  2022 updatedb.conf
+drwxr-xr-x  2 root     root       4096 May 20 04:00 update-motd.d
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 UPower
+-rw-r--r--  1 root     root       1523 May 24  2024 usb_modeswitch.conf
+drwxr-xr-x  2 root     root       4096 May 24  2024 usb_modeswitch.d
+lrwxrwxrwx  1 root     root         16 Aug 18  2024 vconsole.conf -> default/keyboard
+-rw-r--r--  1 root     root         51 Mar  7  2022 vdpau_wrapper.cfg
+drwxr-xr-x  2 root     root       4096 May 20 05:02 vim
+drwx------  2 root     root       4096 May 20 05:05 vpnc
+drwxr-xr-x  5 root     root       4096 Aug 18  2024 vulkan
+-rw-r--r--  1 root     root       4942 Mar 17  2024 wgetrc
+drwxr-xr-x  2 root     root       4096 May 16  2024 wireshark
+drwxr-xr-x  2 root     root       4096 May 20 05:05 wpa_supplicant
+drwxr-xr-x 11 root     root       4096 May 20 05:02 X11
+-rw-r--r--  1 root     root        681 Jan 24  2024 xattr.conf
+drwxr-xr-x 17 root     root       4096 May 20 05:09 xdg
+drwxr-xr-x  2 root     root       4096 May 20 05:10 xfce4
+drwxr-xr-x  2 root     root       4096 May 20 05:07 xml
+drwxr-xr-x  2 root     root       4096 Aug 18  2024 xrdp
+drwxr-xr-x  2 root     root       4096 May 20 04:21 zsh
+-rw-r--r--  1 root     root        460 Jan 20  2023 zsh_command_not_found
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc]
+└─$ cd logrotate.d
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ ll
+total 76
+-rw-r--r-- 1 root root  120 Apr 25  2024 alternatives
+-rw-r--r-- 1 root root  397 Jul  7  2024 apache2
+-rw-r--r-- 1 root root  173 Jun 20  2024 apt
+-rw-r--r-- 1 root root   91 Jan  4  2024 bootlog
+-rw-r--r-- 1 root root  130 Jun 22  2020 btmp
+-rw-r--r-- 1 root root  112 Apr 25  2024 dpkg
+-rw-r--r-- 1 root root  368 Apr  8 11:00 gvmd
+-rw-r--r-- 1 root root   89 Jun 17  2018 macchanger
+-rw-r--r-- 1 root root 1859 Jul 12  2024 mariadb
+-rw-r--r-- 1 root root  252 Sep 25  2023 mosquitto
+-rw-r--r-- 1 root root  329 May  5  2024 nginx
+-rw-r--r-- 1 root root  291 Jun 19  2024 openvas-scanner
+-rw-r--r-- 1 root root  173 Jul 31  2023 postgresql-common
+-rw-r--r-- 1 root root   94 Apr 20  2024 ppp
+-rw-r--r-- 1 root root  146 Jan  9  2024 redis-server
+-rw-r--r-- 1 root root  132 Sep 10  2020 sane-utils
+-rw-r--r-- 1 root root  677 Oct  4  2023 speech-dispatcher
+-rw-r--r-- 1 root root  246 Apr 11  2024 stunnel4
+-rw-r--r-- 1 root root  145 Jul 26  2021 wtmp
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ sudo nano myapp                
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ sudo nano myapp
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/etc/logrotate.d]
+└─$ cd                  
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ mkdir -p ~/scripts
+
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ ll
+total 76
+-rw-rw-r-- 1 kali kali  7748 May 22 01:18 01.txt
+drwxr-xr-x 2 kali kali  4096 Feb 14 08:32 Desktop
+drwxr-xr-x 4 kali kali  4096 May 22 00:23 Documents
+drwxr-xr-x 6 kali kali 12288 May 19 05:22 Downloads
+drwxrwxr-x 2 kali kali  4096 May 19 01:59 log-practice
+drwxrwxr-x 2 kali kali  4096 May 16 08:27 logs
+drwxrwxr-x 5 kali kali  4096 May 16 00:45 maven-mvnd-1.0.2-linux-amd64
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Music
+-rw-rw-r-- 1 kali kali   649 May 23 03:22 myapp_today.log
+-rw------- 1 kali kali   108 May 21 05:14 nohup.out
+-rw-rw-r-- 1 kali kali    54 May 21 04:58 nohup.txt
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Pictures
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Public
+drwxrwxr-x 2 kali kali  4096 May 26 01:17 scripts
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Templates
+drwxr-xr-x 2 kali kali  4096 Nov 28 08:01 Videos
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd scripts    
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ ll
+total 0
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ nano hello.sh
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ chmod +x hello.sh
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ crontab -e       
+no crontab for kali - using an empty one
+Select an editor.  To change later, run select-editor again.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+
+Choose 1-3 [1]: 
+crontab: installing new crontab
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ tail -f /var/log        
+tail: error reading '/var/log': Is a directory
+tail: /var/log: cannot follow end of this type of file; giving up on this name
+tail: no files remaining
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ tail -f /var/log ll
+==> /var/log <==
+tail: error reading '/var/log': Is a directory
+tail: /var/log: cannot follow end of this type of file; giving up on this name
+tail: cannot open 'll' for reading: No such file or directory
+tail: no files remaining
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ cat ~/cron_test.log
+
+Cron Ran at Mon May 26 01:22:01 AM EDT 2025
+Cron Ran at Mon May 26 01:24:01 AM EDT 2025
+Cron Ran at Mon May 26 01:26:01 AM EDT 2025
+Cron Ran at Mon May 26 01:28:01 AM EDT 2025
+Cron Ran at Mon May 26 01:30:02 AM EDT 2025
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ nano hello.sh      
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ tail -f /var/log/syslog
+
+tail: cannot open '/var/log/syslog' for reading: No such file or directory
+tail: no files remaining
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ sudo logrotate -d /etc/logrotate.d/myapp
+
+[sudo] password for kali: 
+warning: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+reading config file /etc/logrotate.d/myapp
+Reading state from file: /var/lib/logrotate/status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 1 logs
+
+rotating pattern: /opt/myapp/app.log after 1 days empty log files are not rotated, (7 rotations), old logs are removed
+considering log /opt/myapp/app.log
+Creating new state
+  Now: 2025-05-26 01:33
+  Last rotated at 2025-05-26 01:00
+  log does not need rotating (log has already been rotated)
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ cat ~/cron_test.log                     
+
+Cron Ran at Mon May 26 01:22:01 AM EDT 2025
+Cron Ran at Mon May 26 01:24:01 AM EDT 2025
+Cron Ran at Mon May 26 01:26:01 AM EDT 2025
+Cron Ran at Mon May 26 01:28:01 AM EDT 2025
+Cron Ran at Mon May 26 01:30:02 AM EDT 2025
+Cron Ran at Mon May 26 01:32:01 AM EDT 2025
+Cron Ran at Mon May 26 01:34:01 AM EDT 2025
+Cron Ran at Mon May 26 01:36:01 AM EDT 2025
+Cron Ran at Mon May 26 01:38:01 AM EDT 2025
+Cron Ran at Mon May 26 01:40:01 AM EDT 2025
+Cron Ran at Mon May 26 01:42:01 AM EDT 2025
+Cron Ran at Mon May 26 01:44:01 AM EDT 2025
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ crontab -e                              
+crontab: installing new crontab
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ cat ~/cron_test.log
+
+Cron Ran at Mon May 26 01:22:01 AM EDT 2025
+Cron Ran at Mon May 26 01:24:01 AM EDT 2025
+Cron Ran at Mon May 26 01:26:01 AM EDT 2025
+Cron Ran at Mon May 26 01:28:01 AM EDT 2025
+Cron Ran at Mon May 26 01:30:02 AM EDT 2025
+Cron Ran at Mon May 26 01:32:01 AM EDT 2025
+Cron Ran at Mon May 26 01:34:01 AM EDT 2025
+Cron Ran at Mon May 26 01:36:01 AM EDT 2025
+Cron Ran at Mon May 26 01:38:01 AM EDT 2025
+Cron Ran at Mon May 26 01:40:01 AM EDT 2025
+Cron Ran at Mon May 26 01:42:01 AM EDT 2025
+Cron Ran at Mon May 26 01:44:01 AM EDT 2025
+Cron Ran at Mon May 26 01:46:01 AM EDT 2025
+                                                                                                                                                                      
+
+┌──(kali㉿kali)-[~/scripts]
+└─$ 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~/scripts]
+└─$ crontab -e         
+crontab: installing new crontab
+"/tmp/crontab.0v69Wx/crontab":0: bad minute
+errors in crontab file, can't install.
+Do you want to retry the same edit? (y/n) y
+crontab: installing new crontab
+...
+..
+
+.
+.
+.
+..
+sh: corrupt history file /home/kali/.zsh_history
+┌──(kali㉿kali)-[~]
+└─$ cd var            
+cd: no such file or directory: var
+                                                                                                                                                                      
+┌──(kali㉿kali)-[~]
+└─$ cd /var           
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var]
+└─$ ll              
+total 40
+drwxr-xr-x  2 root root  4096 May 25 23:47 backups
+drwxr-xr-x 19 root root  4096 Nov 28 08:01 cache
+drwxr-xr-x 76 root root  4096 May 20 05:11 lib
+drwxrwsr-x  2 root staff 4096 Aug 12  2024 local
+lrwxrwxrwx  1 root root     9 Aug 18  2024 lock -> /run/lock
+drwxr-xr-x 20 root root  4096 May 26 01:14 log
+drwxrwsr-x  2 root mail  4096 Aug 18  2024 mail
+drwxr-xr-x  2 root root  4096 Aug 18  2024 opt
+lrwxrwxrwx  1 root root     4 Aug 18  2024 run -> /run
+drwxr-xr-x  4 root root  4096 Aug 18  2024 spool
+drwxrwxrwt  8 root root  4096 May 26 01:09 tmp
+drwxr-xr-x  4 root root  4096 May 15 05:35 www
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var]
+└─$ cd log 
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var/log]
+└─$ ll
+total 2100
+-rw-r--r--  1 root              root              62449 May 20 05:11 alternatives.log
+-rw-r--r--  1 root              root              11527 May 15 23:44 alternatives.log.1
+-rw-r--r--  1 root              root               7399 Aug 18  2024 alternatives.log.2.gz
+drwxr-x---  2 root              adm                4096 May 16 00:43 apache2
+drwxr-xr-x  2 root              root               4096 May 23 02:59 apt
+-rw-------  1 root              root                  0 May 26 00:19 boot.log
+-rw-------  1 root              root               7476 May 26 00:19 boot.log.1
+-rw-------  1 root              root              21008 May 23 00:04 boot.log.2
+-rw-------  1 root              root              14033 May 22 00:06 boot.log.3
+-rw-------  1 root              root              14082 May 21 02:24 boot.log.4
+-rw-------  1 root              root               7916 May 20 03:32 boot.log.5
+-rw-------  1 root              root              27048 May 19 00:40 boot.log.6
+-rw-------  1 root              root              43767 May 16 00:43 boot.log.7
+-rw-rw----  1 root              utmp               2304 May 21 06:31 btmp
+-rw-rw----  1 root              utmp                  0 Feb 14 07:57 btmp.1
+-rw-r--r--  1 root              root            1414263 May 23 02:59 dpkg.log
+-rw-r--r--  1 root              root                461 May 15 23:44 dpkg.log.1
+-rw-r--r--  1 root              root             142428 Dec 12 10:54 dpkg.log.2.gz
+-rw-r--r--  1 root              root               7120 May 20 05:04 fontconfig.log
+drwxr-xr-x  2 _gvm              _gvm               4096 Jun 19  2024 gvm
+drwx------  3 inetsim           inetsim            4096 Aug 18  2024 inetsim
+drwxr-sr-x+ 3 root              systemd-journal    4096 Nov 28 08:01 journal
+-rw-rw-r--  1 root              utmp                  0 Aug 18  2024 lastlog
+drwx--x--x  2 root              root               4096 May 26 01:14 lightdm
+-rw-r--r--  1 root              root                396 May 25 23:47 macchanger.log
+-rw-r--r--  1 root              root                 70 May 21 23:26 macchanger.log.1.gz
+-rw-r--r--  1 root              root                 62 May 15 01:06 macchanger.log.2.gz
+-rw-r--r--  1 root              root                 59 Feb 14 07:49 macchanger.log.3.gz
+-rw-r--r--  1 root              root                 59 Jan 14 07:37 macchanger.log.4.gz
+drwxr-xr-x  2 mosquitto         root               4096 Mar 11  2024 mosquitto
+drwxr-xr-x  2 root              adm                4096 May 21 02:24 nginx
+drwxr-xr-x  2 _gvm              _gvm               4096 Jun 21  2024 notus-scanner
+drwxr-xr-x  2 root              root               4096 Jul 18  2024 openvpn
+drwxrwxr-t  2 root              postgres           4096 May 21 02:24 postgresql
+drwx------  2 root              root               4096 Aug 18  2024 private
+lrwxrwxrwx  1 root              root                 39 Aug 18  2024 README -> ../../usr/share/doc/systemd/README.logs
+drwxr-s---  2 redis             adm                4096 Aug 18  2024 redis
+drwxr-xr-x  4 root              root               4096 May 20 04:04 runit
+drwxr-x---  2 root              adm                4096 Jun 10  2024 samba
+drwx------  2 speech-dispatcher root               4096 Mar 13  2024 speech-dispatcher
+drwxr-xr-x  2 stunnel4          stunnel4           4096 Aug 18  2024 stunnel4
+drwxr-xr-x  2 root              root               4096 Jan 15  2024 sysstat
+-rw-rw-r--  1 root              utmp              75648 May 25 23:47 wtmp
+-rw-r--r--  1 root              root              28738 May 26 01:17 Xorg.0.log
+-rw-r--r--  1 root              root              58742 May 23 07:24 Xorg.0.log.old
+-rw-r--r--  1 root              root              26682 May 26 01:17 Xorg.1.log
+-rw-r--r--  1 root              root              26547 May 26 00:59 Xorg.1.log.old
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var/log]
+└─$ cd  apt
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var/log/apt]
+└─$ ll
+total 888
+-rw-r--r-- 1 root root 101964 May 23 02:59 eipp.log.xz
+-rw-r--r-- 1 root root 105338 May 23 02:59 history.log
+-rw-r--r-- 1 root root    139 May 19 02:25 history.log.1.gz
+-rw-r--r-- 1 root root  29768 Aug 18  2024 history.log.2.gz
+-rw-r----- 1 root adm  543829 May 23 02:59 term.log
+-rw-r----- 1 root adm     319 May 19 02:25 term.log.1.gz
+-rw-r----- 1 root adm  108460 Aug 18  2024 term.log.2.gz
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var/log/apt]
+└─$ cd ..  
+                                                                                                                                                                      
+┌──(kali㉿kali)-[/var/log]
+└─$ ll
+total 2100
+-rw-r--r--  1 root              root              62449 May 20 05:11 alternatives.log
+-rw-r--r--  1 root              root              11527 May 15 23:44 alternatives.log.1
+-rw-r--r--  1 root              root               7399 Aug 18  2024 alternatives.log.2.gz
+drwxr-x---  2 root              adm                4096 May 16 00:43 apache2
+drwxr-xr-x  2 root              root               4096 May 23 02:59 apt
+-rw-------  1 root              root                  0 May 26 00:19 boot.log
+-rw-------  1 root              root               7476 May 26 00:19 boot.log.1
+-rw-------  1 root              root              21008 May 23 00:04 boot.log.2
+-rw-------  1 root              root              14033 May 22 00:06 boot.log.3
+-rw-------  1 root              root              14082 May 21 02:24 boot.log.4
+-rw-------  1 root              root               7916 May 20 03:32 boot.log.5
+-rw-------  1 root              root              27048 May 19 00:40 boot.log.6
+-rw-------  1 root              root              43767 May 16 00:43 boot.log.7
+-rw-rw----  1 root              utmp               2304 May 21 06:31 btmp
+-rw-rw----  1 root              utmp                  0 Feb 14 07:57 btmp.1
+-rw-r--r--  1 root              root            1414263 May 23 02:59 dpkg.log
+-rw-r--r--  1 root              root                461 May 15 23:44 dpkg.log.1
+-rw-r--r--  1 root              root             142428 Dec 12 10:54 dpkg.log.2.gz
+-rw-r--r--  1 root              root               7120 May 20 05:04 fontconfig.log
+drwxr-xr-x  2 _gvm              _gvm               4096 Jun 19  2024 gvm
+drwx------  3 inetsim           inetsim            4096 Aug 18  2024 inetsim
+drwxr-sr-x+ 3 root              systemd-journal    4096 Nov 28 08:01 journal
+-rw-rw-r--  1 root              utmp                  0 Aug 18  2024 lastlog
+drwx--x--x  2 root              root               4096 May 26 01:14 lightdm
+-rw-r--r--  1 root              root                396 May 25 23:47 macchanger.log
+-rw-r--r--  1 root              root                 70 May 21 23:26 macchanger.log.1.gz
+-rw-r--r--  1 root              root                 62 May 15 01:06 macchanger.log.2.gz
+-rw-r--r--  1 root              root                 59 Feb 14 07:49 macchanger.log.3.gz
+-rw-r--r--  1 root              root                 59 Jan 14 07:37 macchanger.log.4.gz
+drwxr-xr-x  2 mosquitto         root               4096 Mar 11  2024 mosquitto
+drwxr-xr-x  2 root              adm                4096 May 21 02:24 nginx
+drwxr-xr-x  2 _gvm              _gvm               4096 Jun 21  2024 notus-scanner
+drwxr-xr-x  2 root              root               4096 Jul 18  2024 openvpn
+drwxrwxr-t  2 root              postgres           4096 May 21 02:24 postgresql
+drwx------  2 root              root               4096 Aug 18  2024 private
+lrwxrwxrwx  1 root              root                 39 Aug 18  2024 README -> ../../usr/share/doc/systemd/README.logs
+drwxr-s---  2 redis             adm                4096 Aug 18  2024 redis
+drwxr-xr-x  4 root              root               4096 May 20 04:04 runit
+drwxr-x---  2 root              adm                4096 Jun 10  2024 samba
+drwx------  2 speech-dispatcher root               4096 Mar 13  2024 speech-dispatcher
+drwxr-xr-x  2 stunnel4          stunnel4           4096 Aug 18  2024 stunnel4
+drwxr-xr-x  2 root              root               4096 Jan 15  2024 sysstat
+-rw-rw-r--  1 root              utmp              75648 May 25 23:47 wtmp
+-rw-r--r--  1 root              root              28738 May 26 01:17 Xorg.0.log
+-rw-r--r--  1 root              root              58742 May 23 07:24 Xorg.0.log.old
+-rw-r--r--  1 root              root              26682 May 26 01:17 Xorg.1.log
+-rw-r--r--  1 root              root              26547 May 26 00:59 Xorg.1.log.old
