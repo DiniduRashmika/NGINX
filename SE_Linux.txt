@@ -1,0 +1,1856 @@
+buntu@UbuntuOS:~$ sudo su
+[sudo] password for ubuntu: 
+root@UbuntuOS:/home/ubuntu# ls -ld
+drwxr-x--- 16 ubuntu ubuntu 4096 May 27 05:00 .
+root@UbuntuOS:/home/ubuntu# ls -ldZ
+drwxr-x--- 16 ubuntu ubuntu ? 4096 May 27 05:00 .
+root@UbuntuOS:/home/ubuntu# ls -ltr
+total 36
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Desktop
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Templates
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Public
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Downloads
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Pictures
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Music
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Documents
+drwxr-xr-x 2 ubuntu ubuntu 4096 May 26 12:09 Videos
+drwx------ 4 ubuntu ubuntu 4096 May 26 12:09 snap
+root@UbuntuOS:/home/ubuntu# ls -ld
+drwxr-x--- 16 ubuntu ubuntu 4096 May 27 05:00 .
+root@UbuntuOS:/home/ubuntu# ls -ldZ
+drwxr-x--- 16 ubuntu ubuntu ? 4096 May 27 05:00 .
+root@UbuntuOS:/home/ubuntu# sudo apt install selinux -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package selinux
+root@UbuntuOS:/home/ubuntu# sudo apt install selinux 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package selinux
+root@UbuntuOS:/home/ubuntu# sudo apt install selinux selinux-policy-default auditd policycoreutils selinux-utils
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package selinux
+root@UbuntuOS:/home/ubuntu# ^C
+root@UbuntuOS:/home/ubuntu# sudo apt update
+sudo apt install policycoreutils selinux-basics selinux-policy-default auditd
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://lk.archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://lk.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:4 http://lk.archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 1s (89.6 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  checkpolicy gawk libauparse0t64 libblas3 libgfortran5 liblapack3 libsigsegv2
+  m4 policycoreutils-dev policycoreutils-python-utils python3-audit
+  python3-networkx python3-numpy python3-selinux python3-semanage
+  python3-sepolgen python3-sepolicy python3-setools selinux-policy-dev
+  selinux-utils semodule-utils setools
+Suggested packages:
+  audispd-plugins gawk-doc m4-doc python-networkx-doc python3-gdal
+  python3-matplotlib python3-pydot python3-pygraphviz python3-scipy gfortran
+  python3-dev python3-pytest logcheck syslog-summary setools-gui
+The following NEW packages will be installed:
+  auditd checkpolicy gawk libauparse0t64 libblas3 libgfortran5 liblapack3
+  libsigsegv2 m4 policycoreutils policycoreutils-dev
+  policycoreutils-python-utils python3-audit python3-networkx python3-numpy
+  python3-selinux python3-semanage python3-sepolgen python3-sepolicy
+  python3-setools selinux-basics selinux-policy-default selinux-policy-dev
+  selinux-utils semodule-utils setools
+0 upgraded, 26 newly installed, 0 to remove and 1 not upgraded.
+Need to get 16.4 MB of archives.
+After this operation, 73.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://lk.archive.ubuntu.com/ubuntu noble/main amd64 libsigsegv2 amd64 2.14-1ubuntu2 [15.0 kB]
+Get:2 http://lk.archive.ubuntu.com/ubuntu noble/main amd64 gawk amd64 1:5.2.1-2build3 [463 kB]
+Get:3 http://lk.archive.ubuntu.com/ubuntu noble-updates/main amd64 libauparse0t64 amd64 1:3.1.2-2.1build1.1 [58.9 kB]
+Get:4 http://lk.archive.ubuntu.com/ubuntu noble-updates/main amd64 auditd amd64 1:3.1.2-2.1build1.1 [215 kB]
+Get:5 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 checkpolicy amd64 3.5-1 [260 kB]
+Get:6 http://lk.archive.ubuntu.com/ubuntu noble-updates/main amd64 libblas3 amd64 3.12.0-3build1.1 [238 kB]
+Get:7 http://lk.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgfortran5 amd64 14.2.0-4ubuntu2~24.04 [916 kB]
+Get:8 http://lk.archive.ubuntu.com/ubuntu noble-updates/main amd64 liblapack3 amd64 3.12.0-3build1.1 [2,646 kB]
+Get:9 http://lk.archive.ubuntu.com/ubuntu noble/main amd64 m4 amd64 1.4.19-4build1 [244 kB]                                    
+Get:10 http://lk.archive.ubuntu.com/ubuntu noble-updates/universe amd64 selinux-utils amd64 3.5-2ubuntu2.1 [108 kB]            
+Get:11 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 policycoreutils amd64 3.5-2 [153 kB]                           
+Get:12 http://lk.archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-selinux amd64 3.5-2ubuntu2.1 [165 kB]          
+Get:13 http://lk.archive.ubuntu.com/ubuntu noble/main amd64 python3-networkx all 2.8.8-1ubuntu1 [1,468 kB]                     
+Get:14 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 python3-setools amd64 4.4.4-1build1 [521 kB]                   
+Get:15 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 semodule-utils amd64 3.5-1 [19.1 kB]                           
+Get:16 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 python3-sepolgen all 3.5-1 [461 kB]                            
+Get:17 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 python3-sepolicy all 3.5-1 [34.5 kB]                           
+Get:18 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 policycoreutils-dev amd64 3.5-1 [138 kB]                       
+Get:19 http://lk.archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-audit amd64 1:3.1.2-2.1build1.1 [63.0 kB]      
+Get:20 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 python3-semanage amd64 3.5-1build5 [58.0 kB]                   
+Get:21 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 policycoreutils-python-utils all 3.5-1 [96.1 kB]               
+Get:22 http://lk.archive.ubuntu.com/ubuntu noble/main amd64 python3-numpy amd64 1:1.26.4+ds-6ubuntu1 [4,437 kB]                
+Get:23 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 selinux-basics all 0.5.9 [12.6 kB]                             
+Get:24 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 selinux-policy-default all 2:2.20240202-1 [3,136 kB]           
+Get:25 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 selinux-policy-dev all 2:2.20240202-1 [408 kB]                 
+Get:26 http://lk.archive.ubuntu.com/ubuntu noble/universe amd64 setools amd64 4.4.4-1build1 [40.1 kB]                          
+Fetched 16.4 MB in 26s (618 kB/s)                                                                                              
+Selecting previously unselected package libsigsegv2:amd64.
+(Reading database ... 151500 files and directories currently installed.)
+Preparing to unpack .../libsigsegv2_2.14-1ubuntu2_amd64.deb ...
+Unpacking libsigsegv2:amd64 (2.14-1ubuntu2) ...
+Setting up libsigsegv2:amd64 (2.14-1ubuntu2) ...
+Selecting previously unselected package gawk.
+(Reading database ... 151507 files and directories currently installed.)
+Preparing to unpack .../00-gawk_1%3a5.2.1-2build3_amd64.deb ...
+Unpacking gawk (1:5.2.1-2build3) ...
+Selecting previously unselected package libauparse0t64:amd64.
+Preparing to unpack .../01-libauparse0t64_1%3a3.1.2-2.1build1.1_amd64.deb ...
+Adding 'diversion of /lib/x86_64-linux-gnu/libauparse.so.0 to /lib/x86_64-linux-gnu/libauparse.so.0.usr-is-merged by libauparse0
+t64'
+Adding 'diversion of /lib/x86_64-linux-gnu/libauparse.so.0.0.0 to /lib/x86_64-linux-gnu/libauparse.so.0.0.0.usr-is-merged by lib
+auparse0t64'
+Unpacking libauparse0t64:amd64 (1:3.1.2-2.1build1.1) ...
+Selecting previously unselected package auditd.
+Preparing to unpack .../02-auditd_1%3a3.1.2-2.1build1.1_amd64.deb ...
+Unpacking auditd (1:3.1.2-2.1build1.1) ...
+Selecting previously unselected package checkpolicy.
+Preparing to unpack .../03-checkpolicy_3.5-1_amd64.deb ...
+Unpacking checkpolicy (3.5-1) ...
+Selecting previously unselected package libblas3:amd64.
+Preparing to unpack .../04-libblas3_3.12.0-3build1.1_amd64.deb ...
+Unpacking libblas3:amd64 (3.12.0-3build1.1) ...
+Selecting previously unselected package libgfortran5:amd64.
+Preparing to unpack .../05-libgfortran5_14.2.0-4ubuntu2~24.04_amd64.deb ...
+Unpacking libgfortran5:amd64 (14.2.0-4ubuntu2~24.04) ...
+Selecting previously unselected package liblapack3:amd64.
+Preparing to unpack .../06-liblapack3_3.12.0-3build1.1_amd64.deb ...
+Unpacking liblapack3:amd64 (3.12.0-3build1.1) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../07-m4_1.4.19-4build1_amd64.deb ...
+Unpacking m4 (1.4.19-4build1) ...
+Selecting previously unselected package selinux-utils.
+Preparing to unpack .../08-selinux-utils_3.5-2ubuntu2.1_amd64.deb ...
+Unpacking selinux-utils (3.5-2ubuntu2.1) ...
+Selecting previously unselected package policycoreutils.
+Preparing to unpack .../09-policycoreutils_3.5-2_amd64.deb ...
+Unpacking policycoreutils (3.5-2) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../10-python3-selinux_3.5-2ubuntu2.1_amd64.deb ...
+Unpacking python3-selinux (3.5-2ubuntu2.1) ...
+Selecting previously unselected package python3-networkx.
+Preparing to unpack .../11-python3-networkx_2.8.8-1ubuntu1_all.deb ...
+Unpacking python3-networkx (2.8.8-1ubuntu1) ...
+Selecting previously unselected package python3-setools.
+Preparing to unpack .../12-python3-setools_4.4.4-1build1_amd64.deb ...
+Unpacking python3-setools (4.4.4-1build1) ...
+Selecting previously unselected package semodule-utils.
+Preparing to unpack .../13-semodule-utils_3.5-1_amd64.deb ...
+Unpacking semodule-utils (3.5-1) ...
+Selecting previously unselected package python3-sepolgen.
+Preparing to unpack .../14-python3-sepolgen_3.5-1_all.deb ...
+Unpacking python3-sepolgen (3.5-1) ...
+Selecting previously unselected package python3-sepolicy.
+Preparing to unpack .../15-python3-sepolicy_3.5-1_all.deb ...
+Unpacking python3-sepolicy (3.5-1) ...
+Selecting previously unselected package policycoreutils-dev.
+Preparing to unpack .../16-policycoreutils-dev_3.5-1_amd64.deb ...
+Unpacking policycoreutils-dev (3.5-1) ...
+Selecting previously unselected package python3-audit.
+Preparing to unpack .../17-python3-audit_1%3a3.1.2-2.1build1.1_amd64.deb ...
+Unpacking python3-audit (1:3.1.2-2.1build1.1) ...
+Selecting previously unselected package python3-semanage.
+Preparing to unpack .../18-python3-semanage_3.5-1build5_amd64.deb ...
+Unpacking python3-semanage (3.5-1build5) ...
+Selecting previously unselected package policycoreutils-python-utils.
+Preparing to unpack .../19-policycoreutils-python-utils_3.5-1_all.deb ...
+Unpacking policycoreutils-python-utils (3.5-1) ...
+Selecting previously unselected package python3-numpy.
+Preparing to unpack .../20-python3-numpy_1%3a1.26.4+ds-6ubuntu1_amd64.deb ...
+Unpacking python3-numpy (1:1.26.4+ds-6ubuntu1) ...
+Selecting previously unselected package selinux-basics.
+Preparing to unpack .../21-selinux-basics_0.5.9_all.deb ...
+Unpacking selinux-basics (0.5.9) ...
+Selecting previously unselected package selinux-policy-default.
+Preparing to unpack .../22-selinux-policy-default_2%3a2.20240202-1_all.deb ...
+Unpacking selinux-policy-default (2:2.20240202-1) ...
+Selecting previously unselected package selinux-policy-dev.
+Preparing to unpack .../23-selinux-policy-dev_2%3a2.20240202-1_all.deb ...
+Unpacking selinux-policy-dev (2:2.20240202-1) ...
+Selecting previously unselected package setools.
+Preparing to unpack .../24-setools_4.4.4-1build1_amd64.deb ...
+Unpacking setools (4.4.4-1build1) ...
+Setting up selinux-utils (3.5-2ubuntu2.1) ...
+Setting up semodule-utils (3.5-1) ...
+Setting up python3-semanage (3.5-1build5) ...
+Setting up gawk (1:5.2.1-2build3) ...
+Setting up policycoreutils (3.5-2) ...
+Setting up m4 (1.4.19-4build1) ...
+Setting up python3-networkx (2.8.8-1ubuntu1) ...
+/usr/lib/python3/dist-packages/networkx/readwrite/tests/test_gml.py:556: SyntaxWarning: invalid octal escape sequence '\420'
+  "graph [edge [ source u'u\4200' target u'u\4200' ] "
+/usr/lib/python3/dist-packages/networkx/readwrite/tests/test_gml.py:557: SyntaxWarning: invalid octal escape sequence '\420'
+  + "node [ id u'u\4200' label b ] ]"
+Setting up libblas3:amd64 (3.12.0-3build1.1) ...
+update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libbla
+s.so.3-x86_64-linux-gnu) in auto mode
+Setting up selinux-policy-default (2:2.20240202-1) ...
+Updating selinux default policy (this step might take a moment)...libsemanage.get_home_dirs: Error while fetching users.  Return
+ing list so far.
+libsemanage.add_user: user sddm not in password file
+ done.
+Setting up checkpolicy (3.5-1) ...
+Setting up libgfortran5:amd64 (14.2.0-4ubuntu2~24.04) ...
+Setting up libauparse0t64:amd64 (1:3.1.2-2.1build1.1) ...
+Setting up python3-selinux (3.5-2ubuntu2.1) ...
+Setting up python3-setools (4.4.4-1build1) ...
+Setting up liblapack3:amd64 (3.12.0-3build1.1) ...
+update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (
+liblapack.so.3-x86_64-linux-gnu) in auto mode
+Setting up auditd (1:3.1.2-2.1build1.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/auditd.service → /usr/lib/systemd/system/auditd.service.
+Setting up selinux-basics (0.5.9) ...
+/usr/share/selinux-basics/tests/22_postfix.py:25: SyntaxWarning: invalid escape sequence '\s'
+  split = re.compile("([^\s]+)")
+Setting up setools (4.4.4-1build1) ...
+Setting up python3-audit (1:3.1.2-2.1build1.1) ...
+Setting up python3-numpy (1:1.26.4+ds-6ubuntu1) ...
+Setting up python3-sepolgen (3.5-1) ...
+Setting up python3-sepolicy (3.5-1) ...
+Setting up policycoreutils-python-utils (3.5-1) ...
+Setting up policycoreutils-dev (3.5-1) ...
+Setting up selinux-policy-dev (2:2.20240202-1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for install-info (7.1-3build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+root@UbuntuOS:/home/ubuntu# 
+
+sudo: selinux-avtivate: command not found
+root@UbuntuOS:/home/ubuntu# sudo selinux-activate
+Activating SE Linux
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.11.0-26-generic
+Found initrd image: /boot/initrd.img-6.11.0-26-generic
+Found memtest86+x64 image: /boot/memtest86+x64.bin
+Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+SE Linux is activated.  You may need to reboot now.
+
+buntu@UbuntuOS:~$ sudo su
+[sudo] password for ubuntu: 
+root@UbuntuOS:/home/ubuntu# sudo su
+root@UbuntuOS:/home/ubuntu# selinux status
+selinux: command not found
+root@UbuntuOS:/home/ubuntu# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             default
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+root@UbuntuOS:/home/ubuntu# sudo nano /etc/selinuc/
+root@UbuntuOS:/home/ubuntu# cd /etc/selinux
+root@UbuntuOS:/etc/selinux# ll
+total 28
+drwxr-xr-x.   3 root root  4096 May 27 05:48 ./
+drwxr-xr-x. 140 root root 12288 May 27 06:01 ../
+-rw-r--r--.   1 root root   584 May 27 05:48 config
+drwxr-xr-x.   4 root root  4096 May 27 05:56 default/
+-rw-r--r--.   1 root root  2065 Mar 31  2024 semanage.conf
+root@UbuntuOS:/etc/selinux# sudo nano config
+root@UbuntuOS:/etc/selinux# sudo nano config
+root@UbuntuOS:/etc/selinux# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             default
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+root@UbuntuOS:/etc/selinux# sudo systemctl stop apparmor
+root@UbuntuOS:/etc/selinux# sudo systemctl disable apparmor
+Synchronizing state of apparmor.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable apparmor
+Removed "/etc/systemd/system/sysinit.target.wants/apparmor.service".
+root@UbuntuOS:/etc/selinux# 
+
+..............
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+
+
+
+.
+
+.liveuser@localhost-live:~$ sudo su
+root@localhost-live:/home/liveuser# ls -l
+total 0
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Desktop
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Documents
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Downloads
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Music
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Pictures
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Public
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Templates
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Videos
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop
+ unconfined_u:object_r:user_home_t:s0 Documents
+ unconfined_u:object_r:user_home_t:s0 Downloads
+unconfined_u:object_r:audio_home_t:s0 Music
+ unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Templates
+ unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# ls-Z root
+bash: ls-Z: command not found...
+root@localhost-live:/home/liveuser# ls -ld
+drwx------. 14 liveuser liveuser 440 May 27 10:13 .
+root@localhost-live:/home/liveuser# ls -ldZ
+drwx------. 14 liveuser liveuser unconfined_u:object_r:user_home_dir_t:s0 440 May 27 10:13 .
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# setenforce 0
+root@localhost-live:/home/liveuser# getenforce
+Permissive
+root@localhost-live:/home/liveuser# setenforce 1
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# setenforce 0
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# selinux -t
+bash: selinux: command not found...
+root@localhost-live:/home/liveuser# sudo setenforce 1
+root@localhost-live:/home/liveuser# sudo getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sesttus
+bash: sesttus: command not found...
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# systemctl ststus apache
+Unknown command verb 'ststus', did you mean 'status'?
+root@localhost-live:/home/liveuser# systemctl status apache
+Unit apache.service could not be found.
+root@localhost-live:/home/liveuser# systemctl status hpptd
+Unit hpptd.service could not be found.
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# systemctl status httpd
+Warning: The unit file, source configuration file or drop-ins of httpd.service changed on disk. Run 'systemctl da>
+○ httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: inactive (dead)
+       Docs: man:httpd.service(8)
+
+root@localhost-live:/home/liveuser# systemctl status nginx
+Unit nginx.service could not be found.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx
+
+
+Unit nginx.service could not be found.
+root@localhost-live:/home/liveuser# sudo apt install nginx
+sudo: apt: command not found
+root@localhost-live:/home/liveuser# install nginx
+install: missing destination file operand after 'nginx'
+Try 'install --help' for more information.
+root@localhost-live:/home/liveuser# sudo install nginx
+install: missing destination file operand after 'nginx'
+Try 'install --help' for more information.
+root@localhost-live:/home/liveuser# dnf install nginx
+Updating and loading repositories:
+ Fedora 42 - x86_64 - Updates                                             100% | 402.3 KiB/s |   5.6 MiB |  00m14s
+ Fedora 42 openh264 (From Cisco) - x86_64                                 100% |   3.8 KiB/s |   6.0 KiB |  00m02s
+ Fedora 42 - x86_64                                                       100% | 581.8 KiB/s |  35.4 MiB |  01m02s
+Repositories loaded.
+Package                              Arch       Version                               Repository              Size
+Installing:
+ nginx                               x86_64     2:1.26.3-1.fc42                       fedora             119.8 KiB
+Installing dependencies:
+ nginx-core                          x86_64     2:1.26.3-1.fc42                       fedora               1.8 MiB
+ nginx-filesystem                    noarch     2:1.26.3-1.fc42                       fedora             141.0   B
+ nginx-mimetypes                     noarch     2.1.54-8.fc42                         fedora              46.6 KiB
+
+Transaction Summary:
+ Installing:         4 packages
+
+Total size of inbound packages is 733 KiB. Need to download 733 KiB.
+After this operation, 2 MiB extra will be used (install 2 MiB, remove 0 B).
+Is this ok [y/N]: y
+[1/4] nginx-2:1.26.3-1.fc42.x86_64                                          0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[2/4] nginx-core-2:1.26.3-1.fc42.x86_64                                     0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[3/4] nginx-filesystem-2:1.26.3-1.fc42.noarch                               0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[4/4] nginx-mimetypes-0:2.1.54-8.fc42.noarch                                0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+------------------------------------------------------------------------------------------------------------------
+[4/4] Total                                                               ???% | -21.0   B/s |  -4.0   B |  00m00s
+Failed to download packages
+ Librepo error: Curl error (6): Could not resolve hostname for https://mirrors.fedoraproject.org/metalink?repo=fedora-42&arch=x86_64 [Could not resolve host: mirrors.fedoraproject.org]
+root@localhost-live:/home/liveuser# dnf install nginx
+Updating and loading repositories:
+ Fedora 42 - x86_64 - Updates                                             100% |  11.2 KiB/s |   8.3 KiB |  00m01s
+ Fedora 42 - x86_64 - Updates                                             100% | 365.9 KiB/s |   1.5 MiB |  00m04s
+>>> Downloading successful, but checksum doesn't match. Calculated: 477e2785a9dc1d95ba37a1a575914dde2b860a2307b573
+>>> Downloading successful, but checksum doesn't match. Calculated: 477e2785a9dc1d95ba37a1a575914dde2b860a2307b573
+Repositories loaded.
+Package                              Arch       Version                               Repository              Size
+Installing:
+ nginx                               x86_64     2:1.26.3-1.fc42                       fedora             119.8 KiB
+Installing dependencies:
+ nginx-core                          x86_64     2:1.26.3-1.fc42                       fedora               1.8 MiB
+ nginx-filesystem                    noarch     2:1.26.3-1.fc42                       fedora             141.0   B
+ nginx-mimetypes                     noarch     2.1.54-8.fc42                         fedora              46.6 KiB
+
+Transaction Summary:
+ Installing:         4 packages
+
+Total size of inbound packages is 733 KiB. Need to download 733 KiB.
+After this operation, 2 MiB extra will be used (install 2 MiB, remove 0 B).
+Is this ok [y/N]: y
+[1/4] nginx-filesystem-2:1.26.3-1.fc42.noarch                             100% |  19.7 KiB/s |  11.7 KiB |  00m01s
+[2/4] nginx-2:1.26.3-1.fc42.x86_64                                        100% |  41.9 KiB/s |  33.0 KiB |  00m01s
+[3/4] nginx-mimetypes-0:2.1.54-8.fc42.noarch                              100% |  73.0 KiB/s |  21.7 KiB |  00m00s
+[4/4] nginx-core-2:1.26.3-1.fc42.x86_64                                   100% | 235.4 KiB/s | 666.4 KiB |  00m03s
+------------------------------------------------------------------------------------------------------------------
+[4/4] Total                                                               100% | 218.9 KiB/s | 732.8 KiB |  00m03s
+Running transaction
+Importing OpenPGP key 0x105EF944:
+ UserID     : "Fedora (42) <fedora-42-primary@fedoraproject.org>"
+ Fingerprint: B0F4950458F69E1150C6C5EDC8AC4916105EF944
+ From       : file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-42-x86_64
+Is this ok [y/N]: y
+The key was successfully imported.
+[1/6] Verify package files                                                100% |   8.0   B/s |   4.0   B |  00m00s
+[2/6] Prepare transaction                                                 100% |   1.0   B/s |   4.0   B |  00m02s
+>>> Running unknown scriptlet: nginx-filesystem-2:1.26.3-1.fc42.noarch                                            
+>>> Finished unknown scriptlet: nginx-filesystem-2:1.26.3-1.fc42.noarch                                           
+>>> Scriptlet output:                                                                                             
+>>> Creating group 'nginx' with GID 970.                                                                          
+>>> Creating user 'nginx' (Nginx web server) with UID 970 and GID 970.                                            
+>>>                                                                                                               
+[3/6] Installing nginx-filesystem-2:1.26.3-1.fc42.noarch                  100% |  49.3 KiB/s |   1.3 KiB |  00m00s
+[4/6] Installing nginx-mimetypes-0:2.1.54-8.fc42.noarch                   100% |   5.1 MiB/s |  47.4 KiB |  00m00s
+[5/6] Installing nginx-core-2:1.26.3-1.fc42.x86_64                        100% |  20.5 MiB/s |   1.8 MiB |  00m00s
+[6/6] Installing nginx-2:1.26.3-1.fc42.x86_64                             100% |   2.1 KiB/s | 122.5 KiB |  00m58s
+Complete!
+root@localhost-live:/home/liveuser# sudo status nginx
+sudo: status: command not found
+root@localhost-live:/home/liveuser# status nginx
+bash: status: command not found...
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop     unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Documents   unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Downloads   unconfined_u:object_r:user_home_t:s0 Templates
+unconfined_u:object_r:audio_home_t:s0 Music       unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# sudo systemclt enable nginx
+sudo: systemclt: command not found
+root@localhost-live:/home/liveuser# sudo systmclt enable nginx
+sudo: systmclt: command not found
+root@localhost-live:/home/liveuser# nginx -v
+nginx version: nginx/1.26.3
+root@localhost-live:/home/liveuser# sudo systemctl enable nginx
+sudo systemctl start nginx
+Created symlink '/etc/systemd/system/multi-user.target.wants/nginx.service' → '/usr/lib/systemd/system/nginx.service'.
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 03:34:12 UTC; 13min ago
+ Invocation: c21cfb30474f4f67aa3e41905b0546a5
+    Process: 41738 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 41739 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 41742 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.4M
+        CPU: 176ms
+
+May 28 03:34:09 localhost-live nginx[41739]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 03:34:09 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:12 localhost-live nginx[41742]: nginx: [emerg] still could not bind()
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 03:34:12 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo systemctl stop httpd
+sudo systemctl disable httpd
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:16:31 UTC; 24s ago
+ Invocation: a58704c5b6494c00b05ee37865053ec5
+    Process: 42082 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42084 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42086 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 28.5M
+        CPU: 735ms
+
+May 28 04:16:28 localhost-live nginx[42084]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:16:28 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:31 localhost-live nginx[42086]: nginx: [emerg] still could not bind()
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:16:31 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+
+root@localhost-live:/home/liveuser# sudo systemctl ststus httpd
+Unknown command verb 'ststus', did you mean 'status'?
+root@localhost-live:/home/liveuser# sudo systemctl status httpd
+○ httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: inactive (dead)
+       Docs: man:httpd.service(8)
+root@localhost-live:/home/liveuser# sudo systemctl stop cockpit.socket
+sudo systemctl stop cockpit.service
+sudo systemctl disable cockpit.socket
+sudo systemctl disable cockpit.service
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:19:19 UTC; 16s ago
+ Invocation: 81f43d1086104b27b878bcb0b1bc997d
+    Process: 42429 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42431 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42433 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.2M
+        CPU: 182ms
+
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+...skipping...
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:19:19 UTC; 16s ago
+ Invocation: 81f43d1086104b27b878bcb0b1bc997d
+    Process: 42429 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42431 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42433 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.2M
+        CPU: 182ms
+
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+~
+~
+
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo systemctl stop http
+Failed to stop http.service: Unit http.service not loaded.
+root@localhost-live:/home/liveuser# sudo nano /etc/nginx/nginx.conf
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+root@localhost-live:/home/liveuser# sudo systemctl enabal nginx
+Unknown command verb 'enabal', did you mean 'enable'?
+root@localhost-live:/home/liveuser# sudo systemctl enable nginx
+root@localhost-live:/home/liveuser# sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: active (running) since Wed 2025-05-28 04:26:40 UTC; 1min 37s ago
+ Invocation: 1cede6e53adc4a4491903d3055c6d083
+   Main PID: 42484 (nginx)
+      Tasks: 2 (limit: 2557)
+     Memory: 7.6M (peak: 8M)
+        CPU: 177ms
+     CGroup: /system.slice/nginx.service
+             ├─42484 "nginx: master process /usr/sbin/nginx"
+             └─42485 "nginx: worker process"
+
+May 28 04:26:40 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+May 28 04:26:40 localhost-live nginx[42481]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:26:40 localhost-live nginx[42481]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:26:40 localhost-live systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+root@localhost-live:/home/liveuser# sudo systemctl start http
+Failed to start http.service: Unit http.service not found.
+root@localhost-live:/home/liveuser# sudo systemctl start httpd
+Job for httpd.service failed because the control process exited with error code.
+See "systemctl status httpd.service" and "journalctl -xeu httpd.service" for details.
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo lsof -i :8080
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+nginx   42484  root    8u  IPv4 116161      0t0  TCP *:webcache (LISTEN)
+nginx   42484  root    9u  IPv6 116162      0t0  TCP *:webcache (LISTEN)
+nginx   42485 nginx    8u  IPv4 116161      0t0  TCP *:webcache (LISTEN)
+nginx   42485 nginx    9u  IPv6 116162      0t0  TCP *:webcache (LISTEN)
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo journalctl -xe | grep nginx
+May 27 12:05:35 localhost-live sudo[41038]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+May 27 12:07:19 localhost-live sudo[41046]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/install nginx
+May 28 03:04:00 localhost-live audit[41293]: ADD_GROUP pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-group acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:00 localhost-live audit[41293]: ADD_USER pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-user acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-filesystem-2:1.26.3-1.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-mimetypes-2.1.54-8.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-core-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:34:08 localhost-live sudo[41583]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 03:34:09 localhost-live sudo[41733]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 03:34:09 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 03:34:09 localhost-live nginx[41739]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 03:34:09 localhost-live nginx[41739]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 03:34:09 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:12 localhost-live nginx[41742]: nginx: [emerg] still could not bind()
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 03:34:12 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 03:34:12 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 03:47:19 localhost-live sudo[41795]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:16:27 localhost-live sudo[42077]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:16:27 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:16:28 localhost-live nginx[42084]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:16:28 localhost-live nginx[42084]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:16:28 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:31 localhost-live nginx[42086]: nginx: [emerg] still could not bind()
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:16:31 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:16:31 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:16:55 localhost-live sudo[42090]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:19:16 localhost-live sudo[42423]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:19:16 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:19:16 localhost-live nginx[42431]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:19:19 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:19:35 localhost-live sudo[42438]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:25:28 localhost-live sudo[42470]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/nano /etc/nginx/nginx.conf
+May 28 04:26:40 localhost-live sudo[42474]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:26:40 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:26:40 localhost-live nginx[42481]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:26:40 localhost-live nginx[42481]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:26:40 localhost-live systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has finished successfully
+░░ A start job for unit nginx.service has finished successfully.
+May 28 04:26:40 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 28 04:26:57 localhost-live sudo[42487]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enabal nginx
+May 28 04:27:13 localhost-live sudo[42491]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 04:28:18 localhost-live sudo[42644]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+root@localhost-live:/home/liveuser# 
+
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.liveuser@localhost-live:~$ sudo su
+root@localhost-live:/home/liveuser# ls -l
+total 0
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Desktop
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Documents
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Downloads
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Music
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Pictures
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Public
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Templates
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Videos
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop
+ unconfined_u:object_r:user_home_t:s0 Documents
+ unconfined_u:object_r:user_home_t:s0 Downloads
+unconfined_u:object_r:audio_home_t:s0 Music
+ unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Templates
+ unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# ls-Z root
+bash: ls-Z: command not found...
+root@localhost-live:/home/liveuser# ls -ld
+drwx------. 14 liveuser liveuser 440 May 27 10:13 .
+root@localhost-live:/home/liveuser# ls -ldZ
+drwx------. 14 liveuser liveuser unconfined_u:object_r:user_home_dir_t:s0 440 May 27 10:13 .
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# setenforce 0
+root@localhost-live:/home/liveuser# getenforce
+Permissive
+root@localhost-live:/home/liveuser# setenforce 1
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          error (Success)
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# getenforce
+Enforcing
+root@localhost-live:/home/liveuser# setenforce 0
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# selinux -t
+bash: selinux: command not found...
+root@localhost-live:/home/liveuser# sudo setenforce 1
+root@localhost-live:/home/liveuser# sudo getenforce
+Enforcing
+root@localhost-live:/home/liveuser# sesttus
+bash: sesttus: command not found...
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo nano /etc/selinux/config
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# systemctl ststus apache
+Unknown command verb 'ststus', did you mean 'status'?
+root@localhost-live:/home/liveuser# systemctl status apache
+Unit apache.service could not be found.
+root@localhost-live:/home/liveuser# systemctl status hpptd
+Unit hpptd.service could not be found.
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# systemctl status httpd
+Warning: The unit file, source configuration file or drop-ins of httpd.service changed on disk. Run 'systemctl da>
+○ httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: inactive (dead)
+       Docs: man:httpd.service(8)
+
+root@localhost-live:/home/liveuser# systemctl status nginx
+Unit nginx.service could not be found.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx
+
+
+Unit nginx.service could not be found.
+root@localhost-live:/home/liveuser# sudo apt install nginx
+sudo: apt: command not found
+root@localhost-live:/home/liveuser# install nginx
+install: missing destination file operand after 'nginx'
+Try 'install --help' for more information.
+root@localhost-live:/home/liveuser# sudo install nginx
+install: missing destination file operand after 'nginx'
+Try 'install --help' for more information.
+root@localhost-live:/home/liveuser# dnf install nginx
+Updating and loading repositories:
+ Fedora 42 - x86_64 - Updates                                             100% | 402.3 KiB/s |   5.6 MiB |  00m14s
+ Fedora 42 openh264 (From Cisco) - x86_64                                 100% |   3.8 KiB/s |   6.0 KiB |  00m02s
+ Fedora 42 - x86_64                                                       100% | 581.8 KiB/s |  35.4 MiB |  01m02s
+Repositories loaded.
+Package                              Arch       Version                               Repository              Size
+Installing:
+ nginx                               x86_64     2:1.26.3-1.fc42                       fedora             119.8 KiB
+Installing dependencies:
+ nginx-core                          x86_64     2:1.26.3-1.fc42                       fedora               1.8 MiB
+ nginx-filesystem                    noarch     2:1.26.3-1.fc42                       fedora             141.0   B
+ nginx-mimetypes                     noarch     2.1.54-8.fc42                         fedora              46.6 KiB
+
+Transaction Summary:
+ Installing:         4 packages
+
+Total size of inbound packages is 733 KiB. Need to download 733 KiB.
+After this operation, 2 MiB extra will be used (install 2 MiB, remove 0 B).
+Is this ok [y/N]: y
+[1/4] nginx-2:1.26.3-1.fc42.x86_64                                          0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[2/4] nginx-core-2:1.26.3-1.fc42.x86_64                                     0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[3/4] nginx-filesystem-2:1.26.3-1.fc42.noarch                               0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+[4/4] nginx-mimetypes-0:2.1.54-8.fc42.noarch                                0% |   0.0   B/s |  -1.0   B |  ?     
+>>> Interrupted                                                                                                   
+------------------------------------------------------------------------------------------------------------------
+[4/4] Total                                                               ???% | -21.0   B/s |  -4.0   B |  00m00s
+Failed to download packages
+ Librepo error: Curl error (6): Could not resolve hostname for https://mirrors.fedoraproject.org/metalink?repo=fedora-42&arch=x86_64 [Could not resolve host: mirrors.fedoraproject.org]
+root@localhost-live:/home/liveuser# dnf install nginx
+Updating and loading repositories:
+ Fedora 42 - x86_64 - Updates                                             100% |  11.2 KiB/s |   8.3 KiB |  00m01s
+ Fedora 42 - x86_64 - Updates                                             100% | 365.9 KiB/s |   1.5 MiB |  00m04s
+>>> Downloading successful, but checksum doesn't match. Calculated: 477e2785a9dc1d95ba37a1a575914dde2b860a2307b573
+>>> Downloading successful, but checksum doesn't match. Calculated: 477e2785a9dc1d95ba37a1a575914dde2b860a2307b573
+Repositories loaded.
+Package                              Arch       Version                               Repository              Size
+Installing:
+ nginx                               x86_64     2:1.26.3-1.fc42                       fedora             119.8 KiB
+Installing dependencies:
+ nginx-core                          x86_64     2:1.26.3-1.fc42                       fedora               1.8 MiB
+ nginx-filesystem                    noarch     2:1.26.3-1.fc42                       fedora             141.0   B
+ nginx-mimetypes                     noarch     2.1.54-8.fc42                         fedora              46.6 KiB
+
+Transaction Summary:
+ Installing:         4 packages
+
+Total size of inbound packages is 733 KiB. Need to download 733 KiB.
+After this operation, 2 MiB extra will be used (install 2 MiB, remove 0 B).
+Is this ok [y/N]: y
+[1/4] nginx-filesystem-2:1.26.3-1.fc42.noarch                             100% |  19.7 KiB/s |  11.7 KiB |  00m01s
+[2/4] nginx-2:1.26.3-1.fc42.x86_64                                        100% |  41.9 KiB/s |  33.0 KiB |  00m01s
+[3/4] nginx-mimetypes-0:2.1.54-8.fc42.noarch                              100% |  73.0 KiB/s |  21.7 KiB |  00m00s
+[4/4] nginx-core-2:1.26.3-1.fc42.x86_64                                   100% | 235.4 KiB/s | 666.4 KiB |  00m03s
+------------------------------------------------------------------------------------------------------------------
+[4/4] Total                                                               100% | 218.9 KiB/s | 732.8 KiB |  00m03s
+Running transaction
+Importing OpenPGP key 0x105EF944:
+ UserID     : "Fedora (42) <fedora-42-primary@fedoraproject.org>"
+ Fingerprint: B0F4950458F69E1150C6C5EDC8AC4916105EF944
+ From       : file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-42-x86_64
+Is this ok [y/N]: y
+The key was successfully imported.
+[1/6] Verify package files                                                100% |   8.0   B/s |   4.0   B |  00m00s
+[2/6] Prepare transaction                                                 100% |   1.0   B/s |   4.0   B |  00m02s
+>>> Running unknown scriptlet: nginx-filesystem-2:1.26.3-1.fc42.noarch                                            
+>>> Finished unknown scriptlet: nginx-filesystem-2:1.26.3-1.fc42.noarch                                           
+>>> Scriptlet output:                                                                                             
+>>> Creating group 'nginx' with GID 970.                                                                          
+>>> Creating user 'nginx' (Nginx web server) with UID 970 and GID 970.                                            
+>>>                                                                                                               
+[3/6] Installing nginx-filesystem-2:1.26.3-1.fc42.noarch                  100% |  49.3 KiB/s |   1.3 KiB |  00m00s
+[4/6] Installing nginx-mimetypes-0:2.1.54-8.fc42.noarch                   100% |   5.1 MiB/s |  47.4 KiB |  00m00s
+[5/6] Installing nginx-core-2:1.26.3-1.fc42.x86_64                        100% |  20.5 MiB/s |   1.8 MiB |  00m00s
+[6/6] Installing nginx-2:1.26.3-1.fc42.x86_64                             100% |   2.1 KiB/s | 122.5 KiB |  00m58s
+Complete!
+root@localhost-live:/home/liveuser# sudo status nginx
+sudo: status: command not found
+root@localhost-live:/home/liveuser# status nginx
+bash: status: command not found...
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop     unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Documents   unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Downloads   unconfined_u:object_r:user_home_t:s0 Templates
+unconfined_u:object_r:audio_home_t:s0 Music       unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# sudo systemclt enable nginx
+sudo: systemclt: command not found
+root@localhost-live:/home/liveuser# sudo systmclt enable nginx
+sudo: systmclt: command not found
+root@localhost-live:/home/liveuser# nginx -v
+nginx version: nginx/1.26.3
+root@localhost-live:/home/liveuser# sudo systemctl enable nginx
+sudo systemctl start nginx
+Created symlink '/etc/systemd/system/multi-user.target.wants/nginx.service' → '/usr/lib/systemd/system/nginx.service'.
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 03:34:12 UTC; 13min ago
+ Invocation: c21cfb30474f4f67aa3e41905b0546a5
+    Process: 41738 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 41739 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 41742 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.4M
+        CPU: 176ms
+
+May 28 03:34:09 localhost-live nginx[41739]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 03:34:09 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 03:34:12 localhost-live nginx[41742]: nginx: [emerg] still could not bind()
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 03:34:12 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo systemctl stop httpd
+sudo systemctl disable httpd
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:16:31 UTC; 24s ago
+ Invocation: a58704c5b6494c00b05ee37865053ec5
+    Process: 42082 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42084 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42086 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 28.5M
+        CPU: 735ms
+
+May 28 04:16:28 localhost-live nginx[42084]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:16:28 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:16:31 localhost-live nginx[42086]: nginx: [emerg] still could not bind()
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:16:31 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+
+root@localhost-live:/home/liveuser# sudo systemctl ststus httpd
+Unknown command verb 'ststus', did you mean 'status'?
+root@localhost-live:/home/liveuser# sudo systemctl status httpd
+○ httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: inactive (dead)
+       Docs: man:httpd.service(8)
+root@localhost-live:/home/liveuser# sudo systemctl stop cockpit.socket
+sudo systemctl stop cockpit.service
+sudo systemctl disable cockpit.socket
+sudo systemctl disable cockpit.service
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+root@localhost-live:/home/liveuser# sudo systemctl status nginx.service
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:19:19 UTC; 16s ago
+ Invocation: 81f43d1086104b27b878bcb0b1bc997d
+    Process: 42429 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42431 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42433 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.2M
+        CPU: 182ms
+
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+...skipping...
+× nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: failed (Result: exit-code) since Wed 2025-05-28 04:19:19 UTC; 16s ago
+ Invocation: 81f43d1086104b27b878bcb0b1bc997d
+    Process: 42429 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 42431 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 42433 ExecStart=/usr/sbin/nginx (code=exited, status=1/FAILURE)
+   Mem peak: 8.2M
+        CPU: 182ms
+
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in u>
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy serve>
+~
+~
+
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo systemctl stop http
+Failed to stop http.service: Unit http.service not loaded.
+root@localhost-live:/home/liveuser# sudo nano /etc/nginx/nginx.conf
+root@localhost-live:/home/liveuser# sudo systemctl start nginx
+root@localhost-live:/home/liveuser# sudo systemctl enabal nginx
+Unknown command verb 'enabal', did you mean 'enable'?
+root@localhost-live:/home/liveuser# sudo systemctl enable nginx
+root@localhost-live:/home/liveuser# sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+     Active: active (running) since Wed 2025-05-28 04:26:40 UTC; 1min 37s ago
+ Invocation: 1cede6e53adc4a4491903d3055c6d083
+   Main PID: 42484 (nginx)
+      Tasks: 2 (limit: 2557)
+     Memory: 7.6M (peak: 8M)
+        CPU: 177ms
+     CGroup: /system.slice/nginx.service
+             ├─42484 "nginx: master process /usr/sbin/nginx"
+             └─42485 "nginx: worker process"
+
+May 28 04:26:40 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+May 28 04:26:40 localhost-live nginx[42481]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:26:40 localhost-live nginx[42481]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:26:40 localhost-live systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+root@localhost-live:/home/liveuser# sudo systemctl start http
+Failed to start http.service: Unit http.service not found.
+root@localhost-live:/home/liveuser# sudo systemctl start httpd
+Job for httpd.service failed because the control process exited with error code.
+See "systemctl status httpd.service" and "journalctl -xeu httpd.service" for details.
+root@localhost-live:/home/liveuser# sudo lsof -i :80
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+cockpit-w 2931 root    4u  IPv4  26654      0t0  TCP localhost:http (LISTEN)
+root@localhost-live:/home/liveuser# sudo lsof -i :8080
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+nginx   42484  root    8u  IPv4 116161      0t0  TCP *:webcache (LISTEN)
+nginx   42484  root    9u  IPv6 116162      0t0  TCP *:webcache (LISTEN)
+nginx   42485 nginx    8u  IPv4 116161      0t0  TCP *:webcache (LISTEN)
+nginx   42485 nginx    9u  IPv6 116162      0t0  TCP *:webcache (LISTEN)
+root@localhost-live:/home/liveuser# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# sudo journalctl -xe | grep nginx
+May 27 12:05:35 localhost-live sudo[41038]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+May 27 12:07:19 localhost-live sudo[41046]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/install nginx
+May 28 03:04:00 localhost-live audit[41293]: ADD_GROUP pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-group acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:00 localhost-live audit[41293]: ADD_USER pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-user acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-filesystem-2:1.26.3-1.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-mimetypes-2.1.54-8.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-core-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:34:08 localhost-live sudo[41583]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 03:34:09 localhost-live sudo[41733]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 03:34:09 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 03:34:09 localhost-live nginx[41739]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 03:34:09 localhost-live nginx[41739]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 03:34:09 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:12 localhost-live nginx[41742]: nginx: [emerg] still could not bind()
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 03:34:12 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 03:34:12 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 03:47:19 localhost-live sudo[41795]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:16:27 localhost-live sudo[42077]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:16:27 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:16:28 localhost-live nginx[42084]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:16:28 localhost-live nginx[42084]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:16:28 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:31 localhost-live nginx[42086]: nginx: [emerg] still could not bind()
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:16:31 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:16:31 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:16:55 localhost-live sudo[42090]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:19:16 localhost-live sudo[42423]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:19:16 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:19:16 localhost-live nginx[42431]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:19:19 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:19:35 localhost-live sudo[42438]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:25:28 localhost-live sudo[42470]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/nano /etc/nginx/nginx.conf
+May 28 04:26:40 localhost-live sudo[42474]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:26:40 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:26:40 localhost-live nginx[42481]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:26:40 localhost-live nginx[42481]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:26:40 localhost-live systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has finished successfully
+░░ A start job for unit nginx.service has finished successfully.
+May 28 04:26:40 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 28 04:26:57 localhost-live sudo[42487]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enabal nginx
+May 28 04:27:13 localhost-live sudo[42491]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 04:28:18 localhost-live sudo[42644]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# ^[[200~sudo ausearch -m avc -ts recent
+bash: sudo: command not found...
+root@localhost-live:/home/liveuser# ~sudo ausearch -m avc -ts recent
+bash: ~sudo: command not found...
+Similar command is: 'sudo'
+root@localhost-live:/home/liveuser# sudo ausearch -m avc -ts recent
+<no matches>
+root@localhost-live:/home/liveuser# sudo journalctl -xe | grep nginx
+May 27 12:05:35 localhost-live sudo[41038]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+May 27 12:07:19 localhost-live sudo[41046]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/install nginx
+May 28 03:04:00 localhost-live audit[41293]: ADD_GROUP pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-group acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:00 localhost-live audit[41293]: ADD_USER pid=41293 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:rpm_script_t:s0-s0:c0.c1023 msg='op=adding-user acct="nginx" exe="systemd-sysusers" hostname=? addr=? terminal=? res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-filesystem-2:1.26.3-1.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-mimetypes-2.1.54-8.fc42.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-core-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:04:57 localhost-live audit[41276]: SOFTWARE_UPDATE pid=41276 uid=0 auid=1000 ses=2 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=install sw="nginx-2:1.26.3-1.fc42.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="dnf" exe="/usr/bin/dnf5" hostname=localhost-live addr=? terminal=pts/1 res=success'
+May 28 03:34:08 localhost-live sudo[41583]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 03:34:09 localhost-live sudo[41733]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 03:34:09 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 03:34:09 localhost-live nginx[41739]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 03:34:09 localhost-live nginx[41739]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 03:34:09 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:10 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:11 localhost-live nginx[41742]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 03:34:12 localhost-live nginx[41742]: nginx: [emerg] still could not bind()
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 03:34:12 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 03:34:12 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 03:34:12 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 03:47:19 localhost-live sudo[41795]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:16:27 localhost-live sudo[42077]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:16:27 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:16:28 localhost-live nginx[42084]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:16:28 localhost-live nginx[42084]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:16:28 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:29 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:30 localhost-live nginx[42086]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:16:31 localhost-live nginx[42086]: nginx: [emerg] still could not bind()
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:16:31 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:16:31 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:16:31 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:16:55 localhost-live sudo[42090]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:19:16 localhost-live sudo[42423]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:19:16 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:19:16 localhost-live nginx[42431]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:19:16 localhost-live nginx[42431]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:19:16 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:17 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:18 localhost-live nginx[42433]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+May 28 04:19:19 localhost-live nginx[42433]: nginx: [emerg] still could not bind()
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+░░ An ExecStart= process belonging to unit nginx.service has exited.
+May 28 04:19:19 localhost-live systemd[1]: nginx.service: Failed with result 'exit-code'.
+░░ The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+May 28 04:19:19 localhost-live systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has failed
+░░ A start job for unit nginx.service has finished with a failure.
+May 28 04:19:19 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+May 28 04:19:35 localhost-live sudo[42438]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx.service
+May 28 04:25:28 localhost-live sudo[42470]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/nano /etc/nginx/nginx.conf
+May 28 04:26:40 localhost-live sudo[42474]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl start nginx
+May 28 04:26:40 localhost-live systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+░░ Subject: A start job for unit nginx.service has begun execution
+░░ A start job for unit nginx.service has begun execution.
+May 28 04:26:40 localhost-live nginx[42481]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+May 28 04:26:40 localhost-live nginx[42481]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+May 28 04:26:40 localhost-live systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+░░ Subject: A start job for unit nginx.service has finished successfully
+░░ A start job for unit nginx.service has finished successfully.
+May 28 04:26:40 localhost-live audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 28 04:26:57 localhost-live sudo[42487]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enabal nginx
+May 28 04:27:13 localhost-live sudo[42491]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl enable nginx
+May 28 04:28:18 localhost-live sudo[42644]:     root : TTY=pts/1 ; PWD=/home/liveuser ; USER=root ; COMMAND=/usr/sbin/systemctl status nginx
+root@localhost-live:/home/liveuser# ^C
+root@localhost-live:/home/liveuser# sudo dnf install policycoreutils selinux-basics selinux-policy-default aauditd
+Updating and loading repositories:
+ Fedora 42 - x86_64 - Updates     100% |  13.5 KiB/s |   8.3 KiB |  00m01s
+ Fedora 42 - x86_64 - Updates     100% | 409.6 KiB/s |   2.2 MiB |  00m05s
+Repositories loaded.
+Failed to resolve the transaction:
+Package "policycoreutils-3.8-1.fc42.x86_64" is already installed.
+No match for argument: selinux-basics
+No match for argument: selinux-policy-default
+No match for argument: aauditd
+You can try to add to command line:
+  --skip-unavailable to skip unavailable packages
+root@localhost-live:/home/liveuser# sudo dnf install policycoreutils selinux-basics selinux-policy-default auditd
+Updating and loading repositories:
+Repositories loaded.
+Failed to resolve the transaction:
+Package "policycoreutils-3.8-1.fc42.x86_64" is already installed.
+No match for argument: selinux-basics
+No match for argument: selinux-policy-default
+Package "audit-4.0.3-2.fc42.x86_64" is already installed.
+You can try to add to command line:
+  --skip-unavailable to skip unavailable packages
+root@localhost-live:/home/liveuser# sudo seststus
+sudo: seststus: command not found
+root@localhost-live:/home/liveuser# seststus
+bash: seststus: command not found...
+root@localhost-live:/home/liveuser# sudo sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      34
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop
+ unconfined_u:object_r:user_home_t:s0 Documents
+ unconfined_u:object_r:user_home_t:s0 Downloads
+unconfined_u:object_r:audio_home_t:s0 Music
+ unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Templates
+ unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# ll
+total 0
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Desktop
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Documents
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Downloads
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Music
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Pictures
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Public
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Templates
+drwxr-xr-x. 2 liveuser liveuser 40 May 27 10:11 Videos
+root@localhost-live:/home/liveuser# cd Documents
+root@localhost-live:/home/liveuser/Documents# ll
+total 0
+root@localhost-live:/home/liveuser/Documents# cd
+root@localhost-live:~# sudo su
+root@localhost-live:~# ll
+total 0
+root@localhost-live:~# /home
+bash: /home: Is a directory
+root@localhost-live:~# cd /home/liveuser/Documents
+root@localhost-live:/home/liveuser/Documents# cd ..
+root@localhost-live:/home/liveuser# chcon -t Documents
+chcon: missing operand
+Try 'chcon --help' for more information.
+root@localhost-live:/home/liveuser# chcon -t TYPE Documents
+chcon: failed to change context of 'Documents' to ‘unconfined_u:object_r:TYPE:s0’: Invalid argument
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# ls -Z /Documents
+
+ls: cannot access '/Documents': No such file or directory
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# 
+root@localhost-live:/home/liveuser# ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+root@localhost-live:/home/liveuser# ls -Z Documents
+root@localhost-live:/home/liveuser# cd Documents
+root@localhost-live:/home/liveuser/Documents# ls-Z
+bash: ls-Z: command not found...
+root@localhost-live:/home/liveuser/Documents# ls -Z 
+root@localhost-live:/home/liveuser/Documents# ls -Z
+root@localhost-live:/home/liveuser/Documents# 
+root@localhost-live:/home/liveuser/Documents# 
+root@localhost-live:/home/liveuser/Documents# 
+root@localhost-live:/home/liveuser/Documents# 
+root@localhost-live:/home/liveuser/Documents# 
+root@localhost-live:/home/liveuser/Documents# cd ..
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop
+ unconfined_u:object_r:user_home_t:s0 Documents
+ unconfined_u:object_r:user_home_t:s0 Downloads
+unconfined_u:object_r:audio_home_t:s0 Music
+ unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Templates
+ unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# chcon -t user_doc_t Documents
+chcon: failed to change context of 'Documents' to ‘unconfined_u:object_r:user_doc_t:s0’: Invalid argument
+root@localhost-live:/home/liveuser# ls -Z
+ unconfined_u:object_r:user_home_t:s0 Desktop
+ unconfined_u:object_r:user_home_t:s0 Documents
+ unconfined_u:object_r:user_home_t:s0 Downloads
+unconfined_u:object_r:audio_home_t:s0 Music
+ unconfined_u:object_r:user_home_t:s0 Pictures
+ unconfined_u:object_r:user_home_t:s0 Public
+ unconfined_u:object_r:user_home_t:s0 Templates
+ unconfined_u:object_r:user_home_t:s0 Videos
+root@localhost-live:/home/liveuser# chcon -t user_doc_t TYPE Documents
+chcon: cannot access 'TYPE': No such file or directory
+chcon: failed to change context of 'Documents' to ‘unconfined_u:object_r:user_doc_t:s0’: Invalid argument
+root@localhost-live:/home/liveuser# chcon -t user_doc_t /Documents
+chcon: cannot access '/Documents': No such file or directory
+root@localhost-live:/home/liveuser# mkdir /Documents/New
+mkdir: cannot create directory ‘/Documents/New’: No such file or directory
+root@localhost-live:/home/liveuser# mkdir /Documents/
+root@localhost-live:/home/liveuser# ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+root@localhost-live:/home/liveuser# cd Documents
+root@localhost-live:/home/liveuser/Documents# ll
+total 0
+root@localhost-live:/home/liveuser/Documents# cd ..
+root@localhost-live:/home/liveuser# ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+root@localhost-live:/home/liveuser# ls -Z/var/www/html
+ls: invalid option -- '/'
+Try 'ls --help' for more information.
+root@localhost-live:/home/liveuser# ls -Z /var/www/html
+root@localhost-live:/home/liveuser# cd /var/www/html
+root@localhost-live:/var/www/html# ls -Z
+root@localhost-live:/var/www/html# ll
+total 0
+root@localhost-live:/var/www/html# mkdir index.html
+root@localhost-live:/var/www/html# ll
+total 0
+drwxr-xr-x. 2 root root 40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# ls -Z
+unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# cd ..
+root@localhost-live:/var/www# ls-Z
+bash: ls-Z: command not found...
+root@localhost-live:/var/www# ls -Z
+system_u:object_r:httpd_sys_script_exec_t:s0 cgi-bin
+    system_u:object_r:httpd_sys_content_t:s0 html
+root@localhost-live:/var/www# cd html
+root@localhost-live:/var/www/html# ls -Z
+unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# chcon -t httpd_sys_t 
+chcon: missing operand
+Try 'chcon --help' for more information.
+root@localhost-live:/var/www/html# chcon -t httpd_sys_t /html
+chcon: cannot access '/html': No such file or directory
+root@localhost-live:/var/www/html# cd ..
+root@localhost-live:/var/www# chcon -t httpd_sys_t /html
+chcon: cannot access '/html': No such file or directory
+root@localhost-live:/var/www# chcon -t httpd_sys_t /var/www/html
+chcon: failed to change context of '/var/www/html' to ‘system_u:object_r:httpd_sys_t:s0’: Invalid argument
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# 
+root@localhost-live:/var/www# chcon -t httpd_sys_content_new_t /var/www/html/index.html
+chcon: failed to change context of '/var/www/html/index.html' to ‘unconfined_u:object_r:httpd_sys_content_new_t:s0’: Invalid argument
+root@localhost-live:/var/www# setenforce 0
+root@localhost-live:/var/www# getenforce
+Permissive
+root@localhost-live:/var/www# chcon -t httpd_sys_content_new_t /var/www/html/index.html
+root@localhost-live:/var/www# cd html
+root@localhost-live:/var/www/html# ls -Z
+unconfined_u:object_r:httpd_sys_content_new_t:s0 index.html
+root@localhost-live:/var/www/html# setenforce 1
+root@localhost-live:/var/www/html# getenforce
+Enforcing
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_t /var/www/html/index.html
+root@localhost-live:/var/www/html# ls -Z
+system_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_new_t /var/www/html/index.html
+chcon: failed to change context of '/var/www/html/index.html' to ‘system_u:object_r:httpd_sys_content_new_t:s0’: Invalid argument
+root@localhost-live:/var/www/html# 
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_new_t /var/www/html/index.html^C
+root@localhost-live:/var/www/html# ls -Z
+system_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# 
+
+.
+.
+.
+.
+.
+.
+.
+..
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_t /var/www/html/index.html
+root@localhost-live:/var/www/html# ls -Z
+system_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_new_t /var/www/html/index.html
+chcon: failed to change context of '/var/www/html/index.html' to ‘system_u:object_r:httpd_sys_content_new_t:s0’: Invalid argument
+root@localhost-live:/var/www/html# 
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_new_t /var/www/html/index.html^C
+root@localhost-live:/var/www/html# ls -Z
+system_u:object_r:httpd_sys_content_t:s0 index.html
+root@localhost-live:/var/www/html# mkdir about.html
+root@localhost-live:/var/www/html# mkdir home.html
+root@localhost-live:/var/www/html# ll
+total 0
+drwxr-xr-x. 2 root root 40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root 40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# ls -Z
+unconfined_u:object_r:httpd_sys_content_t:s0 about.html      system_u:object_r:httpd_sys_content_t:s0 index.html
+unconfined_u:object_r:httpd_sys_content_t:s0 home.html
+root@localhost-live:/var/www/html# ll -Z
+total 0
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root system_u:object_r:httpd_sys_content_t:s0     40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# chcon -Rt httpd_sys_content_new-t /var/www/html/
+chcon: failed to change context of 'home.html' to ‘unconfined_u:object_r:httpd_sys_content_new-t:s0’: Invalid argument
+chcon: failed to change context of 'about.html' to ‘unconfined_u:object_r:httpd_sys_content_new-t:s0’: Invalid argument
+chcon: failed to change context of 'index.html' to ‘system_u:object_r:httpd_sys_content_new-t:s0’: Invalid argument
+chcon: failed to change context of '/var/www/html/' to ‘system_u:object_r:httpd_sys_content_new-t:s0’: Invalid argument
+root@localhost-live:/var/www/html# setenforce 0
+root@localhost-live:/var/www/html# getenforce
+Permissive
+root@localhost-live:/var/www/html# chcon -Rt httpd_sys_content_new-t /var/www/html/
+root@localhost-live:/var/www/html# ll -Z
+total 0
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_new-t:s0 40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_new-t:s0 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root system_u:object_r:httpd_sys_content_new-t:s0     40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# chcon -Rt httpd_sys_content_t /var/www/html/
+root@localhost-live:/var/www/html# ll -Z
+total 0
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root system_u:object_r:httpd_sys_content_t:s0     40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# restorecon /var/www/html/index.html
+root@localhost-live:/var/www/html# chcon -t httpd_sys_content_new_t /var/www/html/home.html
+root@localhost-live:/var/www/html# ll -Z
+total 0
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0     40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_new_t:s0 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root system_u:object_r:httpd_sys_content_t:s0         40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# restorecon /var/www/html/home.html
+root@localhost-live:/var/www/html# ll -Z
+total 0
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:48 about.html
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 40 May 28 12:49 home.html
+drwxr-xr-x. 2 root root system_u:object_r:httpd_sys_content_t:s0     40 May 28 10:56 index.html
+root@localhost-live:/var/www/html# 
