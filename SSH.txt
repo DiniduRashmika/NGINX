@@ -1,0 +1,276 @@
+oot@vbox:/home/rashmika# ^C
+root@vbox:/home/rashmika# ssh keygen
+ssh: Could not resolve hostname keygen: Name or service not known
+root@vbox:/home/rashmika# sudo adduser ashan
+useradd: user 'ashan' already exists
+root@vbox:/home/rashmika# sudo deluser ashan
+sudo: deluser: command not found
+root@vbox:/home/rashmika# ssh-keygen -t rsa -b 4096 -C "ashan@yourmachine"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase for "/root/.ssh/id_rsa" (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:QVl+KPiWvbc2xqG7RAFAUxsgfVkt16EIoKqZyHGrBqQ ashan@yourmachine
+The key's randomart image is:
++---[RSA 4096]----+
+|    .o*=*=o. ... |
+|     o.++*.oo..  |
+|    . ..+ =oo    |
+| . .   . = o     |
+|o...    S o      |
+|E+o .  . . ..    |
+|*. .      oo..   |
+| ..      ...=.   |
+|..        o=..   |
++----[SHA256]-----+
+root@vbox:/home/rashmika# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD0YoNKBOx10XiICnuBZYcVXrfm8N0FwRpoYy3twzZGO1UVqGJe0rows2f/Iho50pTSq9+rmhQvJh18W8+BffFyyeiSFUxPqUZlMnSdoBCi/Degmmmba/OEcqsTgrwKAIQE/isu29IWpli8w7Age1lnf6xdysTsLAVvyri7G0+NuEJWaRxruCnJAFmW9M+bcCrOWgjKx5/q2GQ6PQKq5ip/PI4DO8SbwtrOjqrDYdQLnvL59OHdBVLd1d4EbpzIk5FdaqehNQ7/MfUnWOYjvW7n39666M0XLkNIL2UI8GwBu+mWz2ZnbdBYHMRKbykP+hfkWet/B/Sd6jXsZ0hNTQ0z8GK7VshBNugFx7BcTNCdg4jFWlbga4RtJxDR2KXjvwpGHPkcg//BuNR9gfekBSxnPdjgV2x/Ttg2kfUPJLH93jnbKt02tgqSg0pcpqiStPoqCeEncu7M9Ej35birUmnmfN3nnJhmFf26L5zf8/lsJ++ZLW3IJMBnI08MAgzBFPKbwXh8BVa/bJhkSGb1otYiZreR4nprHd4LOHzOfaAUOKNsL69Bxn16rrRKKldcq3B7cGE29RzWY4zZXwbQs1fpXysBndXSUx2I/2xxno1Y+qqaGEbKKku8BmcHKvdqm7beIYRKOEvs8VInXjVQlV04liI+80Pf150YL9ag91IcTQ== ashan@yourmachine
+root@vbox:/home/rashmika# cp /Downloads .ssh/id_rsa
+cp: cannot stat '/Downloads': No such file or directory
+.
+.
+.
+.
+.
+.
+.
+.
+..
+.
+.
+rashmika@vbox:~$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fd00::7670:d5c9:ae3a:c3c1  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::cbf8:1694:28eb:92d7  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4b:2f:3f  txqueuelen 1000  (Ethernet)
+        RX packets 2193159  bytes 3135779017 (2.9 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 536332  bytes 42445063 (40.4 MiB)
+        TX errors 0  dropped 12 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1304  bytes 145192 (141.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1304  bytes 145192 (141.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@vbox:/home$ ll
+total 0
+drwx------. 1 ashan    ashan    144 May 30 18:26 ashan
+drwx------. 1 rashmika rashmika 656 May 30 14:02 rashmika
+rashmika@vbox:/home$ su ashan
+Password: 
+ashan@adsl-dynamic-ipv6:/home$ ll
+total 0
+drwx------. 1 ashan    ashan    144 May 30 18:26 ashan
+drwx------. 1 rashmika rashmika 656 May 30 14:02 rashmika
+ashan@adsl-dynamic-ipv6:/home$ cd ashan/
+ashan@adsl-dynamic-ipv6:~$ ll
+total 4
+-rw-r--r--. 1 ashan ashan 10 May 30 18:26 hello.txt
+ashan@adsl-dynamic-ipv6:~$ cat hello.txt 
+Hello MF!
+ashan@adsl-dynamic-ipv6:~$ 
+..
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.rashmika@adsl-dynamic-ipv6:~$ sudo su
+[sudo] password for rashmika: 
+root@adsl-dynamic-ipv6:/home/rashmika# ls -a
+.              .bash_profile  Desktop    .mozilla  .ssh                                    .vboxclient-draganddrop-tty2-control.pid
+..             .bashrc        Documents  Music     Templates                               .vboxclient-hostversion-tty2-control.pid
+.bash_history  .cache         Downloads  Pictures  .vboxclient-clipboard-tty2-control.pid  .vboxclient-seamless-tty2-control.pid
+.bash_logout   .config        .local     Public    .vboxclient-clipboard-tty2-service.pid  Videos
+root@adsl-dynamic-ipv6:/home/rashmika# cd .ssh
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls -a
+.  ..  dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# rm dinidu.pem
+rm: remove regular file 'dinidu.pem'? 
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# rm dinidu.pem
+rm: remove regular file 'dinidu.pem'? 
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# rm -f dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika# ssh -v
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+root@adsl-dynamic-ipv6:/home/rashmika# ip -a
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { address | addrlabel | fou | help | ila | ioam | l2tp | link |
+                   macsec | maddress | monitor | mptcp | mroute | mrule |
+                   neighbor | neighbour | netconf | netns | nexthop | ntable |
+                   ntbl | route | rule | sr | stats | tap | tcpmetrics |
+                   token | tunnel | tuntap | vrf | xfrm }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -echo | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+root@adsl-dynamic-ipv6:/home/rashmika# ssh -V
+OpenSSH_9.9p1, OpenSSL 3.2.4 11 Feb 2025
+root@adsl-dynamic-ipv6:/home/rashmika# cd Downloads
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# ls
+dinidu.pem  rashmika_key.pem  rashmika_private.key
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# cp .ssh /Downloads/dinidu.pem
+cp: cannot stat '.ssh': No such file or directory
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# cp /.ssh /Downloads/dinidu.pem
+cp: -r not specified; omitting directory '/.ssh'
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# cp dinidu.pem /home/rashmika/.ssh
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika# cd .ssh
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# nano config
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# nano config
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ssh dp
+ssh: Could not resolve hostname dp: Name or service not known
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# nano config
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# 
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ssh dp
+ssh: Could not resolve hostname dp: Name or service not known
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# nano config
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+config  dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika# ssh dp
+
+ssh: Could not resolve hostname dp: Name or service not known
+root@adsl-dynamic-ipv6:/home/rashmika# 
+root@adsl-dynamic-ipv6:/home/rashmika# ^C
+root@adsl-dynamic-ipv6:/home/rashmika# ^C
+root@adsl-dynamic-ipv6:/home/rashmika# ^C
+root@adsl-dynamic-ipv6:/home/rashmika# ^C
+root@adsl-dynamic-ipv6:/home/rashmika# sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+Warning: ALREADY_ENABLED: ssh
+success
+success
+root@adsl-dynamic-ipv6:/home/rashmika# ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase for "/root/.ssh/id_rsa" (empty for no passphrase): 
+Enter same passphrase again: 
+
+root@adsl-dynamic-ipv6:/home/rashmika# ssh dp
+ssh: Could not resolve hostname dp: Name or service not known
+root@adsl-dynamic-ipv6:/home/rashmika# ssh -i dinidu@3.12.115.163
+Warning: Identity file dinidu@3.12.115.163 not accessible: No such file or directory.
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+
+
+
+root@adsl-dynamic-ipv6:/home/rashmika# chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+root@adsl-dynamic-ipv6:/home/rashmika# cp /.ssh/id_rsa /home/rashmika/Downloads
+cp: cannot stat '/.ssh/id_rsa': No such file or directory
+root@adsl-dynamic-ipv6:/home/rashmika# cp home/rashmika/.ssh/id_rsa /home/rashmika/Downloads
+cp: cannot stat 'home/rashmika/.ssh/id_rsa': No such file or directory
+root@adsl-dynamic-ipv6:/home/rashmika# cd ssh
+bash: cd: ssh: No such file or directory
+root@adsl-dynamic-ipv6:/home/rashmika# cd .ssh
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ls
+config  dinidu.pem
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): ^C
+root@adsl-dynamic-ipv6:/home/rashmika/.ssh# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika# cp /root/.ssh/id_rsa /home/rashmika/Downloads
+root@adsl-dynamic-ipv6:/home/rashmika# cd Downloads
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# ls
+dinidu.pem  id_rsa  rashmika_key.pem  rashmika_private.key
+root@adsl-dynamic-ipv6:/home/rashmika/Downloads# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD0YoNKBOx10XiICnuBZYcVXrfm8N0FwRpoYy3twzZGO1UVqGJe0rows2f/Iho50pTSq9+rmhQvJh18W8+BffFyyeiSFUxPqUZlMnSdoBCi/Degmmmba/OEcqsTgrwKAIQE/isu29IWpli8w7Age1lnf6xdysTsLAVvyri7G0+NuEJWaRxruCnJAFmW9M+bcCrOWgjKx5/q2GQ6PQKq5ip/PI4DO8SbwtrOjqrDYdQLnvL59OHdBVLd1d4EbpzIk5FdaqehNQ7/MfUnWOYjvW7n39666M0XLkNIL2UI8GwBu+mWz2ZnbdBYHMRKbykP+hfkWet/B/Sd6jXsZ0hNTQ0z8GK7VshBNugFx7BcTNCdg4jFWlbga4RtJxDR2KXjvwpGHPkcg//BuNR9gfekBSxnPdjgV2x/Ttg2kfUPJLH93jnbKt02tgqSg0pcpqiStPoqCeEncu7M9Ej35birUmnmfN3nnJhmFf26L5zf8/lsJ++ZLW3IJMBnI08MAgzBFPKbwXh8BVa/bJhkSGb1otYiZreR4nprHd4LOHzOfaAUOKNsL69Bxn16rrRKKldcq3B7cGE29RzWY4zZXwbQs1fpXysBndXSUx2I/2xxno1Y+qqaGEbKKku8BmcHKvdqm7beIYRKOEvs8VInXjVQlV04liI+80Pf150YL9ag91IcTQ== ashan@yourmachine
+root@adsl-dynamic-ipv6:/home/rashmika# ^C
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+chmod: cannot access '/home/ashan/.ssh~': No such file or directory
+ashan@adsl-dynamic-ipv6:~/.ssh$ chmod 700 ~/.ssh
+ashan@adsl-dynamic-ipv6:~/.ssh$ chmod 600 ~/.ssh/authorized_keys
+ashan@adsl-dynamic-ipv6:~/.ssh$ chown -R rashmika:rashmika ~/.ssh
+chown: changing ownership of '/home/ashan/.ssh/id_ed25519': Operation not permitted
+chown: changing ownership of '/home/ashan/.ssh/id_ed25519.pub': Operation not permitted
+chown: changing ownership of '/home/ashan/.ssh/authorized_keys': Operation not permitted
+chown: changing ownership of '/home/ashan/.ssh': Operation not permitted
+ashan@adsl-dynamic-ipv6:~/.ssh$ chown -R ashan:ashan ~/.ssh
+ashan@adsl-dynamic-ipv6:~/.ssh$ exit
+exit
+rashmika@adsl-dynamic-ipv6:~$ su 
+Password: 
+rashmika@adsl-dynamic-ipv6:~$ ssh -i rashmika@10.0.2.15
+Warning: Identity file rashmika@10.0.2.15 not accessible: No such file or directory.
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+rashmika@adsl-dynamic-ipv6:~$ ssh dp
+ssh: Could not resolve hostname dp: Name or service not known
